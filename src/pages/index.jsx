@@ -1,9 +1,13 @@
 import React from 'react';
+import GlobalStyle from 'assets/styles/GlobalStyle';
+import Theme from 'assets/styles/theme';
+import Hero from 'templates/Hero/Hero';
 
 const IndexPage = () => (
-    <div>
-        <h1>Hello</h1>
-    </div>
+    <Theme>
+        <Hero />
+        <GlobalStyle />
+    </Theme>
 );
 
 export default IndexPage;

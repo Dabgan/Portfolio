@@ -2,12 +2,13 @@ const path = require('path');
 
 module.exports = {
     siteMetadata: {
-        title: `Gatsby Boilerplate`,
-        description: ``,
+        title: `Gabriel Daniluk - Portfolio`,
+        description: `Welcome on my personal portfolio website!`,
         author: `@gabrieldaniluk`,
     },
     plugins: [
-        `gatsby-plugin-react-helmet`,
+        'gatsby-plugin-react-helmet',
+        'gatsby-transformer-sharp',
         'gatsby-plugin-sharp',
         'gatsby-plugin-styled-components',
         {
@@ -28,15 +29,24 @@ module.exports = {
             },
         },
         {
+            resolve: `gatsby-plugin-prefetch-google-fonts`,
+            options: {
+                fonts: [
+                    {
+                        family: 'Roboto',
+                        variants: ['400', '700'],
+                    },
+                ],
+            },
+        },
+        {
             resolve: `gatsby-plugin-manifest`,
             options: {
-                name: `Gabriel`,
+                name: `Gabriel Daniluk`,
                 short_name: 'dabgan',
                 start_url: `/`,
-                background_color: `#F8F8F8`,
-                theme_color: `#4123DE`,
                 display: `standalone`,
-                icon: `src/assets/images/gatsby-icon.png`,
+                icon: `src/assets/images/Logo.png`,
             },
         },
         'gatsby-plugin-offline',
