@@ -7,7 +7,6 @@ const LogoWrapper = styled.div`
     display: block;
     width: 64px;
     height: 64px;
-    border: 2px solid #069cc8;
 `;
 
 const Logo = () => {

@@ -3,10 +3,25 @@ import { ThemeProvider } from 'styled-components';
 import propTypes from 'prop-types';
 
 const theme = {
-    primary: '#333333',
+    primary: '#fff',
     secondary: '#000000',
+    tertiary: '#4d648d',
+    fourth: '#1E1F26',
+    white: '#eeeeee',
     fonts: {
-        main: `'Roboto', cursive`,
+        regular: '400',
+        bold: '600',
+        family: {
+            main: `'Roboto', cursive`,
+        },
+        color: {
+            primary: '#1E1F26',
+            secondary: '#ffffff',
+        },
+    },
+    fontSize: {
+        m: '2.4rem',
+        l: '4rem',
     },
 };
 

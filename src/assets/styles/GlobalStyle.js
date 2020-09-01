@@ -11,10 +11,17 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
 }
+html {
+    font-size: 62.5%;
+}
 body {
     background-color: ${({ theme }) => theme.primary};
-    font-family: ${({ theme }) => theme.fonts.main};
+    font-family: ${({ theme }) => theme.fonts.family.main};
 }
+button {
+    font-family: ${({ theme }) => theme.fonts.family.main};
+}
+
 `;
 
 export default GlobalStyle;
