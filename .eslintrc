@@ -18,7 +18,8 @@
                     "./src"
                 ],
                 "extensions": [
-                    ".js"
+                    ".js",
+                    ".jsx"
                 ]
             }
         }

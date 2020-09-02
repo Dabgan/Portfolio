@@ -9,16 +9,19 @@ const BtnWrapper = styled.div`
 
 const Btn = styled.button`
     position: relative;
-    padding: 14px 28px;
+    padding: 8px 16px;
     font-size: ${({ theme }) => theme.fontSize.m};
     font-weight: ${({ theme }) => theme.fonts.bold};
     letter-spacing: 0.1em;
     border: 4px solid ${({ theme }) => theme.tertiary};
-    background: ${({ theme }) => theme.white};
+    background: ${({ theme }) => theme.primary};
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     :hover {
         transform: translate(-10px, 10px);
+    }
+    ${({ theme }) => theme.mq.md} {
+        padding: 14px 28px;
     }
 `;
 

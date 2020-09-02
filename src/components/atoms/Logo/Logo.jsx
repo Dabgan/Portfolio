@@ -5,8 +5,12 @@ import styled from 'styled-components';
 
 const LogoWrapper = styled.div`
     display: block;
-    width: 64px;
-    height: 64px;
+    width: 48px;
+    height: 48px;
+    ${({ theme }) => theme.mq.md} {
+        width: 64px;
+        height: 64px;
+    }
 `;
 
 const Logo = () => {
