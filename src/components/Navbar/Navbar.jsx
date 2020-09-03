@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import Hamburger from 'components/atoms/Hamburger/Hamburger';
-import Logo from 'components/atoms/Logo/Logo';
-import Content from 'components/atoms/Content/Content';
+import Hamburger from 'components/Hamburger/Hamburger';
+import Logo from 'components/Logo/Logo';
+import Content from 'components/Content/Content';
 import NavbarLinks from './NavbarLink';
 import { Navigation, Toggle, Navbox } from './navbar.styles';
 

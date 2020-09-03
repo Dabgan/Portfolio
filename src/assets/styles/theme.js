@@ -16,6 +16,7 @@ const theme = {
     secondary: '#000000',
     tertiary: '#4d648d',
     fourth: '#1E1F26',
+    fifth: '#c4dfe5',
     white: '#eeeeee',
     fonts: {
         regular: '400',
@@ -29,8 +30,8 @@ const theme = {
         },
     },
     fontSize: {
-        xs: '',
-        s: '',
+        xs: '1.2rem',
+        s: '1.8rem',
         m: '2.4rem',
         l: '3.2rem',
         xl: '4rem',

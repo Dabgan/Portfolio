@@ -17,8 +17,9 @@ html {
 body {
     background-color: ${({ theme }) => theme.primary};
     font-family: ${({ theme }) => theme.fonts.family.main};
+    letter-spacing: 0.1rem;
 }
-button {
+button, li {
     font-family: ${({ theme }) => theme.fonts.family.main};
 }
 

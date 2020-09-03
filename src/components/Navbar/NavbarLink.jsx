@@ -10,7 +10,7 @@ const NavItem = styled.li`
     transition: all 0.2s ease-in;
     position: relative;
     padding: 20px 0;
-    font-size: ${({ theme }) => theme.fontSize.ml};
+    font-size: ${({ theme }) => theme.fontSize.m};
     a {
         text-decoration: none;
         color: ${({ theme }) => theme.fourth};

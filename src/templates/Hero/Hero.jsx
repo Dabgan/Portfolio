@@ -1,7 +1,7 @@
 import React from 'react';
-import Navbar from 'components/molecules/Navbar/Navbar';
-import Content from 'components/atoms/Content/Content';
-import Button from 'components/atoms/Button/Button';
+import Navbar from 'components/Navbar/Navbar';
+import Content from 'components/Content/Content';
+import Button from 'components/Button/Button';
 import { HeroTitle, HeroSubtitle, Wrapper } from './hero.styles';
 
 const Hero = () => {

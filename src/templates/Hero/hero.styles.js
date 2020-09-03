@@ -21,7 +21,7 @@ export const HeroTitle = styled.h1`
 `;
 
 export const HeroSubtitle = styled.h2`
-    font-size: ${({ theme }) => theme.fontSize.l};
+    font-size: ${({ theme }) => theme.fontSize.m};
     font-weight: ${({ theme }) => theme.fonts.regular};
     text-align: center;
     margin-top: 1.5rem;
@@ -39,4 +39,5 @@ export const Wrapper = styled.header`
     display: flex;
     flex-flow: column;
     align-items: center;
+    margin-bottom: 6rem;
 `;
