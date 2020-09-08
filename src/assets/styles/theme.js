@@ -36,7 +36,7 @@ const theme = {
         l: '3.2rem',
         xl: '4rem',
         xxl: '',
-        xxxl: '',
+        xxxl: '9rem',
     },
     mq: Object.keys(breakpoints).reduce((acc, breakpoint) => {
         acc[breakpoint] = `@media (min-width: ${breakpoints[breakpoint]}px)`;

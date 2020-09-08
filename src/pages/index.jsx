@@ -8,9 +8,11 @@ import Projects from '../templates/Projects/Projects';
 const IndexPage = () => (
     <Theme>
         <Hero />
-        <Technologies />
-        <Projects />
-        <GlobalStyle />
+        <main>
+            <Technologies />
+            <Projects />
+            <GlobalStyle />
+        </main>
     </Theme>
 );
 

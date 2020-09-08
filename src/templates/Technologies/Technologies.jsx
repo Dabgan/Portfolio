@@ -2,9 +2,16 @@ import React from 'react';
 import Content from 'components/Content/Content';
 import TemplateHeader from 'components/Template Header/TemplateHeader';
 import TechnologyItem from 'components/TechnologyItem/TechnologyItem';
-import Wave from 'react-wavify';
-import bottomWave from 'assets/images/Wave1.svg';
-import { Wrapper, InnerWrapper, List, BottomWave } from './technologies.styles';
+
+import bottomWave from 'assets/svg/Wave1.svg';
+import {
+    Wrapper,
+    InnerWrapper,
+    List,
+    TopWave,
+    BottomWave,
+} from './technologies.styles';
+import DiagramAnimation from '../../components/DiagramAnimation/DiagramAnimation';
 
 const technologyListOne = [
     'HTML5',
@@ -30,7 +37,7 @@ const technologyListTwo = [
 const Technologies = () => {
     return (
         <>
-            <Wave
+            <TopWave
                 fill="#1E1F26"
                 options={{
                     height: 50,
@@ -57,6 +64,7 @@ const Technologies = () => {
                                 </TechnologyItem>
                             ))}
                         </List>
+                        <DiagramAnimation />
                     </InnerWrapper>
                 </Content>
             </Wrapper>
