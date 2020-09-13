@@ -7,15 +7,23 @@ module.exports = {
         author: `@gabrieldaniluk`,
     },
     plugins: [
-        'gatsby-plugin-react-helmet',
-        'gatsby-transformer-sharp',
         'gatsby-plugin-sharp',
+        'gatsby-transformer-sharp',
+        'gatsby-plugin-react-helmet',
         'gatsby-plugin-styled-components',
         {
             resolve: `gatsby-source-filesystem`,
             options: {
                 name: `images`,
                 path: `${__dirname}/src/assets/images`,
+            },
+        },
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `projects`,
+                path: `${__dirname}/src/data/`,
+                plugins: [`gatsby-transformer-json`],
             },
         },
         {

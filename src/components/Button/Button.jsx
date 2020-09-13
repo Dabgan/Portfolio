@@ -14,7 +14,7 @@ const Btn = styled.button`
     font-weight: ${({ theme }) => theme.fonts.bold};
     letter-spacing: 0.1em;
     border: 4px solid ${({ theme }) => theme.tertiary};
-    background: ${({ theme }) => theme.primary};
+    background: ${({ theme }) => theme.white};
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     :hover {

@@ -15,7 +15,7 @@ html {
     font-size: 62.5%;
 }
 body {
-    background-color: ${({ theme }) => theme.primary};
+    background-color: ${({ theme }) => theme.white};
     font-family: ${({ theme }) => theme.fonts.family.main};
     letter-spacing: 0.1rem;
 }

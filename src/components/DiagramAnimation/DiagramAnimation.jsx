@@ -3,10 +3,12 @@ import Diagram from 'assets/svg/diagram.inline.svg';
 import styled from 'styled-components';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { theme as diagramTheme } from 'assets/styles/theme';
 
 const Wrapper = styled.div`
-    svg {
-        /* border: 2px solid #069cc8; */
+    display: none;
+    ${({ theme }) => theme.mq.lg} {
+        display: block;
     }
 `;
 
@@ -14,6 +16,8 @@ const DiagramAnimation = () => {
     const wrapper = useRef(null);
 
     useEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+
         const [elements] = wrapper.current.children;
         const circlesLine = elements.getElementById('circles');
         const person = elements.getElementById('person');
@@ -21,8 +25,6 @@ const DiagramAnimation = () => {
         const platform = elements.getElementById('platform');
         const hop = elements.getElementById('hop');
         const diagramLine = elements.getElementById('circleLine');
-
-        gsap.registerPlugin(ScrollTrigger);
 
         gsap.set([...circlesLine.children, person, platform, hop], {
             autoAlpha: 0,
@@ -32,7 +34,7 @@ const DiagramAnimation = () => {
             transformOrigin: '50% 100%',
         });
         gsap.set(platform, { transformOrigin: '50% 50%' });
-        gsap.set([...bars.children], { scaleY: 0 });
+        gsap.set([...bars.children], { scaleY: 0, fill: diagramTheme.fourth });
 
         const pathLength = diagramLine.getTotalLength();
         gsap.set(diagramLine, { strokeDasharray: pathLength });
@@ -94,7 +96,7 @@ const DiagramAnimation = () => {
         [...circlesLine.children].map((circle, id) => {
             return timeLine.to(
                 circle,
-                { delay: -0.3, duration: 1, autoAlpha: 1 },
+                { duration: 1, autoAlpha: 1 },
                 `finishBar${id}`
             );
         });

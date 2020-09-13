@@ -2,8 +2,8 @@ import React from 'react';
 import Content from 'components/Content/Content';
 import TemplateHeader from 'components/Template Header/TemplateHeader';
 import TechnologyItem from 'components/TechnologyItem/TechnologyItem';
-
 import bottomWave from 'assets/svg/Wave1.svg';
+import { theme } from 'assets/styles/theme';
 import {
     Wrapper,
     InnerWrapper,
@@ -38,7 +38,7 @@ const Technologies = () => {
     return (
         <>
             <TopWave
-                fill="#1E1F26"
+                fill={theme.primary}
                 options={{
                     height: 50,
                     amplitude: 30,

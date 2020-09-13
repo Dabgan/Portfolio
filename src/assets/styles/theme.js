@@ -11,13 +11,13 @@ const breakpoints = {
     xxl: 2560,
 };
 
-const theme = {
-    primary: '#fff',
-    secondary: '#000000',
-    tertiary: '#4d648d',
-    fourth: '#1E1F26',
-    fifth: '#c4dfe5',
-    white: '#eeeeee',
+export const theme = {
+    primary: '#1E1F26',
+    secondary: '#283655',
+    tertiary: '#4D648D',
+    fourth: '#D0E1F9',
+    white: '#ffffff',
+    black: '#000000',
     fonts: {
         regular: '400',
         bold: '600',
@@ -34,8 +34,8 @@ const theme = {
         s: '1.8rem',
         m: '2.4rem',
         l: '3.2rem',
-        xl: '4rem',
-        xxl: '',
+        xl: '4.0rem',
+        xxl: '4.8rem',
         xxxl: '9rem',
     },
     mq: Object.keys(breakpoints).reduce((acc, breakpoint) => {

@@ -1,0 +1,12 @@
+{
+    "order": 3,
+    "title": "Quiz App",
+    "description": "This app allows you to solve quizzes from selected categories. When creating this project, I was just starting to learn React so the entire application is written with Class Components. I used SCSS for styling.",
+    "technologies": [
+        "React",
+        "SCSS"
+    ],
+    "codeLink": "https://github.com/Dabgan/Project06-React_Quiz",
+    "demoLink": "https://dabgan.github.io/Project06-React_Quiz/",
+    "coverImg": "../../assets/images/quiz.png"
+}

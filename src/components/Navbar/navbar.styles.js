@@ -26,7 +26,7 @@ export const Navbox = styled.ul`
     position: fixed;
     height: 100%;
     width: 100%;
-    background: ${({ theme }) => theme.primary};
+    background: ${({ theme }) => theme.white};
     padding-top: 10vh;
     transition: all 0.3s ease-in;
     top: 15vh;

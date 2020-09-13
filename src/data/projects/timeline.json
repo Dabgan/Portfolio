@@ -1,0 +1,14 @@
+{
+    "order": 3,
+    "title": "Github Timeline",
+    "description": "My main goal here was to learn the basics of react-redux and expand my knowledge about Styled-Components. Enter github login, and the application will download repositories of that user. Then choose an repository and click it, to see commits history presented on a timeline.",
+    "technologies": [
+        "React & Hooks",
+        "Redux",
+        "Styled Components",
+        "Jest & Enzyme"
+    ],
+    "codeLink": "https://github.com/Dabgan/github-timeline",
+    "demoLink": "https://commits-timeline.netlify.app/",
+    "coverImg": "../../assets/images/timeline.png"
+}
