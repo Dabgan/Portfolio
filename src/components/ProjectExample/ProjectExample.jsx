@@ -1,5 +1,4 @@
-import React from 'react';
-import Content from 'components/Content/Content';
+import React, { useState } from 'react';
 import Button from 'components/Button/Button';
 import propTypes from 'prop-types';
 import Img from 'gatsby-image';
@@ -7,14 +6,24 @@ import {
     ProjectTitle,
     Wrapper,
     InfoWrapper,
-    ProjectImgWrapper,
+    ImageWrapper,
+    Description,
+    TechnologiesList,
+    InnerWrapper,
+    ButtonsWrapper,
+    ProjectItem,
+    ProjectMarker,
+    Line,
 } from './projectExample.styles';
 
 const ProjectExample = ({ projectData }) => {
-    const codeText = '<Code />';
+    // const [readMore, setReadMore] = useState(false);
 
+    const codeText = '<Code />';
     const {
         title,
+        inverted,
+        introduction,
         description,
         technologies,
         coverImg,
@@ -22,47 +31,64 @@ const ProjectExample = ({ projectData }) => {
         codeLink,
     } = projectData;
 
+    // const toggleReadMore = () => {
+    //     return setReadMore(prevState => !prevState);
+    // };
+
     return (
-        <Content>
-            <Wrapper>
-                <ProjectImgWrapper>
-                    <Img fluid={coverImg.childImageSharp.fluid} alt={title} />
-                </ProjectImgWrapper>
-                <InfoWrapper>
-                    <ProjectTitle>{title}</ProjectTitle>
+        <Wrapper inverted={inverted ? 1 : 0}>
+            <ImageWrapper inverted={inverted ? 1 : 0}>
+                <Img fluid={coverImg.childImageSharp.fluid} alt={title} />
+            </ImageWrapper>
+            <InfoWrapper inverted={inverted ? 1 : 0}>
+                {/* <InnerWrapper> */}
+                <ProjectTitle inverted={inverted ? 1 : 0}>{title}</ProjectTitle>
+                {/* <Button onClick={toggleReadMore} size="small" secondary>
+                        Read more
+                    </Button> */}
+                {/* </InnerWrapper> */}
+                <Line />
+                <Description>{description}</Description>
+                <TechnologiesList>
+                    {technologies.map(item => (
+                        <ProjectItem key={item}>
+                            <ProjectMarker />
+                            {item}
+                        </ProjectItem>
+                    ))}
+                </TechnologiesList>
 
-                    <h5>{description}</h5>
-                    <ul>
-                        {technologies.map(item => (
-                            <li key={item}>{item}</li>
-                        ))}
-                    </ul>
-
+                <ButtonsWrapper>
                     <a
                         href={demoLink}
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <Button>Live</Button>
+                        <Button size="medium">Live</Button>
                     </a>
                     <a
                         href={codeLink}
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <Button>{codeText}</Button>
+                        <Button size="medium" secondary>
+                            {codeText}
+                        </Button>
                     </a>
-                </InfoWrapper>
-            </Wrapper>
-        </Content>
+                </ButtonsWrapper>
+                {/* <Description>{introduction}</Description> */}
+            </InfoWrapper>
+        </Wrapper>
     );
 };
 
 ProjectExample.propTypes = {
     projectData: propTypes.shape({
         title: propTypes.string.isRequired,
+        introduction: propTypes.string.isRequired,
         description: propTypes.string.isRequired,
         technologies: propTypes.arrayOf(propTypes.string),
+        inverted: propTypes.bool.isRequired,
         coverImg: propTypes.shape({
             childImageSharp: propTypes.shape({
                 fluid: propTypes.shape({

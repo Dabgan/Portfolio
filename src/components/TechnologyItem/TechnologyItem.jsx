@@ -14,7 +14,7 @@ const Item = styled.li`
     height: 5rem;
 
     ${({ theme }) => theme.mq.lg} {
-        font-size: ${({ theme }) => theme.fontSize.m};
+        font-size: ${({ theme }) => theme.fontSize.ml};
     }
 `;
 

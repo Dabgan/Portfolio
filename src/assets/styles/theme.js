@@ -18,6 +18,7 @@ export const theme = {
     fourth: '#D0E1F9',
     white: '#ffffff',
     black: '#000000',
+    gray: '#ebebeb',
     fonts: {
         regular: '400',
         bold: '600',
@@ -30,9 +31,11 @@ export const theme = {
         },
     },
     fontSize: {
-        xs: '1.2rem',
+        xxs: '1.2rem',
+        xs: '1.5rem',
         s: '1.8rem',
         m: '2.4rem',
+        ml: '2.7rem',
         l: '3.2rem',
         xl: '4.0rem',
         xxl: '4.8rem',
@@ -42,6 +45,20 @@ export const theme = {
         acc[breakpoint] = `@media (min-width: ${breakpoints[breakpoint]}px)`;
         return acc;
     }, {}),
+    margin: {
+        xs: '1rem',
+        s: '3rem',
+        m: '5rem',
+        l: '7rem',
+        xl: '9rem',
+    },
+    padding: {
+        s: '1.5rem',
+        m: '2.5rem',
+        l: '3.5rem',
+        xl: '18rem',
+    },
+    borderRadius: '8px',
 };
 
 const Theme = ({ children }) => (

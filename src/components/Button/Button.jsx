@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import propTypes from 'prop-types';
 
 const BtnWrapper = styled.div`
@@ -13,33 +13,76 @@ const Btn = styled.button`
     font-size: ${({ theme }) => theme.fontSize.m};
     font-weight: ${({ theme }) => theme.fonts.bold};
     letter-spacing: 0.1em;
-    border: 4px solid ${({ theme }) => theme.tertiary};
+    border: 2px solid ${({ theme }) => theme.tertiary};
     background: ${({ theme }) => theme.white};
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+
     :hover {
-        transform: translate(-10px, 10px);
+        transform: translate(-7px, 6px);
     }
     ${({ theme }) => theme.mq.md} {
         padding: 14px 28px;
     }
+
+    ${({ size }) =>
+        size === 'small' &&
+        css`
+            padding: 4px 8px;
+            font-size: ${({ theme }) => theme.fontSize.xs};
+            margin-bottom: 2px;
+            border: 2px solid ${({ theme }) => theme.tertiary};
+            :hover {
+                transform: translate(-3px, 3px);
+            }
+        `}
+    ${({ size }) =>
+        size === 'medium' &&
+        css`
+            font-size: ${({ theme }) => theme.fontSize.s};
+            :hover {
+                transform: translate(-6px, 5px);
+            }
+        `}
+    ${({ secondary }) =>
+        secondary &&
+        css`
+            background: ${({ theme }) => theme.black};
+            color: ${({ theme }) => theme.white};
+        `}
 `;
 
 const BtnBackground = styled.div`
     position: absolute;
-    top: 15px;
-    left: -10px;
-    background: ${({ theme }) => theme.tertiary};
-    width: ${props => props.width - 5}px;
-    height: ${props => props.height - 5}px;
     z-index: -1;
+    top: 12px;
+    left: -7px;
+    background: ${({ theme }) => theme.tertiary};
+    width: ${props => props.width - 12}px;
+    height: ${props => props.height - 6}px;
+
+    ${({ size }) =>
+        size === 'small' &&
+        css`
+            top: 7px;
+            left: -3px;
+            height: ${props => props.height - 4}px;
+        `}
+    ${({ size }) =>
+        size === 'medium' &&
+        css`
+            top: 12px;
+            left: -6px;
+            height: ${props => props.height - 7}px;
+        `}
 `;
 
-const Button = ({ children, marginTop }) => {
+const Button = ({ children, marginTop, size, onClick, secondary }) => {
     const [height, setHeight] = useState(0);
     const [width, setWidth] = useState(0);
     const buttonRef = useRef(null);
 
+    // setting proportional button background based on actual button sizes
     useEffect(() => {
         setHeight(buttonRef.current.offsetHeight);
         setWidth(buttonRef.current.offsetWidth);
@@ -47,8 +90,15 @@ const Button = ({ children, marginTop }) => {
 
     return (
         <BtnWrapper marginTop={marginTop}>
-            <Btn ref={buttonRef}>{children}</Btn>
-            <BtnBackground width={width} height={height} />
+            <Btn
+                ref={buttonRef}
+                size={size}
+                onClick={onClick}
+                secondary={secondary}
+            >
+                {children}
+            </Btn>
+            <BtnBackground width={width} height={height} size={size} />
         </BtnWrapper>
     );
 };
@@ -56,10 +106,16 @@ const Button = ({ children, marginTop }) => {
 Button.propTypes = {
     children: propTypes.string.isRequired,
     marginTop: propTypes.string,
+    size: propTypes.string,
+    secondary: propTypes.bool,
+    onClick: propTypes.func,
 };
 
 Button.defaultProps = {
     marginTop: '0px',
+    size: 'big',
+    secondary: false,
+    onClick: null,
 };
 
 export default Button;

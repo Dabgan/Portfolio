@@ -1,16 +1,18 @@
 {
     "order": 1,
     "title": "Snowshop",
+    "introduction": "My biggest project so far. A mockup of a fully functioning online shop.",
     "description": "My biggest project so far. A mockup of a fully functioning online shop in which I used firebase as my backend. It has features such as shopping cart, filtering and more. While creating this page, I learned how to solve advanced problems with React.",
     "technologies": [
         "React & Hooks",
-        "Firebase",
         "Styled Components",
+        "Firebase",
         "Formik",
         "Local Storage",
-        "react-tostify"
+        "React-tostify"
     ],
     "codeLink": "https://github.com/Dabgan/SnowShop",
     "demoLink": "https://snow-shop.netlify.app/",
-    "coverImg": "../../assets/images/snowshop.png"
+    "coverImg": "../../assets/images/snowshop.png",
+    "inverted": true
 }

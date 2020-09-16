@@ -16,6 +16,8 @@ const Projects = () => {
                     demoLink
                     codeLink
                     id
+                    introduction
+                    inverted
                     coverImg {
                         childImageSharp {
                             fluid(maxWidth: 1600, maxHeight: 900, quality: 90) {

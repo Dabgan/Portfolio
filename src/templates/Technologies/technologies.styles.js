@@ -17,6 +17,7 @@ export const InnerWrapper = styled.div`
     margin-top: 3rem;
     ${({ theme }) => theme.mq.lg} {
         margin-top: 0rem;
+        align-items: flex-start;
     }
 `;
 
@@ -24,7 +25,7 @@ export const List = styled.ul`
     display: flex;
     flex-flow: column;
     ${({ theme }) => theme.mq.lg} {
-        margin: 0 3rem;
+        margin: 4rem 3rem 0;
     }
 `;
 
