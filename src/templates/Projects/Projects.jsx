@@ -20,8 +20,8 @@ const Projects = () => {
                     inverted
                     coverImg {
                         childImageSharp {
-                            fluid(maxWidth: 1600, maxHeight: 900, quality: 90) {
-                                ...GatsbyImageSharpFluid
+                            fluid(maxWidth: 850, maxHeight: 571, quality: 90) {
+                                ...GatsbyImageSharpFluid_tracedSVG
                             }
                         }
                     }

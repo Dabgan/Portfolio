@@ -33,6 +33,7 @@ export const ImageWrapper = styled.div`
             left: ${({ inverted }) => (inverted ? '+35px' : '-35px')};
             top: -35px;
             background: ${({ theme }) => theme.gray};
+            z-index: -1;
         }
     }
 `;

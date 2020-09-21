@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Button from 'components/Button/Button';
 import propTypes from 'prop-types';
 import Img from 'gatsby-image';

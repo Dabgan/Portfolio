@@ -1,5 +1,5 @@
 {
-    "order": 3,
+    "order": 2,
     "title": "Github Timeline",
     "introduction": "In this project you pick up users github repo and display commits in a timeline ",
     "description": "My main goal here was to learn the basics of react-redux and expand my knowledge about Styled-Components. Enter github login, and the application will download repositories of that user. Then choose an repository and click it, to see commits history presented on a timeline.",
@@ -12,5 +12,5 @@
     "codeLink": "https://github.com/Dabgan/github-timeline",
     "demoLink": "https://commits-timeline.netlify.app/",
     "coverImg": "../../assets/images/timeline.png",
-    "inverted": true
+    "inverted": false
 }
