@@ -35,7 +35,7 @@ const Projects = () => {
             <InnerWrapper>
                 <TemplateHeader title="Projects" color />
                 <SecondaryTitle>
-                    My favourite ones. You can find more on my github
+                    My favourite ones. You can find more on my github profile.
                 </SecondaryTitle>
                 {data.projects.nodes.map(node => (
                     <ProjectExample key={node.id} projectData={node} />

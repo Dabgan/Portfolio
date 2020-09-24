@@ -8,7 +8,6 @@ const Content = styled.div`
     max-width: 1440px;
     ${({ theme }) => theme.mq.md} {
         padding: 0 0;
-        /* border: 2px solid #069cc8; */
     }
 `;
 

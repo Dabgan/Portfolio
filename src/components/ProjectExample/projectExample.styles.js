@@ -7,13 +7,14 @@ export const Wrapper = styled.div`
     ${({ theme }) => theme.mq.lg} {
         flex-flow: ${({ inverted }) => (inverted ? 'row-reverse' : 'row')};
         padding: ${({ theme }) => theme.padding.l} 0;
-        margin: ${({ theme }) => theme.margin.xl} 0 0;
+        margin: ${({ theme }) => theme.margin.l} 0
+            ${({ theme }) => theme.margin.l};
     }
 `;
 
 export const ImageWrapper = styled.div`
     width: 100%;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05), 0 5px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 5px 5px 35px #9e9e9e;
     position: relative;
     img {
         width: 100%;
@@ -32,7 +33,7 @@ export const ImageWrapper = styled.div`
             height: 100%;
             left: ${({ inverted }) => (inverted ? '+35px' : '-35px')};
             top: -35px;
-            background: ${({ theme }) => theme.gray};
+            background: ${({ theme }) => theme.lightGray};
             z-index: -1;
         }
     }
@@ -54,11 +55,8 @@ export const InfoWrapper = styled.div`
 export const ProjectTitle = styled.h4`
     color: ${({ theme }) => theme.tertiary};
     font-size: ${({ theme }) => theme.fontSize.ml};
-    max-width: 50%;
     margin-top: ${({ theme }) => theme.margin.s};
     ${({ theme }) => theme.mq.lg} {
-        width: 100%;
-        max-width: 100%;
         text-align: ${({ inverted }) => (inverted ? 'left' : 'right')};
         font-size: ${({ theme }) => theme.fontSize.xxl};
     }

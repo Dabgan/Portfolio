@@ -13,5 +13,7 @@ export const SecondaryTitle = styled.h3`
         font-size: ${({ theme }) => theme.fontSize.ml};
         text-align: left;
         margin: 0 0;
+        max-width: 50%;
+        padding-right: ${({ theme }) => theme.padding.xl};
     }
 `;

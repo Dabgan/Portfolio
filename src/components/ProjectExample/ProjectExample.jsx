@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import Button from 'components/Button/Button';
 import propTypes from 'prop-types';
 import Img from 'gatsby-image';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import {
     ProjectTitle,
     Wrapper,
@@ -18,7 +20,8 @@ import {
 
 const ProjectExample = ({ projectData }) => {
     // const [readMore, setReadMore] = useState(false);
-
+    const imgRef = useRef(null);
+    const contentRef = useRef(null);
     const codeText = '<Code />';
     const {
         title,
@@ -31,16 +34,45 @@ const ProjectExample = ({ projectData }) => {
         codeLink,
     } = projectData;
 
+    useEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+
+        const img = imgRef.current;
+        const content = contentRef.current;
+
+        const tweenDirection = inverted ? '+' : '-';
+
+        const startProjectAnimation = (elem, distance) => {
+            gsap.fromTo(
+                elem,
+                { x: `${tweenDirection}=${distance}`, autoAlpha: 0 },
+                {
+                    duration: 1.4,
+                    x: '0',
+                    autoAlpha: 1,
+                    ease: 'power3.inOut',
+                    scrollTrigger: {
+                        trigger: elem,
+                        start: '-10% 90%',
+                    },
+                }
+            );
+        };
+
+        startProjectAnimation(img, '200');
+        startProjectAnimation(content, '400');
+    }, []);
+
     // const toggleReadMore = () => {
     //     return setReadMore(prevState => !prevState);
     // };
 
     return (
         <Wrapper inverted={inverted ? 1 : 0}>
-            <ImageWrapper inverted={inverted ? 1 : 0}>
+            <ImageWrapper ref={imgRef} inverted={inverted ? 1 : 0}>
                 <Img fluid={coverImg.childImageSharp.fluid} alt={title} />
             </ImageWrapper>
-            <InfoWrapper inverted={inverted ? 1 : 0}>
+            <InfoWrapper ref={contentRef} inverted={inverted ? 1 : 0}>
                 {/* <InnerWrapper> */}
                 <ProjectTitle inverted={inverted ? 1 : 0}>{title}</ProjectTitle>
                 {/* <Button onClick={toggleReadMore} size="small" secondary>

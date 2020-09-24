@@ -6,7 +6,7 @@ const NavItem = styled.li`
     text-decoration: none;
     list-style: none;
     margin: 0 1.5vw;
-    transition: all 0.2s ease-in;
+    /* transition: all 0.2s ease-in; */
     position: relative;
     padding: 20px 0;
     font-size: ${({ theme }) => theme.fontSize.m};

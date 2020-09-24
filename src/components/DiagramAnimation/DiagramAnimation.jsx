@@ -104,7 +104,7 @@ const DiagramAnimation = () => {
 
     return (
         <Wrapper ref={wrapper}>
-            <Diagram className="scrollTrigger" />
+            <Diagram />
         </Wrapper>
     );
 };
