@@ -4,6 +4,7 @@ import Theme from 'assets/styles/theme';
 import Hero from 'templates/Hero/Hero';
 import Technologies from '../templates/Technologies/Technologies';
 import Projects from '../templates/Projects/Projects';
+import About from '../templates/About/About';
 
 const IndexPage = () => (
     <Theme>
@@ -11,6 +12,7 @@ const IndexPage = () => (
         <main>
             <Technologies />
             <Projects />
+            <About />
             <GlobalStyle />
         </main>
     </Theme>

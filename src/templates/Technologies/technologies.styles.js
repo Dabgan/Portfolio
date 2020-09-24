@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Wave from 'react-wavify';
+import wave from 'assets/svg/wave.inline.svg';
 
 export const Wrapper = styled.section`
     background: ${({ theme }) => theme.primary};
@@ -34,8 +35,8 @@ export const TopWave = styled(Wave)`
         margin-top: 6rem;
     }
 `;
-
-export const BottomWave = styled.img`
-    width: 100%;
-    color: red;
+export const BottomWave = styled(wave)`
+    path {
+        fill: ${({ theme }) => theme.primary};
+    }
 `;

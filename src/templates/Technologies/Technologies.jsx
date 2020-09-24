@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from 'react';
 import Content from 'components/Content/Content';
 import TemplateHeader from 'components/Template Header/TemplateHeader';
 import TechnologyItem from 'components/TechnologyItem/TechnologyItem';
-import bottomWave from 'assets/svg/Wave1.svg';
 import { theme } from 'assets/styles/theme';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -76,7 +75,7 @@ const Technologies = () => {
             />
             <Wrapper>
                 <Content>
-                    <TemplateHeader title="Technologies" />
+                    <TemplateHeader>Technologies</TemplateHeader>
                     <InnerWrapper>
                         <List ref={listOneRef}>
                             {technologyListOne.map(item => (
@@ -96,7 +95,7 @@ const Technologies = () => {
                     </InnerWrapper>
                 </Content>
             </Wrapper>
-            <BottomWave src={bottomWave} alt="template wave" />
+            <BottomWave />
         </>
     );
 };

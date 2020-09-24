@@ -33,7 +33,7 @@ const Projects = () => {
     return (
         <Content>
             <InnerWrapper>
-                <TemplateHeader title="Projects" color />
+                <TemplateHeader color>Projects</TemplateHeader>
                 <SecondaryTitle>
                     My favourite ones. You can find more on my github profile.
                 </SecondaryTitle>

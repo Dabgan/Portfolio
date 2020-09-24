@@ -20,7 +20,7 @@ const Header = styled.h2`
     }
 `;
 
-const TemplateHeader = ({ title, color }) => {
+const TemplateHeader = ({ children, color }) => {
     const headerRef = useRef(null);
 
     useEffect(() => {
@@ -36,13 +36,13 @@ const TemplateHeader = ({ title, color }) => {
 
     return (
         <Header ref={headerRef} color={color ? 1 : 0}>
-            {title}
+            {children}
         </Header>
     );
 };
 
 TemplateHeader.propTypes = {
-    title: propTypes.string.isRequired,
+    children: propTypes.string.isRequired,
     color: propTypes.bool,
 };
 
