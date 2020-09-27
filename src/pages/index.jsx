@@ -6,6 +6,7 @@ import Technologies from '../templates/Technologies/Technologies';
 import Projects from '../templates/Projects/Projects';
 import About from '../templates/About/About';
 import Contact from '../templates/Contact/Contact';
+import Footer from '../components/Footer/Footer';
 
 const IndexPage = () => (
     <Theme>
@@ -15,6 +16,7 @@ const IndexPage = () => (
             <Projects />
             <About />
             <Contact />
+            <Footer />
             <GlobalStyle />
         </main>
     </Theme>
