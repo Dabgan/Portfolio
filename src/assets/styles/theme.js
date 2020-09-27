@@ -19,6 +19,7 @@ export const theme = {
     white: '#ffffff',
     black: '#000000',
     gray: '#ebebeb',
+    error: '#ed2311',
     lightGray: '#f5f5f5',
     fonts: {
         regular: '400',
@@ -54,6 +55,7 @@ export const theme = {
         xl: '9rem',
     },
     padding: {
+        xs: '0.6rem',
         s: '1.5rem',
         m: '2.5rem',
         l: '3.5rem',

@@ -77,7 +77,7 @@ const BtnBackground = styled.div`
         `}
 `;
 
-const Button = ({ children, marginTop, size, onClick, secondary }) => {
+const Button = ({ children, marginTop, size, onClick, secondary, submit }) => {
     const [height, setHeight] = useState(0);
     const [width, setWidth] = useState(0);
     const buttonRef = useRef(null);
@@ -95,6 +95,7 @@ const Button = ({ children, marginTop, size, onClick, secondary }) => {
                 size={size}
                 onClick={onClick}
                 secondary={secondary}
+                type={submit ? 'submit' : 'button'}
             >
                 {children}
             </Btn>
@@ -109,6 +110,7 @@ Button.propTypes = {
     size: propTypes.string,
     secondary: propTypes.bool,
     onClick: propTypes.func,
+    submit: propTypes.bool,
 };
 
 Button.defaultProps = {
@@ -116,6 +118,7 @@ Button.defaultProps = {
     size: 'big',
     secondary: false,
     onClick: null,
+    submit: false,
 };
 
 export default Button;

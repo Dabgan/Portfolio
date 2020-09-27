@@ -6,6 +6,8 @@ const Content = styled.div`
     width: 100%;
     height: 100%;
     max-width: 1440px;
+    position: relative;
+    z-index: 1;
     ${({ theme }) => theme.mq.md} {
         padding: 0 0;
     }

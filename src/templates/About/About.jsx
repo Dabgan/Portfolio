@@ -41,7 +41,7 @@ const About = () => {
 
     return (
         <>
-            <Wave top />
+            <Wave top="true" />
             <Wrapper>
                 <Content ref={wrapperRef}>
                     <TemplateHeader>About</TemplateHeader>
