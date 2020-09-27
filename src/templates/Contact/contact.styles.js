@@ -4,7 +4,7 @@ export const Wrapper = styled.section`
     background: ${({ theme }) => theme.primary};
     color: ${({ theme }) => theme.white};
     margin-top: -2rem;
-    padding: 5rem 0;
+    padding: 5rem 0 0;
     ${({ theme }) => theme.mq.lg} {
         /* flex-flow: row; */
     }

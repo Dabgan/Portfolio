@@ -2,8 +2,8 @@ import React from 'react';
 import Content from 'components/Content/Content';
 import TemplateHeader from 'components/Template Header/TemplateHeader';
 import ContactForm from 'components/ContactForm/ContactForm';
-import Logo from 'components/Logo/Logo';
 import { Wrapper, Subtitle } from './contact.styles';
+import Socials from '../../components/Socials/Socials';
 
 const Contact = () => {
     return (
@@ -15,13 +15,8 @@ const Contact = () => {
                     open to job offers and I will answer as soon as possible.
                 </Subtitle>
                 <ContactForm />
-                <div>
-                    <Logo />
-                    <span>Ld</span>
-                    <span>E@</span>
-                    <span>GH</span>
-                </div>
             </Content>
+            <Socials />
         </Wrapper>
     );
 };
