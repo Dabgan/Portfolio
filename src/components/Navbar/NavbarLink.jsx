@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
+import gsap from 'gsap/gsap-core';
+import ScrollToPlugin from 'gsap/ScrollToPlugin';
 
 const NavItem = styled.li`
     text-decoration: none;
     list-style: none;
     margin: 0 1.5vw;
-    /* transition: all 0.2s ease-in; */
     position: relative;
     padding: 20px 0;
     font-size: ${({ theme }) => theme.fontSize.m};
@@ -22,13 +23,23 @@ const NavItem = styled.li`
     }
 `;
 
-const navItems = ['skills', 'projects', 'contact', 'about'];
+const navItems = ['skills', 'projects', 'about', 'contact'];
 
 const NavbarLinks = () => {
+    gsap.registerPlugin(ScrollToPlugin);
+
+    const handleScrollToSection = item => {
+        gsap.to(window, {
+            duration: 1,
+            scrollTo: { y: `#${item}`, offsetY: 50 },
+            ease: 'power2.Out',
+        });
+    };
+
     return (
         <>
             {navItems.map(item => (
-                <NavItem key={item}>
+                <NavItem onClick={() => handleScrollToSection(item)} key={item}>
                     <Link to={`#${item}`}>{item}</Link>
                 </NavItem>
             ))}

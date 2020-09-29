@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import ProjectExample from 'components/ProjectExample/ProjectExample';
 import Content from 'components/Content/Content';
 import TemplateHeader from '../../components/Template Header/TemplateHeader';
-import { InnerWrapper, SecondaryTitle } from './projects.styles';
+import { InnerWrapper, SecondaryTitle, Wrapper } from './projects.styles';
 
 const Projects = () => {
     const data = useStaticQuery(graphql`
@@ -31,17 +31,20 @@ const Projects = () => {
     `);
 
     return (
-        <Content>
-            <InnerWrapper>
-                <TemplateHeader color>Projects</TemplateHeader>
-                <SecondaryTitle>
-                    My favourite ones. You can find more on my github profile.
-                </SecondaryTitle>
-                {data.projects.nodes.map(node => (
-                    <ProjectExample key={node.id} projectData={node} />
-                ))}
-            </InnerWrapper>
-        </Content>
+        <Wrapper id="projects">
+            <Content>
+                <InnerWrapper>
+                    <TemplateHeader color>Projects</TemplateHeader>
+                    <SecondaryTitle>
+                        My favourite ones. You can find more on my github
+                        profile.
+                    </SecondaryTitle>
+                    {data.projects.nodes.map(node => (
+                        <ProjectExample key={node.id} projectData={node} />
+                    ))}
+                </InnerWrapper>
+            </Content>
+        </Wrapper>
     );
 };
 

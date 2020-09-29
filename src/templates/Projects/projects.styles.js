@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+export const Wrapper = styled.section``;
 export const InnerWrapper = styled.section`
     margin-top: ${({ theme }) => theme.margin.m};
 `;

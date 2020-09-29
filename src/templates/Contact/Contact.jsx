@@ -8,7 +8,7 @@ import Socials from '../../components/Socials/Socials';
 
 const Contact = () => {
     return (
-        <Wrapper>
+        <Wrapper id="contact">
             <Content>
                 <TemplateHeader inverted>Contact</TemplateHeader>
                 <InnerWrapper>

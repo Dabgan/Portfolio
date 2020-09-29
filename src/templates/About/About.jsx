@@ -42,7 +42,7 @@ const About = () => {
     return (
         <>
             <Wave top="true" />
-            <Wrapper>
+            <Wrapper id="about">
                 <Content ref={wrapperRef}>
                     <TemplateHeader>About</TemplateHeader>
                     <Subtitle>me talking about myself</Subtitle>

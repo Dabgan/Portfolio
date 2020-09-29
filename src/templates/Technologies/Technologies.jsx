@@ -73,7 +73,7 @@ const Technologies = () => {
                     points: 3,
                 }}
             />
-            <Wrapper>
+            <Wrapper id="skills">
                 <Content>
                     <TemplateHeader>Technologies</TemplateHeader>
                     <InnerWrapper>
