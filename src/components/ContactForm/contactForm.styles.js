@@ -2,10 +2,9 @@ import styled, { css } from 'styled-components';
 import { Field, Form } from 'formik';
 
 export const FormWrapper = styled.div`
-    /* border: 2px solid ${({ theme }) => theme.black}; */
     background: ${({ theme }) => theme.white};
     padding: 1.5rem 1.5rem 0;
-    margin: 0 30px 0 10px;
+    margin: 0 3rem 0 1rem;
     position: relative;
     min-height: 36rem;
     ::before {
@@ -15,9 +14,22 @@ export const FormWrapper = styled.div`
         background: ${({ theme }) => theme.gray};
         position: absolute;
         z-index: -1;
-        left: 20px;
-        top: -20px;
+        left: 2rem;
+        top: -2rem;
     }
+    ${({ theme }) => theme.mq.lg} {
+        max-width: 50%;
+        flex: 1;
+        padding: 2.5rem 1.5rem 0;
+        margin: 0 5rem 0 3rem;
+        min-height: 48rem;
+    }
+`;
+
+export const StyledForm = styled(Form)`
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-end;
 `;
 
 export const FormGroup = styled.div`
@@ -27,19 +39,16 @@ export const FormGroup = styled.div`
     position: relative;
     padding: 1rem 0 0.5rem;
     z-index: 1;
-`;
-
-export const StyledForm = styled(Form)`
-    display: flex;
-    flex-flow: column;
-    justify-content: flex-end;
+    ${({ theme }) => theme.mq.lg} {
+        margin: 0 2rem;
+    }
 `;
 
 export const Label = styled.label`
     display: block;
     position: absolute;
     align-self: flex-start;
-    color: ${({ theme }) => theme.black};
+    color: ${({ theme }) => theme.tertiary};
     font-size: ${({ theme }) => theme.fontSize.xs};
     font-weight: 700;
     pointer-events: none;
@@ -49,10 +58,16 @@ export const Label = styled.label`
     ${({ focused }) =>
         focused &&
         css`
-            transform: translate(15px, -7px) scale(0.9);
+            transform: translate(15px, -7px) scale(0.6);
             background: ${({ theme }) => theme.fourth};
-            padding: 0 10px;
+            padding: 5px 10px;
+            color: ${({ theme }) => theme.primary};
         `}
+
+    ${({ theme }) => theme.mq.lg} {
+        font-size: ${({ theme }) => theme.fontSize.m};
+        padding-left: 0.7rem;
+    }
 `;
 
 export const Input = styled(Field)`
@@ -64,10 +79,18 @@ export const Input = styled(Field)`
     padding: 1.5rem 1.25rem 1rem;
     border: none;
 
+    ${({ theme }) => theme.mq.lg} {
+        font-size: ${({ theme }) => theme.fontSize.m};
+        padding-left: 2rem;
+    }
+
     ${({ size }) =>
         size &&
         css`
             height: 15rem;
+            ${({ theme }) => theme.mq.lg} {
+                height: 25rem;
+            }
         `}
 
     /* outline: none; */

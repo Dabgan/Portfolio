@@ -32,7 +32,6 @@ const ContactForm = () => {
                 initialValues={initialValues}
                 validationSchema={contactSchema}
                 onSubmit={(values, actions) => {
-                    console.log(JSON.stringify(values));
                     setFormValues(values);
                     const timeOut = setTimeout(() => {
                         actions.setSubmitting(false);
@@ -48,7 +47,6 @@ const ContactForm = () => {
                     handleChange,
                     isSubmitting,
                 }) => {
-                    console.log(`touched`, touched);
                     return (
                         <StyledForm
                             name="contact"

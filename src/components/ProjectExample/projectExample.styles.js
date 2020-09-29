@@ -52,7 +52,7 @@ export const InfoWrapper = styled.div`
     }
 `;
 
-export const ProjectTitle = styled.h4`
+export const ProjectTitle = styled.h3`
     color: ${({ theme }) => theme.tertiary};
     font-size: ${({ theme }) => theme.fontSize.ml};
     margin-top: ${({ theme }) => theme.margin.s};

@@ -8,7 +8,7 @@ export const Wrapper = styled.section`
     margin-top: -1rem;
     padding: 5rem 0;
     ${({ theme }) => theme.mq.lg} {
-        /* flex-flow: row; */
+        /* padding: 5rem 0; */
     }
 `;
 export const InnerWrapper = styled.section`

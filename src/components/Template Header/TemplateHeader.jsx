@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import propTypes from 'prop-types';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -9,18 +9,21 @@ const Header = styled.h2`
     font-size: ${({ theme }) => theme.fontSize.xl};
     font-weight: ${({ theme }) => theme.fonts.bold};
     letter-spacing: 0.3rem;
-    color: ${props =>
-        props.color
-            ? ({ theme }) => theme.primary
-            : ({ theme }) => theme.white};
+    color: ${({ $color }) =>
+        $color ? ({ theme }) => theme.primary : ({ theme }) => theme.white};
 
     ${({ theme }) => theme.mq.lg} {
         text-align: left;
         font-size: ${({ theme }) => theme.fontSize.xxxl};
+        ${({ $inverted }) =>
+            $inverted &&
+            css`
+                text-align: right;
+            `}
     }
 `;
 
-const TemplateHeader = ({ children, color }) => {
+const TemplateHeader = ({ children, color, inverted }) => {
     const headerRef = useRef(null);
 
     useEffect(() => {
@@ -35,7 +38,7 @@ const TemplateHeader = ({ children, color }) => {
     }, []);
 
     return (
-        <Header ref={headerRef} color={color ? 1 : 0}>
+        <Header ref={headerRef} $color={color} $inverted={inverted}>
             {children}
         </Header>
     );
@@ -44,10 +47,12 @@ const TemplateHeader = ({ children, color }) => {
 TemplateHeader.propTypes = {
     children: propTypes.string.isRequired,
     color: propTypes.bool,
+    inverted: propTypes.bool,
 };
 
 TemplateHeader.defaultProps = {
     color: false,
+    inverted: false,
 };
 
 export default TemplateHeader;
