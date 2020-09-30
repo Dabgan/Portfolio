@@ -20,7 +20,7 @@ const LogoWrapper = styled.div`
         `}
 `;
 
-const Logo = ({ small }) => {
+const Logo = ({ small, onClick }) => {
     const data = useStaticQuery(graphql`
         query {
             logo: file(name: { eq: "Logo" }) {
@@ -34,7 +34,7 @@ const Logo = ({ small }) => {
     `);
 
     return (
-        <LogoWrapper as={Link} to="/" $small={small}>
+        <LogoWrapper as={Link} to="/" $small={small} onClick={onClick}>
             <Img fluid={data.logo.childImageSharp.fluid} alt="logo" />
         </LogoWrapper>
     );
@@ -42,9 +42,11 @@ const Logo = ({ small }) => {
 
 Logo.propTypes = {
     small: propTypes.bool,
+    onClick: propTypes.func,
 };
 Logo.defaultProps = {
     small: false,
+    onClick: null,
 };
 
 export default Logo;

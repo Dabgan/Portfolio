@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
-import gsap from 'gsap/gsap-core';
-import ScrollToPlugin from 'gsap/ScrollToPlugin';
+import useScrollToSection from 'hooks/useScrollToSection/useScrollToSection';
 
 const NavItem = styled.li`
     text-decoration: none;
@@ -26,21 +25,14 @@ const NavItem = styled.li`
 const navItems = ['skills', 'projects', 'about', 'contact'];
 
 const NavbarLinks = () => {
-    gsap.registerPlugin(ScrollToPlugin);
-
-    const handleScrollToSection = item => {
-        gsap.to(window, {
-            duration: 1,
-            scrollTo: { y: `#${item}`, offsetY: 50 },
-            ease: 'power2.Out',
-        });
-    };
-
     return (
         <>
             {navItems.map(item => (
-                <NavItem onClick={() => handleScrollToSection(item)} key={item}>
-                    <Link to={`#${item}`}>{item}</Link>
+                <NavItem
+                    onClick={() => useScrollToSection(`#${item}`)}
+                    key={item}
+                >
+                    <Link to="/">{item}</Link>
                 </NavItem>
             ))}
         </>
