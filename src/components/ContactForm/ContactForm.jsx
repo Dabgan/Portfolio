@@ -18,13 +18,19 @@ const contactSchema = Yup.object().shape({
     email: Yup.string()
         .email('The email is incorrect')
         .required('Please enter your email'),
-    message: Yup.string().required('At least say "Hi"?'),
+    message: Yup.string().required('At least say hi?'),
 });
 
 const ContactForm = () => {
     const [formValues, setFormValues] = useState();
-    // const [emailFocused, setEmailFocused] = useState(false);
-    // const [messageFocused, setMessageFocused] = useState(false);
+    const [emailFocused, setEmailFocused] = useState(false);
+    const [messageFocused, setMessageFocused] = useState(false);
+
+    const handleInputFocus = e => {
+        return e.target.name === 'email'
+            ? setEmailFocused(prev => !prev)
+            : setMessageFocused(prev => !prev);
+    };
 
     return (
         <FormWrapper>
@@ -44,7 +50,7 @@ const ContactForm = () => {
                     errors,
                     touched,
                     handleSubmit,
-                    handleChange,
+                    handleBlur,
                     isSubmitting,
                 }) => {
                     return (
@@ -59,14 +65,18 @@ const ContactForm = () => {
                                     type="email"
                                     name="email"
                                     autoComplete="email"
-                                    onChange={handleChange}
                                     $valid={touched.email && !errors.email}
                                     $error={touched.email && errors.email}
+                                    onFocus={handleInputFocus}
+                                    onBlur={e => {
+                                        handleBlur(e);
+                                        handleInputFocus(e);
+                                    }}
                                 />
                                 <Label
                                     htmlFor="email"
                                     touched={touched.email}
-                                    focused={values.email}
+                                    focused={values.email || emailFocused}
                                 >
                                     your email
                                 </Label>
@@ -76,19 +86,23 @@ const ContactForm = () => {
                                     type="text"
                                     name="message"
                                     component="textarea"
-                                    onChange={handleChange}
                                     $valid={touched.message && !errors.message}
                                     $error={touched.message && errors.message}
                                     size={1}
+                                    onFocus={handleInputFocus}
+                                    onBlur={e => {
+                                        handleBlur(e);
+                                        handleInputFocus(e);
+                                    }}
                                 />
                                 <Label
                                     htmlFor="message"
-                                    focused={values.message}
+                                    focused={values.message || messageFocused}
                                 >
                                     message
                                 </Label>
                             </FormGroup>
-                            <FormGroup>
+                            <FormGroup mb="2rem">
                                 <ErrorMessage name="email">
                                     {msg => (
                                         <StyledInlineErrorMessage>
@@ -101,12 +115,7 @@ const ContactForm = () => {
                                         {errors.message}
                                     </StyledInlineErrorMessage>
                                 )}
-                                <Button
-                                    marginTop="2.6rem"
-                                    size="medium"
-                                    submit
-                                    disabled={isSubmitting}
-                                >
+                                <Button marginTop="1rem" size="medium" submit>
                                     {isSubmitting ? 'Sending...' : 'Send'}
                                 </Button>
                             </FormGroup>

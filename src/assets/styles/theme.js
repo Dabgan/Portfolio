@@ -19,7 +19,8 @@ export const theme = {
     white: '#ffffff',
     black: '#000000',
     gray: '#ebebeb',
-    error: '#ed2311',
+    valid: '#47c41d',
+    error: '#e60e0e',
     lightGray: '#f5f5f5',
     fonts: {
         regular: '400',
