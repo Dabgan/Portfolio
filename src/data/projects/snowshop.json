@@ -14,5 +14,5 @@
     "codeLink": "https://github.com/Dabgan/SnowShop",
     "demoLink": "https://snow-shop.netlify.app/",
     "coverImg": "../../assets/images/snowshop.png",
-    "inverted": true
+    "inverted": false
 }

@@ -15,24 +15,26 @@ import {
 import DiagramAnimation from '../../components/DiagramAnimation/DiagramAnimation';
 
 const technologyListOne = [
+    'React',
     'HTML5',
     'CSS3',
     'SCSS',
     'Javascript (ES6+)',
-    'React',
     'React Hooks',
     'Redux',
+    'Figma',
     'Styled Components',
 ];
 const technologyListTwo = [
+    'Gatsby',
+    'GSAP',
+    'Jest & Enzyme',
     'GIT',
     'Github',
     'RWD',
     'Firebase',
     'Bootstrap',
     'JQuery',
-    'Figma',
-    'Gatsby',
 ];
 
 const Technologies = () => {

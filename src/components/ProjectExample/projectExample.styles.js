@@ -80,7 +80,7 @@ export const Line = styled.div`
     background: ${({ theme }) => theme.tertiary};
     margin: ${({ theme }) => theme.margin.xs} 0;
     ${({ theme }) => theme.mq.lg} {
-        margin: 0;
+        margin: 0.5rem 0 1rem;
     }
 `;
 

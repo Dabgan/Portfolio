@@ -11,10 +11,11 @@ export const SecondaryTitle = styled.h3`
     letter-spacing: 0.05rem;
     text-align: center;
     ${({ theme }) => theme.mq.lg} {
-        font-size: ${({ theme }) => theme.fontSize.ml};
+        font-size: ${({ theme }) => theme.fontSize.m};
         text-align: left;
         margin: 0 0;
         max-width: 50%;
         padding-right: ${({ theme }) => theme.padding.xl};
+        font-weight: 500;
     }
 `;

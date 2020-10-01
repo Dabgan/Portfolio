@@ -11,5 +11,5 @@
     "codeLink": "https://github.com/Dabgan/Project06-React_Quiz",
     "demoLink": "https://dabgan.github.io/Project06-React_Quiz/",
     "coverImg": "../../assets/images/quiz.png",
-    "inverted": false
+    "inverted": true
 }

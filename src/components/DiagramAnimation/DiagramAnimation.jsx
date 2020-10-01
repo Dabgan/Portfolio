@@ -8,7 +8,10 @@ import { theme as diagramTheme } from 'assets/styles/theme';
 const Wrapper = styled.div`
     display: none;
     ${({ theme }) => theme.mq.lg} {
-        display: block;
+        display: flex;
+        justify-content: center;
+        flex: 1;
+        padding-right: 8rem;
     }
 `;
 
@@ -20,27 +23,24 @@ const DiagramAnimation = () => {
 
         const [elements] = wrapper.current.children;
         const circlesLine = elements.getElementById('circles');
-        const person = elements.getElementById('person');
         const bars = elements.getElementById('bars');
-        const platform = elements.getElementById('platform');
         const hop = elements.getElementById('hop');
         const diagramLine = elements.getElementById('circleLine');
 
-        gsap.set([...circlesLine.children, person, platform, hop], {
+        gsap.set([...circlesLine.children, hop], {
             autoAlpha: 0,
         });
 
         gsap.set([...bars.children, diagramLine, hop], {
             transformOrigin: '50% 100%',
         });
-        gsap.set(platform, { transformOrigin: '50% 50%' });
         gsap.set([...bars.children], { scaleY: 0, fill: diagramTheme.fourth });
 
         const pathLength = diagramLine.getTotalLength();
         gsap.set(diagramLine, { strokeDasharray: pathLength });
 
         const timeLine = gsap.timeline({
-            defaults: { ease: 'power1.out' },
+            defaults: { ease: 'power1.out', delay: 1 },
             scrollTrigger: { trigger: '#diagram' },
         });
 
@@ -54,39 +54,28 @@ const DiagramAnimation = () => {
         };
 
         timeLine
-            .fromTo(
-                platform,
-                { scale: 0 },
-                { duration: 1, scale: 1, autoAlpha: 1 }
-            )
-            .fromTo(
-                person,
-                { x: '+=200' },
-                { duration: 1, ease: 'power4.out', x: '-=201', autoAlpha: 1 }
-            )
             .addLabel('startDiagramBars')
-            .to(...createBarTween(0, 1.85))
+            .to(...createBarTween(0, 1.48))
             .addLabel('finishBar1')
-            .to(...createBarTween(1, 2.95))
+            .to(...createBarTween(1, 2.36))
             .addLabel('finishBar2')
-            .to(...createBarTween(2, 3.7))
+            .to(...createBarTween(2, 2.96))
             .addLabel('finishBar3')
-            .to(...createBarTween(3, 4.4))
+            .to(...createBarTween(3, 3.52))
             .addLabel('finishBar4')
-            .to(...createBarTween(4, 5.65))
+            .to(...createBarTween(4, 4.52))
             .addLabel('finishBar5')
             .fromTo(
                 hop,
                 { scaleY: 0 },
-                { scaleY: 1, duration: 5.65, autoAlpha: 1 },
+                { scaleY: 1, duration: 4.52, autoAlpha: 1 },
                 'startDiagramBars'
             )
             .fromTo(
                 diagramLine,
                 { strokeDashoffset: pathLength },
                 {
-                    duration: 5.4,
-                    ease: 'power1.out',
+                    duration: 4.52,
                     strokeDashoffset: 0,
                     autoAlpha: 1,
                 },

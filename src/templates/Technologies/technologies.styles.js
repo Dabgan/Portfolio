@@ -8,7 +8,7 @@ export const Wrapper = styled.section`
     padding-bottom: 5rem;
     ${({ theme }) => theme.mq.lg} {
         padding-top: 5rem;
-        padding-bottom: 0rem;
+        padding-bottom: 4rem;
     }
 `;
 
@@ -17,8 +17,8 @@ export const InnerWrapper = styled.div`
     align-items: center;
     margin-top: 3rem;
     ${({ theme }) => theme.mq.lg} {
-        margin-top: 0rem;
-        align-items: flex-start;
+        padding-left: 6rem;
+        margin-top: 5rem;
     }
 `;
 
@@ -26,7 +26,8 @@ export const List = styled.ul`
     display: flex;
     flex-flow: column;
     ${({ theme }) => theme.mq.lg} {
-        margin: 4rem 3rem 0;
+        /* border: 2px solid #2ce90a; */
+        margin-right: 3rem;
     }
 `;
 

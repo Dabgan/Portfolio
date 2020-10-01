@@ -7,11 +7,10 @@
         "Gatsby",
         "Styled Components",
         "GSAP",
-        "PropTypes",
-        "Jest"
+        "PropTypes"
     ],
     "codeLink": "https://github.com/Dabgan/Portfolio",
     "demoLink": "https://github.com/Dabgan/Portfolio",
     "coverImg": "../../assets/images/portfolio.png",
-    "inverted": true
+    "inverted": false
 }

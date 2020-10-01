@@ -8,13 +8,13 @@ const Header = styled.h2`
     text-align: center;
     font-size: ${({ theme }) => theme.fontSize.xl};
     font-weight: ${({ theme }) => theme.fonts.bold};
-    letter-spacing: 0.3rem;
     color: ${({ $color }) =>
         $color ? ({ theme }) => theme.primary : ({ theme }) => theme.white};
 
     ${({ theme }) => theme.mq.lg} {
         text-align: left;
         font-size: ${({ theme }) => theme.fontSize.xxxl};
+        margin-left: -0.5rem;
         ${({ $inverted }) =>
             $inverted &&
             css`

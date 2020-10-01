@@ -12,5 +12,5 @@
     "codeLink": "https://github.com/Dabgan/github-timeline",
     "demoLink": "https://commits-timeline.netlify.app/",
     "coverImg": "../../assets/images/timeline.png",
-    "inverted": false
+    "inverted": true
 }
