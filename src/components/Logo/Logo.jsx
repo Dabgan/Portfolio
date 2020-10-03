@@ -3,6 +3,7 @@ import { graphql, useStaticQuery, Link } from 'gatsby';
 import Img from 'gatsby-image';
 import styled, { css } from 'styled-components';
 import propTypes from 'prop-types';
+import useScrollToSection from '../../hooks/useScrollToSection/useScrollToSection';
 
 const LogoWrapper = styled.div`
     display: block;
@@ -20,7 +21,7 @@ const LogoWrapper = styled.div`
         `}
 `;
 
-const Logo = ({ small, onClick }) => {
+const Logo = ({ small }) => {
     const data = useStaticQuery(graphql`
         query {
             logo: file(name: { eq: "Logo" }) {
@@ -34,7 +35,12 @@ const Logo = ({ small, onClick }) => {
     `);
 
     return (
-        <LogoWrapper as={Link} to="/" $small={small} onClick={onClick}>
+        <LogoWrapper
+            as={Link}
+            to="/"
+            $small={small}
+            onClick={() => useScrollToSection('0')}
+        >
             <Img fluid={data.logo.childImageSharp.fluid} alt="logo" />
         </LogoWrapper>
     );
@@ -42,11 +48,9 @@ const Logo = ({ small, onClick }) => {
 
 Logo.propTypes = {
     small: propTypes.bool,
-    onClick: propTypes.func,
 };
 Logo.defaultProps = {
     small: false,
-    onClick: null,
 };
 
 export default Logo;

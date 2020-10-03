@@ -1,5 +1,18 @@
 import styled from 'styled-components';
 
+export const Wrapper = styled.header`
+    ${({ theme }) => theme.mq.lg} {
+        position: relative;
+    }
+`;
+
+export const InnerWrapper = styled.div`
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin-bottom: 6rem;
+`;
+
 export const HeroTitle = styled.h1`
     font-size: 7.5rem;
     letter-spacing: 1rem;
@@ -33,11 +46,4 @@ export const HeroSubtitle = styled.h2`
         font-size: ${({ theme }) => theme.fontSize.xl};
         margin-top: 0;
     }
-`;
-
-export const Wrapper = styled.header`
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    margin-bottom: 6rem;
 `;

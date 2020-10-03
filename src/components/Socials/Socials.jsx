@@ -1,6 +1,5 @@
 import React from 'react';
 import Logo from 'components/Logo/Logo';
-import useScrollToSection from 'hooks/useScrollToSection/useScrollToSection';
 import styled from 'styled-components';
 import { GrLinkedinOption } from 'react-icons/gr';
 import { MdEmail } from 'react-icons/md';
@@ -53,7 +52,7 @@ const Socials = () => {
     return (
         <Wrapper>
             <MediaQuery maxDeviceWidth={1024}>
-                <Logo small onClick={() => useScrollToSection('0')} />
+                <Logo small />
             </MediaQuery>
             <IconsWrapper>
                 {socials.map(item => (

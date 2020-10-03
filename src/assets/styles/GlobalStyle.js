@@ -17,6 +17,7 @@ html {
 body {
     background-color: ${({ theme }) => theme.white};
     font-family: ${({ theme }) => theme.fonts.family.main};
+    padding-top: 5rem;
 }
 button, li {
     font-family: ${({ theme }) => theme.fonts.family.main};

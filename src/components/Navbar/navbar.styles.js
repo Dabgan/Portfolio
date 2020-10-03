@@ -1,21 +1,38 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+export const Wrapper = styled.div`
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: white;
+    z-index: 2;
+    transition: all 0.3s ease-in;
+    padding: 0.3rem 0;
+    ${({ isScrolled }) =>
+        isScrolled &&
+        css`
+            background: white;
+            box-shadow: 0 2px 5px -2px ${({ theme }) => theme.gray100};
+        `}
+`;
 
 export const Navigation = styled.nav`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: sticky;
-    height: 15vh;
-    top: 0;
-    left: 0;
-    right: 0;
     text-transform: uppercase;
-    padding: 0 5vw;
+    padding: 0vh 5vw;
     z-index: 2;
+    transition: all 0.3s ease-in;
     ${({ theme }) => theme.mq.md} {
         position: relative;
         text-transform: none;
     }
+    ${({ isScrolled }) =>
+        isScrolled &&
+        css`
+            /* padding: 0 5vw; */
+        `}
 `;
 
 export const Navbox = styled.ul`

@@ -4,14 +4,14 @@ import Content from 'components/Content/Content';
 import Button from 'components/Button/Button';
 import useScrollToSection from '../../hooks/useScrollToSection/useScrollToSection';
 
-import { HeroTitle, HeroSubtitle, Wrapper } from './hero.styles';
+import { HeroTitle, HeroSubtitle, Wrapper, InnerWrapper } from './hero.styles';
 
 const Hero = () => {
     return (
-        <>
-            <Navbar />
+        <Wrapper>
+            {/* <Navbar /> */}
             <Content>
-                <Wrapper>
+                <InnerWrapper>
                     <HeroTitle>HELLO</HeroTitle>
                     <HeroSubtitle>
                         I’m <span>Gabriel</span>. I create websites and web
@@ -26,9 +26,9 @@ const Hero = () => {
                     >
                         Projects
                     </Button>
-                </Wrapper>
+                </InnerWrapper>
             </Content>
-        </>
+        </Wrapper>
     );
 };
 
