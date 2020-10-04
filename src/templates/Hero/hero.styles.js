@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.header`
+    margin-top: 5rem;
     ${({ theme }) => theme.mq.lg} {
         position: relative;
     }

@@ -1,14 +1,16 @@
 import React from 'react';
-import { graphql, useStaticQuery, Link } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
+import { animateScroll as scroll } from 'react-scroll';
 import Img from 'gatsby-image';
 import styled, { css } from 'styled-components';
 import propTypes from 'prop-types';
-import useScrollToSection from '../../hooks/useScrollToSection/useScrollToSection';
 
 const LogoWrapper = styled.div`
     display: block;
     width: 48px;
     height: 48px;
+    cursor: pointer;
+
     ${({ theme }) => theme.mq.md} {
         width: 64px;
         height: 64px;
@@ -34,13 +36,12 @@ const Logo = ({ small }) => {
         }
     `);
 
+    const handleScrollToTop = () => {
+        scroll.scrollToTop();
+    };
+
     return (
-        <LogoWrapper
-            as={Link}
-            to="/"
-            $small={small}
-            onClick={() => useScrollToSection('0')}
-        >
+        <LogoWrapper $small={small} onClick={handleScrollToTop}>
             <Img fluid={data.logo.childImageSharp.fluid} alt="logo" />
         </LogoWrapper>
     );

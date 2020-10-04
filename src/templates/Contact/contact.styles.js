@@ -25,16 +25,3 @@ export const InfoWrapper = styled.div`
         padding-left: 10rem;
     }
 `;
-
-export const Subtitle = styled.h3`
-    font-size: ${({ theme }) => theme.fontSize.xs};
-    margin: 0 0 ${({ theme }) => theme.margin.m};
-    letter-spacing: 0.05rem;
-    text-align: center;
-    font-weight: 300;
-    ${({ theme }) => theme.mq.lg} {
-        font-size: ${({ theme }) => theme.fontSize.m};
-        text-align: left;
-        margin: 0 0;
-    }
-`;

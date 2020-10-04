@@ -18,7 +18,7 @@ const contactSchema = Yup.object().shape({
     email: Yup.string()
         .email('The email is incorrect')
         .required('Please enter your email'),
-    message: Yup.string().required('At least say hi?'),
+    message: Yup.string().required('At least say hi? :('),
 });
 
 const ContactForm = () => {

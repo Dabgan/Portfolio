@@ -7,26 +7,10 @@ export const Wrapper = styled.section`
     color: ${({ theme }) => theme.white};
     margin-top: -1rem;
     padding: 5rem 0;
-    ${({ theme }) => theme.mq.lg} {
-        /* padding: 5rem 0; */
-    }
 `;
 export const InnerWrapper = styled.section`
     ${({ theme }) => theme.mq.lg} {
         display: flex;
-    }
-`;
-
-export const Subtitle = styled.h3`
-    font-size: ${({ theme }) => theme.fontSize.s};
-    margin: 0 0 ${({ theme }) => theme.margin.m};
-    letter-spacing: 0.05rem;
-    text-align: center;
-    font-weight: 300;
-    ${({ theme }) => theme.mq.lg} {
-        font-size: ${({ theme }) => theme.fontSize.l};
-        text-align: left;
-        margin: 0 0;
     }
 `;
 

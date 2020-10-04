@@ -3,8 +3,9 @@ import Content from 'components/Content/Content';
 import TemplateHeader from 'components/Template Header/TemplateHeader';
 import ContactForm from 'components/ContactForm/ContactForm';
 import MediaQuery from 'react-responsive';
-import { Wrapper, Subtitle, InnerWrapper, InfoWrapper } from './contact.styles';
-import Socials from '../../components/Socials/Socials';
+import Socials from 'components/Socials/Socials';
+import TemplateSubtitle from 'components/TemplateSubtitle/TemplateSubtitle';
+import { Wrapper, InnerWrapper, InfoWrapper } from './contact.styles';
 
 const Contact = () => {
     return (
@@ -13,11 +14,11 @@ const Contact = () => {
                 <TemplateHeader inverted>Contact</TemplateHeader>
                 <InnerWrapper>
                     <InfoWrapper>
-                        <Subtitle>
+                        <TemplateSubtitle mTop="1rem">
                             Feel free to send me an email or message on
                             LinkedIn. I am open to job offers and I will answer
                             as soon as possible.
-                        </Subtitle>
+                        </TemplateSubtitle>
                         <MediaQuery minDeviceWidth={1024}>
                             <Socials />
                         </MediaQuery>

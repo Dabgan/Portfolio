@@ -105,7 +105,8 @@ const Button = ({ children, marginTop, size, onClick, secondary, submit }) => {
 };
 
 Button.propTypes = {
-    children: propTypes.string.isRequired,
+    children: propTypes.oneOfType([propTypes.string, propTypes.element])
+        .isRequired,
     marginTop: propTypes.string,
     size: propTypes.string,
     secondary: propTypes.bool,

@@ -3,7 +3,8 @@ import { useStaticQuery, graphql } from 'gatsby';
 import ProjectExample from 'components/ProjectExample/ProjectExample';
 import Content from 'components/Content/Content';
 import TemplateHeader from '../../components/Template Header/TemplateHeader';
-import { InnerWrapper, SecondaryTitle, Wrapper } from './projects.styles';
+import { InnerWrapper, Wrapper } from './projects.styles';
+import TemplateSubtitle from '../../components/TemplateSubtitle/TemplateSubtitle';
 
 const Projects = () => {
     const data = useStaticQuery(graphql`
@@ -35,10 +36,10 @@ const Projects = () => {
             <Content>
                 <InnerWrapper>
                     <TemplateHeader color>Projects</TemplateHeader>
-                    <SecondaryTitle>
+                    <TemplateSubtitle mTop="1rem">
                         Here are few of my best applications. You can find more
                         on my github profile.
-                    </SecondaryTitle>
+                    </TemplateSubtitle>
                     {data.projects.nodes.map(node => (
                         <ProjectExample key={node.id} projectData={node} />
                     ))}

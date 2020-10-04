@@ -1,15 +1,13 @@
 import React from 'react';
-import Navbar from 'components/Navbar/Navbar';
 import Content from 'components/Content/Content';
 import Button from 'components/Button/Button';
-import useScrollToSection from '../../hooks/useScrollToSection/useScrollToSection';
+import { Link } from 'react-scroll';
 
 import { HeroTitle, HeroSubtitle, Wrapper, InnerWrapper } from './hero.styles';
 
 const Hero = () => {
     return (
         <Wrapper>
-            {/* <Navbar /> */}
             <Content>
                 <InnerWrapper>
                     <HeroTitle>HELLO</HeroTitle>
@@ -20,11 +18,10 @@ const Hero = () => {
                             👋
                         </span>
                     </HeroSubtitle>
-                    <Button
-                        marginTop="4rem"
-                        onClick={() => useScrollToSection('#projects')}
-                    >
-                        Projects
+                    <Button marginTop="4rem">
+                        <Link to="projects" smooth offset={-90}>
+                            Projects
+                        </Link>
                     </Button>
                 </InnerWrapper>
             </Content>

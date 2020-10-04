@@ -3,36 +3,34 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Content from 'components/Content/Content';
 import TemplateHeader from 'components/Template Header/TemplateHeader';
+import TemplateSubtitle from 'components/TemplateSubtitle/TemplateSubtitle';
 import {
     Wrapper,
     InnerWrapper,
-    Subtitle,
     Description,
     Wave,
     AboutSVG,
 } from './about.styles';
 
 const About = () => {
-    const wrapperRef = useRef(null);
     const descriptionRef = useRef(null);
 
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
 
-        const wrapper = wrapperRef.current;
         const paragraphs = descriptionRef.current.children;
 
         gsap.fromTo(
-            [wrapper.children, paragraphs],
+            [paragraphs],
             { y: `+=30`, autoAlpha: 0 },
             {
                 duration: 1.4,
                 y: '0',
                 autoAlpha: 1,
                 ease: 'power1.inOut',
-                stagger: 0.5,
+                stagger: 0.3,
                 scrollTrigger: {
-                    trigger: wrapper,
+                    trigger: paragraphs,
                     start: '-10% 90%',
                 },
             }
@@ -43,9 +41,9 @@ const About = () => {
         <>
             <Wave top="true" />
             <Wrapper id="about">
-                <Content ref={wrapperRef}>
+                <Content>
                     <TemplateHeader>About</TemplateHeader>
-                    <Subtitle>me talking about myself</Subtitle>
+                    <TemplateSubtitle>me talking about myself</TemplateSubtitle>
                     <InnerWrapper>
                         <Description ref={descriptionRef}>
                             <p>

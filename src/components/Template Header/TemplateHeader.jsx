@@ -27,13 +27,18 @@ const TemplateHeader = ({ children, color, inverted }) => {
     const headerRef = useRef(null);
 
     useEffect(() => {
-        const header = headerRef.current;
         gsap.registerPlugin(ScrollTrigger);
+
+        const header = headerRef.current;
+
         gsap.from(header, {
             duration: 1,
             autoAlpha: 0,
             y: '+=50',
-            scrollTrigger: { trigger: header },
+            scrollTrigger: {
+                trigger: header,
+                start: 'top bottom-=20px',
+            },
         });
     }, []);
 

@@ -1,7 +1,6 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link } from 'react-scroll';
 import styled from 'styled-components';
-import useScrollToSection from 'hooks/useScrollToSection/useScrollToSection';
 
 const NavItem = styled.li`
     text-decoration: none;
@@ -13,6 +12,8 @@ const NavItem = styled.li`
     a {
         text-decoration: none;
         color: ${({ theme }) => theme.primary};
+        cursor: pointer;
+        background: ${({ $active }) => ($active ? 'red' : 'white')};
     }
 
     ${({ theme }) => theme.mq.md} {
@@ -28,11 +29,14 @@ const NavbarLinks = () => {
     return (
         <>
             {navItems.map(item => (
-                <NavItem
-                    onClick={() => useScrollToSection(`#${item}`)}
-                    key={item}
-                >
-                    <Link to="/">{item}</Link>
+                <NavItem key={item}>
+                    <Link
+                        to={item}
+                        smooth
+                        offset={item === 'contact' ? 50 : -90}
+                    >
+                        {item}
+                    </Link>
                 </NavItem>
             ))}
         </>

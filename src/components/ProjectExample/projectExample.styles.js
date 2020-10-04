@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.article`
     display: flex;
     flex-flow: column;
     margin-bottom: ${({ theme }) => theme.margin.m};
+    position: relative;
     ${({ theme }) => theme.mq.lg} {
         flex-flow: ${({ inverted }) => (inverted ? 'row-reverse' : 'row')};
         padding: ${({ theme }) => theme.padding.l} 0;
@@ -12,10 +13,23 @@ export const Wrapper = styled.div`
     }
 `;
 
+export const InnerWrapper = styled.div`
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    margin: ${({ theme }) => theme.margin.s} 0 ${({ theme }) => theme.margin.xs};
+    ${({ theme }) => theme.mq.lg} {
+        justify-content: flex-end;
+        height: auto;
+        margin: 0 0 0;
+    }
+`;
+
 export const ImageWrapper = styled.div`
     width: 100%;
     box-shadow: 5px 5px 35px #9e9e9e;
     position: relative;
+
     img {
         width: 100%;
         height: 100%;
@@ -59,18 +73,6 @@ export const ProjectTitle = styled.h3`
     ${({ theme }) => theme.mq.lg} {
         text-align: ${({ inverted }) => (inverted ? 'left' : 'right')};
         font-size: ${({ theme }) => theme.fontSize.xxl};
-    }
-`;
-
-export const InnerWrapper = styled.div`
-    display: flex;
-    flex-flow: row;
-    align-items: center;
-    margin: ${({ theme }) => theme.margin.s} 0 ${({ theme }) => theme.margin.xs};
-    ${({ theme }) => theme.mq.lg} {
-        justify-content: flex-end;
-        height: auto;
-        margin: 0 0 0;
     }
 `;
 

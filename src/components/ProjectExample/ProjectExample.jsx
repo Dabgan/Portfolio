@@ -45,20 +45,23 @@ const ProjectExample = ({ projectData }) => {
         const startProjectAnimation = (elem, distance) => {
             gsap.fromTo(
                 elem,
-                { x: `${tweenDirection}=${distance}`, autoAlpha: 0 },
+                {
+                    x: `${tweenDirection}=${distance}`,
+                    autoAlpha: 0,
+                },
                 {
                     duration: 1.4,
-                    x: '0',
+                    x: '=0',
                     autoAlpha: 1,
                     ease: 'power3.inOut',
                     scrollTrigger: {
                         trigger: elem,
                         start: '-10% 90%',
+                        // markers: true,
                     },
                 }
             );
         };
-
         startProjectAnimation(img, '200');
         startProjectAnimation(content, '400');
     }, []);
