@@ -1,14 +1,20 @@
 import React from 'react';
 import { Link } from 'react-scroll';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { GoGraph as Skills, GoRepo as Projects } from 'react-icons/go';
+import { GrContact as Contact } from 'react-icons/gr';
+import { RiContactsLine as About } from 'react-icons/ri';
+import MediaQuery from 'react-responsive';
+import propTypes from 'prop-types';
 
 const NavItem = styled.li`
     text-decoration: none;
     list-style: none;
-    margin: 0 1.5vw;
     position: relative;
-    padding: 20px 0;
     font-size: ${({ theme }) => theme.fontSize.m};
+    transition: all 0.5s ease-in-out;
+    transform: translateY(-70px);
+
     a {
         text-decoration: none;
         color: ${({ theme }) => theme.primary};
@@ -17,30 +23,64 @@ const NavItem = styled.li`
     }
 
     ${({ theme }) => theme.mq.md} {
+        margin: 0 1.5vw;
+        padding: 2rem 0;
+        transform: translateY(0px);
         font-size: ${({ theme }) => theme.fontSize.m};
         padding: 0;
         z-index: 0;
+        transition: none;
     }
+    ${({ $direction, $isActive }) =>
+        $direction === -1 &&
+        $isActive &&
+        css`
+            transform: translateY(0px);
+        `}
 `;
 
-const navItems = ['skills', 'projects', 'about', 'contact'];
+const IconWrapper = styled.div`
+    display: flex;
+    justify-content: center;
+    align-content: center;
+`;
 
-const NavbarLinks = () => {
+const navItems = [
+    { name: 'skills', icon: <Skills /> },
+    { name: 'projects', icon: <Projects /> },
+    { name: 'about', icon: <About /> },
+    { name: 'contact', icon: <Contact /> },
+];
+
+const NavbarLinks = ({ isActive, direction }) => {
     return (
         <>
-            {navItems.map(item => (
-                <NavItem key={item}>
+            {navItems.map(({ name, icon }) => (
+                <NavItem key={name} $isActive={isActive} $direction={direction}>
                     <Link
-                        to={item}
+                        to={name}
                         smooth
-                        offset={item === 'contact' ? 50 : -90}
+                        offset={name === 'contact' ? 50 : -90}
                     >
-                        {item}
+                        <MediaQuery maxDeviceWidth={1024}>
+                            <IconWrapper>{icon}</IconWrapper>
+                        </MediaQuery>
+
+                        <MediaQuery minDeviceWidth={1024}>{name}</MediaQuery>
                     </Link>
                 </NavItem>
             ))}
         </>
     );
+};
+
+NavbarLinks.propTypes = {
+    isActive: propTypes.bool,
+    direction: propTypes.number,
+};
+NavbarLinks.defaultProps = {
+    isActive: false,
+    direction: 1,
 };
 
 export default NavbarLinks;

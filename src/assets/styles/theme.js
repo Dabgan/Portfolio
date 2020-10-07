@@ -2,7 +2,7 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import propTypes from 'prop-types';
 
-const breakpoints = {
+export const breakpoints = {
     xs: 320,
     s: 375,
     md: 768,

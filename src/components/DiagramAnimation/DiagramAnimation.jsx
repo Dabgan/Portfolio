@@ -41,7 +41,10 @@ const DiagramAnimation = () => {
 
         const timeLine = gsap.timeline({
             defaults: { ease: 'power1.out', delay: 1 },
-            scrollTrigger: { trigger: '#diagram' },
+            scrollTrigger: {
+                trigger: '#diagram',
+                toggleActions: 'play pause resume pause',
+            },
         });
 
         const createBarTween = (id, duration) => {
