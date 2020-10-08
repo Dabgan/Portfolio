@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import wave from 'assets/svg/wave.inline.svg';
-import about from 'assets/svg/about.inline.svg';
 
 export const Wrapper = styled.section`
     background: ${({ theme }) => theme.secondary};
@@ -31,13 +30,6 @@ export const Description = styled.div`
     }
 `;
 
-export const AboutSVG = styled(about)`
-    display: none;
-    ${({ theme }) => theme.mq.lg} {
-        display: block;
-        flex: 1 0 50%;
-    }
-`;
 export const Wave = styled(wave)`
     width: 100%;
     transform: ${({ top }) => (top ? 'scale(-1)' : 'none')};

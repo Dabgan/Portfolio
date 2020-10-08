@@ -5,6 +5,7 @@ import TechnologyItem from 'components/TechnologyItem/TechnologyItem';
 import { theme } from 'assets/styles/theme';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import DiagramAnimation from 'components/animations/DiagramAnimation';
 import {
     Wrapper,
     InnerWrapper,
@@ -12,7 +13,6 @@ import {
     TopWave,
     BottomWave,
 } from './technologies.styles';
-import DiagramAnimation from '../../components/DiagramAnimation/DiagramAnimation';
 
 const technologyListOne = [
     'React',

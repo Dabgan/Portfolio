@@ -5,6 +5,7 @@ import { GoGraph as Skills, GoRepo as Projects } from 'react-icons/go';
 import { GrContact as Contact } from 'react-icons/gr';
 import { RiContactsLine as About } from 'react-icons/ri';
 import MediaQuery from 'react-responsive';
+import { breakpoints } from 'assets/styles/theme';
 import propTypes from 'prop-types';
 
 const NavItem = styled.li`
@@ -53,19 +54,31 @@ const navItems = [
 ];
 
 const NavbarLinks = ({ isActive, direction }) => {
+    const offset = window.innerWidth > breakpoints.md;
+
+    const setOffset = name => {
+        switch (name) {
+            case 'skills':
+                return offset ? -90 : -80;
+            case 'projects':
+                return offset ? -50 : -60;
+            case 'about':
+                return offset ? -50 : -20;
+            case 'contact':
+                return offset ? 60 : 20;
+            default:
+                return null;
+        }
+    };
+
     return (
         <>
             {navItems.map(({ name, icon }) => (
                 <NavItem key={name} $isActive={isActive} $direction={direction}>
-                    <Link
-                        to={name}
-                        smooth
-                        offset={name === 'contact' ? 50 : -90}
-                    >
+                    <Link to={name} smooth offset={setOffset(name)}>
                         <MediaQuery maxDeviceWidth={1024}>
                             <IconWrapper>{icon}</IconWrapper>
                         </MediaQuery>
-
                         <MediaQuery minDeviceWidth={1024}>{name}</MediaQuery>
                     </Link>
                 </NavItem>

@@ -4,13 +4,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Content from 'components/Content/Content';
 import TemplateHeader from 'components/Template Header/TemplateHeader';
 import TemplateSubtitle from 'components/TemplateSubtitle/TemplateSubtitle';
-import {
-    Wrapper,
-    InnerWrapper,
-    Description,
-    Wave,
-    AboutSVG,
-} from './about.styles';
+import { Wrapper, InnerWrapper, Description, Wave } from './about.styles';
+import AboutAnimation from '../../components/animations/AboutAnimation';
 
 const About = () => {
     const descriptionRef = useRef(null);
@@ -67,7 +62,7 @@ const About = () => {
                                 industry.
                             </p>
                         </Description>
-                        <AboutSVG />
+                        <AboutAnimation />
                     </InnerWrapper>
                 </Content>
             </Wrapper>

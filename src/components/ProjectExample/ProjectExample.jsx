@@ -57,7 +57,6 @@ const ProjectExample = ({ projectData }) => {
                     scrollTrigger: {
                         trigger: elem,
                         start: '-10% 90%',
-                        // markers: true,
                     },
                 }
             );

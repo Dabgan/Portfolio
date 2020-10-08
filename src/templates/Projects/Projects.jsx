@@ -36,7 +36,7 @@ const Projects = () => {
             <Content>
                 <InnerWrapper>
                     <TemplateHeader color>Projects</TemplateHeader>
-                    <TemplateSubtitle mTop="1rem">
+                    <TemplateSubtitle halfWidth>
                         Here are few of my best applications. You can find more
                         on my github profile.
                     </TemplateSubtitle>

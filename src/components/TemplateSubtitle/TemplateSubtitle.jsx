@@ -15,10 +15,12 @@ const Subtitle = styled.h2`
         font-size: ${({ theme }) => theme.fontSize.l};
         text-align: left;
         margin: 0 0;
+        margin-top: ${({ $mTop }) => $mTop};
+        width: ${({ $halfWidth }) => ($halfWidth ? '50%' : 'auto')};
     }
 `;
 
-const TemplateSubtitle = ({ children, mTop }) => {
+const TemplateSubtitle = ({ children, mTop, halfWidth }) => {
     const headerRef = useRef(null);
 
     useEffect(() => {
@@ -33,13 +35,12 @@ const TemplateSubtitle = ({ children, mTop }) => {
             scrollTrigger: {
                 trigger: header,
                 start: 'top bottom-=20px',
-                // markers: true,
             },
         });
     }, []);
 
     return (
-        <Subtitle ref={headerRef} $mTop={mTop}>
+        <Subtitle ref={headerRef} $mTop={mTop} $halfWidth={halfWidth}>
             {children}
         </Subtitle>
     );
@@ -48,10 +49,12 @@ const TemplateSubtitle = ({ children, mTop }) => {
 TemplateSubtitle.propTypes = {
     children: propTypes.string.isRequired,
     mTop: propTypes.string,
+    halfWidth: propTypes.bool,
 };
 
 TemplateSubtitle.defaultProps = {
     mTop: '0',
+    halfWidth: false,
 };
 
 export default TemplateSubtitle;
