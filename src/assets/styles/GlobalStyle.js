@@ -11,15 +11,34 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
 }
+
+
 html {
     font-size: 62.5%;
+    scrollbar-width: thin;
+    scrollbar-color: ${({ theme }) => theme.primary} ${({ theme }) =>
+    theme.fourth};
 }
 body {
     background-color: ${({ theme }) => theme.white};
     font-family: ${({ theme }) => theme.fonts.family.main};
     padding-top: 2rem;
+
     ${({ theme }) => theme.mq.lg} {
     padding-top: 5rem;
+    }
+
+    ::-webkit-scrollbar {
+    width: 16px;
+    }
+
+    ::-webkit-scrollbar-track {
+    background:  ${({ theme }) => theme.primary};
+    }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: ${({ theme }) => theme.fourth};
+    border: 1px solid ${({ theme }) => theme.primary};
     }
 }
 button, li {
