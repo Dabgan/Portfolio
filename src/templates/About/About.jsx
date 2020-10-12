@@ -19,11 +19,11 @@ const About = () => {
             [paragraphs],
             { y: `+=30`, autoAlpha: 0 },
             {
-                duration: 1.4,
+                duration: 1.2,
                 y: '0',
                 autoAlpha: 1,
                 ease: 'power1.inOut',
-                stagger: 0.3,
+                stagger: 0.5,
                 scrollTrigger: {
                     trigger: paragraphs,
                     start: '-10% 90%',

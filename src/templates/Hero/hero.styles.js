@@ -18,6 +18,7 @@ export const HeroTitle = styled.h1`
     font-size: 7.5rem;
     letter-spacing: 1rem;
     margin: 2rem 0 0 5px;
+    perspective: 400px;
 
     ${({ theme }) => theme.mq.s} {
         font-size: 9rem;
@@ -31,6 +32,11 @@ export const HeroTitle = styled.h1`
         font-size: 30rem;
         margin: 3rem 0 0;
         letter-spacing: 2rem;
+    }
+
+    ::selection {
+        color: ${({ theme }) => theme.fourth};
+        background: ${({ theme }) => theme.primary};
     }
 `;
 

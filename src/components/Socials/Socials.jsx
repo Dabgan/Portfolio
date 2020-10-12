@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import Logo from 'components/Logo/Logo';
 import styled from 'styled-components';
 import { GrLinkedinOption } from 'react-icons/gr';
 import { MdEmail } from 'react-icons/md';
 import { FiGithub } from 'react-icons/fi';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import MediaQuery from 'react-responsive';
 import SocialsIcon from './SocialsIcon';
 
@@ -49,12 +51,32 @@ const socials = [
 ];
 
 const Socials = () => {
+    const socialRef = useRef(null);
+
+    useEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+
+        const social = socialRef.current.children;
+
+        gsap.from(social, {
+            duration: 1,
+            autoAlpha: 0,
+            delay: 0.3,
+            y: '+=50',
+            stagger: 0.3,
+            scrollTrigger: {
+                trigger: social,
+                start: 'top bottom-=20px',
+            },
+        });
+    }, []);
+
     return (
         <Wrapper>
             <MediaQuery maxDeviceWidth={1024}>
                 <Logo small />
             </MediaQuery>
-            <IconsWrapper>
+            <IconsWrapper ref={socialRef}>
                 {socials.map(item => (
                     <SocialsIcon data={item} key={item.name} />
                 ))}

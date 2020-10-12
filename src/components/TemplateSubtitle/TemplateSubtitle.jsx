@@ -30,6 +30,7 @@ const TemplateSubtitle = ({ children, mTop, halfWidth }) => {
 
         gsap.from(header, {
             duration: 1,
+            delay: 0.3,
             autoAlpha: 0,
             y: '+=50',
             scrollTrigger: {

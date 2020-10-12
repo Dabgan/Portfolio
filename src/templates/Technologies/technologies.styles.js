@@ -26,7 +26,6 @@ export const List = styled.ul`
     display: flex;
     flex-flow: column;
     ${({ theme }) => theme.mq.lg} {
-        /* border: 2px solid #2ce90a; */
         margin-right: 3rem;
     }
 `;
