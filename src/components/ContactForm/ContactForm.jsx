@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Formik, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import Button from 'components/Button/Button';
+import emailjs from 'emailjs-com';
 
 import {
     FormWrapper,
@@ -10,6 +10,7 @@ import {
     StyledInlineErrorMessage,
     FormGroup,
     StyledForm,
+    SubmitButton,
 } from './contactForm.styles';
 
 const initialValues = { email: '', message: '' };
@@ -22,7 +23,8 @@ const contactSchema = Yup.object().shape({
 });
 
 const ContactForm = () => {
-    const [formValues, setFormValues] = useState();
+    const [btnMsg, setBtnMsg] = useState('Send');
+    const [btnColor, setBtnColor] = useState('color');
     const [emailFocused, setEmailFocused] = useState(false);
     const [messageFocused, setMessageFocused] = useState(false);
 
@@ -32,17 +34,47 @@ const ContactForm = () => {
             : setMessageFocused(prev => !prev);
     };
 
+    const resetBtn = () => {
+        setTimeout(() => {
+            setBtnMsg('Send');
+            setBtnColor('color');
+        }, 3000);
+    };
+
+    const sendEmail = (values, resetForm) => {
+        emailjs
+            .send(
+                'service_8d9ma9f',
+                'portfolio_template',
+                values,
+                'user_Pf5BT1FzcarZmPltcqe3M'
+            )
+            .then(
+                () => {
+                    setBtnMsg('Email send, thanks!');
+                    setBtnColor('send');
+                    resetForm();
+                    resetBtn();
+                },
+                () => {
+                    setBtnMsg('Woops, something went wrong');
+                    setBtnColor('error');
+                    resetBtn();
+                }
+            );
+    };
+
     return (
         <FormWrapper>
             <Formik
                 initialValues={initialValues}
                 validationSchema={contactSchema}
-                onSubmit={(values, actions) => {
-                    setFormValues(values);
+                onSubmit={(values, { setSubmitting, resetForm }) => {
                     const timeOut = setTimeout(() => {
-                        actions.setSubmitting(false);
+                        setSubmitting(false);
                         clearTimeout(timeOut);
                     }, 1500);
+                    sendEmail(values, resetForm);
                 }}
             >
                 {({
@@ -115,9 +147,16 @@ const ContactForm = () => {
                                         {errors.message}
                                     </StyledInlineErrorMessage>
                                 )}
-                                <Button marginTop="1rem" size="medium" submit>
-                                    {isSubmitting ? 'Sending...' : 'Send'}
-                                </Button>
+                                <SubmitButton
+                                    marginTop="1rem"
+                                    size="medium"
+                                    submit={btnColor}
+                                    disabled={
+                                        isSubmitting || btnColor !== 'color'
+                                    }
+                                >
+                                    {isSubmitting ? 'Sending...' : btnMsg}
+                                </SubmitButton>
                             </FormGroup>
                         </StyledForm>
                     );

@@ -14,8 +14,10 @@ const Btn = styled.button`
     font-weight: ${({ theme }) => theme.fonts.bold};
     letter-spacing: 0.1em;
     border: 2px solid ${({ theme }) => theme.tertiary};
-    background: ${({ theme }) => theme.white};
-    cursor: pointer;
+    background: ${({ theme, $disabled }) =>
+        $disabled ? theme.gray100 : theme.white};
+    cursor: ${({ $disabled }) => ($disabled ? 'default' : 'pointer')};
+    pointer-events: ${({ $disabled }) => ($disabled ? 'none' : 'auto')};
     transition: transform 0.3s ease-in-out;
 
     :hover {
@@ -50,6 +52,25 @@ const Btn = styled.button`
             background: ${({ theme }) => theme.black};
             color: ${({ theme }) => theme.white};
         `}
+    ${({ $submit }) =>
+        $submit === 'send' &&
+        css`
+            outline: none;
+            border: 2px solid ${({ theme }) => theme.valid};
+            background: ${({ theme }) => theme.white};
+        `}
+    ${({ $submit }) =>
+        $submit === 'error' &&
+        css`
+            outline: none;
+            border: 2px solid ${({ theme }) => theme.error};
+            background: ${({ theme }) => theme.white};
+        `}
+    ${({ $disabled }) =>
+        $disabled &&
+        css`
+            transform: translate(-6px, 5px);
+        `}
 `;
 
 const BtnBackground = styled.div`
@@ -60,6 +81,7 @@ const BtnBackground = styled.div`
     background: ${({ theme }) => theme.tertiary};
     width: ${props => props.width - 12}px;
     height: ${props => props.height - 6}px;
+    
 
     ${({ size }) =>
         size === 'small' &&
@@ -75,9 +97,30 @@ const BtnBackground = styled.div`
             left: -6px;
             height: ${props => props.height - 7}px;
         `}
+
+    ${({ $submit }) =>
+        $submit === 'send' &&
+        css`
+            outline: none;
+            background: ${({ theme }) => theme.valid};
+        `}
+    ${({ $submit }) =>
+        $submit === 'error' &&
+        css`
+            outline: none;
+            background: ${({ theme }) => theme.error};
+        `}
 `;
 
-const Button = ({ children, marginTop, size, onClick, secondary, submit }) => {
+const Button = ({
+    children,
+    marginTop,
+    size,
+    onClick,
+    secondary,
+    submit,
+    disabled,
+}) => {
     const [height, setHeight] = useState(0);
     const [width, setWidth] = useState(0);
     const buttonRef = useRef(null);
@@ -86,7 +129,7 @@ const Button = ({ children, marginTop, size, onClick, secondary, submit }) => {
     useEffect(() => {
         setHeight(buttonRef.current.offsetHeight);
         setWidth(buttonRef.current.offsetWidth);
-    }, []);
+    }, [submit]);
 
     return (
         <BtnWrapper marginTop={marginTop}>
@@ -96,10 +139,17 @@ const Button = ({ children, marginTop, size, onClick, secondary, submit }) => {
                 onClick={onClick}
                 secondary={secondary}
                 type={submit ? 'submit' : 'button'}
+                $submit={submit}
+                $disabled={disabled}
             >
                 {children}
             </Btn>
-            <BtnBackground width={width} height={height} size={size} />
+            <BtnBackground
+                width={width}
+                height={height}
+                size={size}
+                $submit={submit}
+            />
         </BtnWrapper>
     );
 };
@@ -111,7 +161,8 @@ Button.propTypes = {
     size: propTypes.string,
     secondary: propTypes.bool,
     onClick: propTypes.func,
-    submit: propTypes.bool,
+    submit: propTypes.oneOfType([propTypes.string, propTypes.bool]),
+    disabled: propTypes.bool,
 };
 
 Button.defaultProps = {
@@ -120,6 +171,7 @@ Button.defaultProps = {
     secondary: false,
     onClick: null,
     submit: false,
+    disabled: false,
 };
 
 export default Button;

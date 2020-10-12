@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import { Field, Form } from 'formik';
+import Button from 'components/Button/Button';
 
 export const FormWrapper = styled.div`
     background: ${({ theme }) => theme.white};
@@ -126,4 +127,8 @@ export const StyledInlineErrorMessage = styled.div`
     ${({ theme }) => theme.mq.lg} {
         font-size: ${({ theme }) => theme.fontSize.xs};
     }
+`;
+export const SubmitButton = styled(Button)`
+    background: ${({ disabled, theme }) =>
+        disabled ? theme.white : theme.gray100};
 `;
