@@ -18,7 +18,7 @@ const Btn = styled.button`
         $disabled ? theme.gray100 : theme.white};
     cursor: ${({ $disabled }) => ($disabled ? 'default' : 'pointer')};
     pointer-events: ${({ $disabled }) => ($disabled ? 'none' : 'auto')};
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.2s ease-in-out;
 
     :hover {
         transform: translate(-7px, 6px);

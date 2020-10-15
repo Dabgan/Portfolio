@@ -4,14 +4,36 @@ import TemplateHeader from 'components/Template Header/TemplateHeader';
 import ContactForm from 'components/ContactForm/ContactForm';
 import MediaQuery from 'react-responsive';
 import Socials from 'components/Socials/Socials';
+import Circle from 'assets/svg/circle.inline.svg';
+import Arrow from 'assets/svg/arrow.inline.svg';
 import TemplateSubtitle from 'components/TemplateSubtitle/TemplateSubtitle';
-import { Wrapper, InnerWrapper, InfoWrapper } from './contact.styles';
+import DrawSvgAnimation from '../../components/animations/DrawSvgAnimation';
+import {
+    Wrapper,
+    InnerWrapper,
+    InfoWrapper,
+    AnimationWrapper,
+} from './contact.styles';
 
 const Contact = () => {
     return (
         <Wrapper id="contact">
             <Content>
-                <TemplateHeader inverted>Contact</TemplateHeader>
+                <AnimationWrapper>
+                    <DrawSvgAnimation
+                        position={{ right: -45 }}
+                        animation={{ speed: 4, delay: 1.5 }}
+                    >
+                        <Circle />
+                    </DrawSvgAnimation>
+                    <DrawSvgAnimation
+                        position={{ right: 350, top: -60 }}
+                        animation={{ delay: 4.3, speed: 3.8 }}
+                    >
+                        <Arrow />
+                    </DrawSvgAnimation>
+                    <TemplateHeader inverted>Contact</TemplateHeader>
+                </AnimationWrapper>
                 <InnerWrapper>
                     <InfoWrapper>
                         <TemplateSubtitle mTop="1rem">

@@ -42,24 +42,31 @@ const About = () => {
                     <InnerWrapper>
                         <Description ref={descriptionRef}>
                             <p>
-                                I am self-taught, who had started learning how
-                                to code a little over a year ago and I
-                                immediately discovered my passion for it. Since
-                                then, I have been systematically developing my
-                                skills.
+                                My name is Gabriel and I have always been
+                                interested in technology. When it comes to
+                                programming, I got intriqued by it recently, a
+                                year and a half ago, when I wanted to build my
+                                own website. I started learning about the
+                                front-end technologies and since then, I have
+                                been systematically developing my skills.
                             </p>
                             <p>
-                                I am very organised person and I plan my
-                                learning path with tools such as Trello or
-                                Habitica. I am currently learning Gatsby
-                                framework in which I am going to create my first
-                                commercial project.
+                                I am currently learning and creating projects in
+                                React which is my favorite technology so far
+                                <span role="img" aria-label="heart-icon">
+                                    💗
+                                </span>
+                                . I really enjoy creating websites and web
+                                applications using this library. Besides that, I
+                                like challenges and I like to learn new things -
+                                in every project that I create, apart from
+                                technologies that I already know, I always try
+                                to discover & learn something new.
                             </p>
-
                             <p>
-                                My goal is to start my career as a Frontend
-                                Developer and further develop in the IT
-                                industry.
+                                My main goal right now is to start my career as
+                                a Frontend Developer and further develop in the
+                                IT industry.
                             </p>
                         </Description>
                         <AboutAnimation />

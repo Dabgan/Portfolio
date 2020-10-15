@@ -10,32 +10,12 @@ const Hero = () => {
     const textRef = useRef(null);
 
     useEffect(() => {
-        // const text = textRef.current;
-        // const letters = text.children;
-        // function random(min, max) {
-        //     return Math.random() * (max - min) + min;
-        // }
-        // letters.forEach((letter, i) => {
-        //     gsap.from(letter, {
-        //         duration: 2.5,
-        //         opacity: 0,
-        //         x: random(-100, 100),
-        //         y: random(-100, 100),
-        //         z: random(-100, 100),
-        //         scale: 0.1,
-        //         delay: i * 0.02,
-        //     });
-        // });
-        // gsap.from(letters, {
-        //     duration: 2.5,
-        //     opacity: 0,
-        //     x: random(-100, 100),
-        //     y: random(-100, 100),
-        //     z: random(-100, 100),
-        //     scale: 0.1,
-        //     delay: 0.1 * 0.02,
-        //     yoyo: true,
-        // });
+        const letters = textRef.current.children;
+        gsap.fromTo(
+            letters,
+            { autoAlpha: 0 },
+            { duration: 1, autoAlpha: 1, stagger: 0.3 }
+        );
     }, []);
 
     return (

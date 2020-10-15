@@ -18,7 +18,8 @@ export const HeroTitle = styled.h1`
     font-size: 7.5rem;
     letter-spacing: 1rem;
     margin: 2rem 0 0 5px;
-    perspective: 400px;
+    display: flex;
+    overflow: hidden;
 
     ${({ theme }) => theme.mq.s} {
         font-size: 9rem;

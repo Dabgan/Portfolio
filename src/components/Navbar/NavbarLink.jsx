@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-scroll';
 import styled, { css } from 'styled-components';
-import { GoGraph as Skills, GoRepo as Projects } from 'react-icons/go';
-import { GrContact as Contact } from 'react-icons/gr';
-import { RiContactsLine as About } from 'react-icons/ri';
+import { BsFillBarChartFill as Skills } from 'react-icons/bs';
+import { FaRegLightbulb as Projects } from 'react-icons/fa';
+import { BiMessageDetail as Contact } from 'react-icons/bi';
+import { GoPerson as About } from 'react-icons/go';
 import MediaQuery from 'react-responsive';
 import { breakpoints } from 'assets/styles/theme';
 import propTypes from 'prop-types';
@@ -59,7 +60,7 @@ const NavbarLinks = ({ isActive, direction }) => {
     const setOffset = name => {
         switch (name) {
             case 'skills':
-                return offset ? -90 : -80;
+                return offset ? -40 : -80;
             case 'projects':
                 return offset ? -50 : -60;
             case 'about':

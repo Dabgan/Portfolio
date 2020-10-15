@@ -10,6 +10,9 @@ export const Wrapper = styled.section`
         padding: ${({ theme }) => theme.padding.xl} 0;
     }
 `;
+export const AnimationWrapper = styled.div`
+    position: relative;
+`;
 
 export const InnerWrapper = styled.div`
     ${({ theme }) => theme.mq.lg} {
