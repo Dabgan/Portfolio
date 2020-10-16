@@ -120,6 +120,7 @@ const Button = ({
     secondary,
     submit,
     disabled,
+    btnRef,
 }) => {
     const [height, setHeight] = useState(0);
     const [width, setWidth] = useState(0);
@@ -132,7 +133,7 @@ const Button = ({
     }, [submit]);
 
     return (
-        <BtnWrapper marginTop={marginTop}>
+        <BtnWrapper marginTop={marginTop} ref={btnRef}>
             <Btn
                 ref={buttonRef}
                 size={size}
@@ -163,6 +164,12 @@ Button.propTypes = {
     onClick: propTypes.func,
     submit: propTypes.oneOfType([propTypes.string, propTypes.bool]),
     disabled: propTypes.bool,
+    btnRef: propTypes.oneOfType([
+        propTypes.func,
+        propTypes.shape({
+            current: propTypes.instanceOf(propTypes.elementType),
+        }),
+    ]),
 };
 
 Button.defaultProps = {
@@ -172,6 +179,7 @@ Button.defaultProps = {
     onClick: null,
     submit: false,
     disabled: false,
+    btnRef: null,
 };
 
 export default Button;

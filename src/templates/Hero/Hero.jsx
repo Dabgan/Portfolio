@@ -8,14 +8,24 @@ import { HeroTitle, HeroSubtitle, Wrapper, InnerWrapper } from './hero.styles';
 
 const Hero = () => {
     const textRef = useRef(null);
+    const subtextRef = useRef(null);
+    const buttonRef = useRef(null);
 
     useEffect(() => {
         const letters = textRef.current.children;
-        gsap.fromTo(
-            letters,
-            { autoAlpha: 0 },
-            { duration: 1, autoAlpha: 1, stagger: 0.3 }
-        );
+        const subtext = subtextRef.current;
+        const button = buttonRef.current;
+        const tl = gsap.timeline();
+
+        tl.addLabel('start')
+            .fromTo(
+                letters,
+                { autoAlpha: 0 },
+                { duration: 1, autoAlpha: 1, stagger: 0.2 },
+                'start'
+            )
+            .from(subtext, { delay: 1.4, autoAlpha: 0, y: '+=100' }, 'start')
+            .from(button, { delay: 2.2, autoAlpha: 0, y: '+=100' }, 'start');
     }, []);
 
     return (
@@ -29,14 +39,14 @@ const Hero = () => {
                         <span>L</span>
                         <span>O</span>
                     </HeroTitle>
-                    <HeroSubtitle>
+                    <HeroSubtitle ref={subtextRef}>
                         I’m <span>Gabriel</span>. I create websites and web
                         applications.
                         <span role="img" aria-label="emoji">
                             👋
                         </span>
                     </HeroSubtitle>
-                    <Button marginTop="4rem">
+                    <Button marginTop="4rem" btnRef={buttonRef}>
                         <Link to="projects" smooth offset={-90}>
                             Projects
                         </Link>
