@@ -11,7 +11,6 @@ import {
     ImageWrapper,
     Description,
     TechnologiesList,
-    InnerWrapper,
     ButtonsWrapper,
     ProjectItem,
     ProjectMarker,
@@ -19,14 +18,12 @@ import {
 } from './projectExample.styles';
 
 const ProjectExample = ({ projectData }) => {
-    // const [readMore, setReadMore] = useState(false);
     const imgRef = useRef(null);
     const contentRef = useRef(null);
     const codeText = '<Code />';
     const {
         title,
         inverted,
-        introduction,
         description,
         technologies,
         coverImg,
@@ -65,22 +62,13 @@ const ProjectExample = ({ projectData }) => {
         startProjectAnimation(content, '400');
     }, []);
 
-    // const toggleReadMore = () => {
-    //     return setReadMore(prevState => !prevState);
-    // };
-
     return (
         <Wrapper inverted={inverted ? 1 : 0}>
             <ImageWrapper ref={imgRef} inverted={inverted ? 1 : 0}>
                 <Img fluid={coverImg.childImageSharp.fluid} alt={title} />
             </ImageWrapper>
             <InfoWrapper ref={contentRef} inverted={inverted ? 1 : 0}>
-                {/* <InnerWrapper> */}
                 <ProjectTitle inverted={inverted ? 1 : 0}>{title}</ProjectTitle>
-                {/* <Button onClick={toggleReadMore} size="small" secondary>
-                        Read more
-                    </Button> */}
-                {/* </InnerWrapper> */}
                 <Line />
                 <Description>{description}</Description>
                 <TechnologiesList>
@@ -110,7 +98,6 @@ const ProjectExample = ({ projectData }) => {
                         </Button>
                     </a>
                 </ButtonsWrapper>
-                {/* <Description>{introduction}</Description> */}
             </InfoWrapper>
         </Wrapper>
     );

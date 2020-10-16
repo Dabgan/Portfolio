@@ -5,9 +5,13 @@ export const Wrapper = styled.section`
     color: ${({ theme }) => theme.white};
     margin-top: -2rem;
     padding: 5rem 0 0;
+    overflow: hidden;
+    ${({ theme }) => theme.mq.md} {
+        margin-top: -3rem;
+    }
     ${({ theme }) => theme.mq.lg} {
         margin-top: -6rem;
-        padding: ${({ theme }) => theme.padding.xl} 0;
+        padding: ${({ theme }) => theme.padding.xl} 0 0;
     }
 `;
 export const AnimationWrapper = styled.div`
@@ -23,6 +27,7 @@ export const InnerWrapper = styled.div`
 `;
 
 export const InfoWrapper = styled.div`
+    margin-bottom: ${({ theme }) => theme.margin.m};
     ${({ theme }) => theme.mq.lg} {
         max-width: 50%;
         padding-left: 10rem;

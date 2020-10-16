@@ -50,11 +50,11 @@ const Navbar = () => {
         <Wrapper direction={scrollDirection} isActive={isActive}>
             <Content>
                 <Navigation>
-                    <MediaQuery minDeviceWidth={1024}>
+                    <MediaQuery minDeviceWidth={786}>
                         <Logo />
                     </MediaQuery>
                     <Navbox open ref={navLinksRef}>
-                        <MediaQuery maxDeviceWidth={1024}>
+                        <MediaQuery maxDeviceWidth={786}>
                             <Logo />
                         </MediaQuery>
                         <NavbarLinks

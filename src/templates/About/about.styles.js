@@ -5,7 +5,11 @@ export const Wrapper = styled.section`
     background: ${({ theme }) => theme.secondary};
     color: ${({ theme }) => theme.white};
     margin-top: -1rem;
-    padding: 5rem 0;
+    padding: 2.5rem 0;
+
+    ${({ theme }) => theme.mq.md} {
+        /* padding: 2.5rem 0; */
+    }
 `;
 export const InnerWrapper = styled.section`
     ${({ theme }) => theme.mq.lg} {
@@ -15,7 +19,9 @@ export const InnerWrapper = styled.section`
 
 export const Description = styled.div`
     font-size: ${({ theme }) => theme.fontSize.xs};
-    padding: 0 ${({ theme }) => theme.padding.s};
+    padding: 0 0;
+    text-align: justify;
+    text-justify: inter-word;
     p {
         margin: 2rem 0;
     }
@@ -35,5 +41,8 @@ export const Wave = styled(wave)`
     transform: ${({ top }) => (top ? 'scale(-1)' : 'none')};
     path {
         fill: ${({ theme }) => theme.secondary};
+    }
+    ${({ theme }) => theme.mq.md} {
+        margin-top: ${({ top }) => (top ? '5rem' : '0')};
     }
 `;

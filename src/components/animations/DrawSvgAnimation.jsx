@@ -5,16 +5,15 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import propTypes from 'prop-types';
 
 const SVGWrapper = styled.span`
-    position: absolute;
+position: absolute;
     top: ${({ $position }) => `${$position.top}px`};
     bottom: ${({ $position }) => `${$position.bottom}px`};
     right: ${({ $position }) => `${$position.right}px`};
     left: ${({ $position }) => `${$position.left}px`};
-    z-index: 1;
     path {
         /* stroke: ${({ theme }) => theme.fourth}; */
-        stroke: red;
     }
+    
 `;
 
 const DrawSvgAnimation = ({ children, position, animation }) => {
@@ -38,6 +37,7 @@ const DrawSvgAnimation = ({ children, position, animation }) => {
                 autoAlpha: 1,
                 scrollTrigger: {
                     trigger: svg,
+                    toggleActions: 'play pause resume pause',
                 },
             }
         );

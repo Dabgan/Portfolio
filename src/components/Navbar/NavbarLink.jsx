@@ -77,10 +77,10 @@ const NavbarLinks = ({ isActive, direction }) => {
             {navItems.map(({ name, icon }) => (
                 <NavItem key={name} $isActive={isActive} $direction={direction}>
                     <Link to={name} smooth offset={setOffset(name)}>
-                        <MediaQuery maxDeviceWidth={1024}>
+                        <MediaQuery maxDeviceWidth={758}>
                             <IconWrapper>{icon}</IconWrapper>
                         </MediaQuery>
-                        <MediaQuery minDeviceWidth={1024}>{name}</MediaQuery>
+                        <MediaQuery minDeviceWidth={758}>{name}</MediaQuery>
                     </Link>
                 </NavItem>
             ))}

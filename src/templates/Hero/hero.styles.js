@@ -21,11 +21,7 @@ export const HeroTitle = styled.h1`
     display: flex;
     overflow: hidden;
 
-    ${({ theme }) => theme.mq.s} {
-        font-size: 9rem;
-    }
-
-    ${({ theme }) => theme.mq.lg} {
+    ${({ theme }) => theme.mq.md} {
         font-size: 20rem;
     }
 

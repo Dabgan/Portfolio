@@ -7,10 +7,14 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 const Wrapper = styled.div`
     display: none;
     ${({ theme }) => theme.mq.lg} {
+        max-width: 50%;
         display: flex;
         justify-content: center;
         flex: 1;
         padding-right: 8rem;
+    }
+    ${({ theme }) => theme.mq.md} {
+        padding-right: 0;
     }
 `;
 

@@ -5,7 +5,7 @@ import wave from 'assets/svg/wave.inline.svg';
 export const Wrapper = styled.section`
     background: ${({ theme }) => theme.primary};
     margin-top: -1rem;
-    padding-bottom: 5rem;
+    padding-bottom: 2rem;
     ${({ theme }) => theme.mq.lg} {
         padding-top: 5rem;
         padding-bottom: 4rem;
@@ -15,10 +15,15 @@ export const Wrapper = styled.section`
 export const InnerWrapper = styled.div`
     display: flex;
     align-items: center;
+    justify-content: center;
+    width: 100%;
     margin-top: 3rem;
     ${({ theme }) => theme.mq.lg} {
-        padding-left: 6rem;
+        /* padding-left: 6rem; */
         margin-top: 5rem;
+    }
+    ${({ theme }) => theme.mq.md} {
+        justify-content: space-around;
     }
 `;
 

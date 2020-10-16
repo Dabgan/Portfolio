@@ -5,11 +5,18 @@ export const Wrapper = styled.article`
     flex-flow: column;
     margin-bottom: ${({ theme }) => theme.margin.m};
     position: relative;
+
     ${({ theme }) => theme.mq.lg} {
         flex-flow: ${({ inverted }) => (inverted ? 'row-reverse' : 'row')};
         padding: ${({ theme }) => theme.padding.l} 0;
         margin: ${({ theme }) => theme.margin.l} 0
             ${({ theme }) => theme.margin.l};
+    }
+
+    ${({ theme }) => theme.mq.md} {
+        align-items: center;
+        margin: ${({ theme }) => theme.margin.s} 0
+            ${({ theme }) => theme.margin.s};
     }
 `;
 
@@ -34,6 +41,7 @@ export const ImageWrapper = styled.div`
         width: 100%;
         height: 100%;
     }
+
     ${({ theme }) => theme.mq.lg} {
         margin: 0 ${({ inverted, theme }) => (inverted ? theme.margin.s : '0')}
             0 ${({ inverted, theme }) => (inverted ? '0' : theme.margin.s)};
@@ -56,6 +64,7 @@ export const ImageWrapper = styled.div`
 export const InfoWrapper = styled.div`
     display: flex;
     flex-flow: column;
+
     ${({ theme }) => theme.mq.lg} {
         flex: 0 0 50%;
         padding: 0
@@ -63,6 +72,11 @@ export const InfoWrapper = styled.div`
             ${({ inverted, theme }) => (inverted ? '0' : theme.padding.xl)};
         align-items: ${({ inverted }) =>
             inverted ? 'flex-start' : 'flex-end'};
+    }
+    ${({ theme }) => theme.mq.md} {
+        padding: 0
+            ${({ inverted, theme }) => (inverted ? theme.padding.l : '0')} 0
+            ${({ inverted, theme }) => (inverted ? '0' : theme.padding.l)};
     }
 `;
 

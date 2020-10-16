@@ -6,6 +6,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 const Header = styled.h2`
     text-align: center;
+    padding: 0 3px;
     font-size: ${({ theme }) => theme.fontSize.xl};
     font-weight: ${({ theme }) => theme.fonts.bold};
     color: ${({ $color }) =>

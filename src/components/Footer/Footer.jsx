@@ -10,6 +10,11 @@ const StyledFooter = styled.footer`
     color: ${({ theme }) => theme.fourth};
     background: ${({ theme }) => theme.primary};
     font-style: italic;
+
+    ${({ theme }) => theme.mq.md} {
+        padding-top: 10rem;
+    }
+
     ${({ theme }) => theme.mq.lg} {
         font-size: ${({ theme }) => theme.fontSize.xs};
     }

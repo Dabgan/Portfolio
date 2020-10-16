@@ -20,18 +20,22 @@ const Contact = () => {
         <Wrapper id="contact">
             <Content>
                 <AnimationWrapper>
-                    <DrawSvgAnimation
-                        position={{ right: -45 }}
-                        animation={{ speed: 4, delay: 1.5 }}
-                    >
-                        <Circle />
-                    </DrawSvgAnimation>
-                    <DrawSvgAnimation
-                        position={{ right: 350, top: -60 }}
-                        animation={{ delay: 4.3, speed: 3.8 }}
-                    >
-                        <Arrow />
-                    </DrawSvgAnimation>
+                    <MediaQuery minDeviceWidth={1024}>
+                        <DrawSvgAnimation
+                            position={{ right: -45 }}
+                            animation={{ speed: 4, delay: 1.5 }}
+                        >
+                            <Circle />
+                        </DrawSvgAnimation>
+                        <MediaQuery minDeviceWidth={1366}>
+                            <DrawSvgAnimation
+                                position={{ right: 350, top: -60 }}
+                                animation={{ delay: 4.3, speed: 3.8 }}
+                            >
+                                <Arrow />
+                            </DrawSvgAnimation>
+                        </MediaQuery>
+                    </MediaQuery>
                     <TemplateHeader inverted>Contact</TemplateHeader>
                 </AnimationWrapper>
                 <InnerWrapper>
@@ -41,14 +45,14 @@ const Contact = () => {
                             LinkedIn. I am open to job offers and I will answer
                             as soon as possible.
                         </TemplateSubtitle>
-                        <MediaQuery minDeviceWidth={1024}>
+                        <MediaQuery minDeviceWidth={786}>
                             <Socials />
                         </MediaQuery>
                     </InfoWrapper>
                     <ContactForm />
                 </InnerWrapper>
             </Content>
-            <MediaQuery maxDeviceWidth={1024}>
+            <MediaQuery maxDeviceWidth={786}>
                 <Socials />
             </MediaQuery>
         </Wrapper>

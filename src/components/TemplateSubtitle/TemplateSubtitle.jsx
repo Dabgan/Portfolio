@@ -6,11 +6,16 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 const Subtitle = styled.h2`
     font-size: ${({ theme }) => theme.fontSize.s};
-    margin: 0 0 ${({ theme }) => theme.margin.m};
+    margin: 0 0 ${({ theme }) => theme.margin.s};
     letter-spacing: 0.05rem;
     text-align: center;
     font-weight: 300;
     margin-top: ${({ $mTop }) => $mTop};
+
+    ${({ theme }) => theme.mq.md} {
+        margin: 1rem 0 2rem;
+    }
+
     ${({ theme }) => theme.mq.lg} {
         font-size: ${({ theme }) => theme.fontSize.l};
         text-align: left;

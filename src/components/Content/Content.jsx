@@ -8,7 +8,10 @@ const Content = styled.div`
     max-width: 1440px;
     position: relative;
     z-index: 1;
-    ${({ theme }) => theme.mq.md} {
+    ${({ theme }) => theme.mq.lg} {
+        padding: 0 5rem;
+    }
+    ${({ theme }) => theme.mq.xl} {
         padding: 0 0;
     }
 `;

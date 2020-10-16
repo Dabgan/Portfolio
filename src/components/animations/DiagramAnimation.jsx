@@ -7,11 +7,16 @@ import { theme as diagramTheme } from 'assets/styles/theme';
 
 const Wrapper = styled.div`
     display: none;
+
     ${({ theme }) => theme.mq.lg} {
         display: flex;
         justify-content: center;
         flex: 1;
         padding-right: 8rem;
+        max-width: 50%;
+    }
+    ${({ theme }) => theme.mq.md} {
+        padding-right: 0;
     }
 `;
 

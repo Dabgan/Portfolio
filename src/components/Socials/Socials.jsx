@@ -61,7 +61,6 @@ const Socials = () => {
         gsap.from(social, {
             duration: 1,
             autoAlpha: 0,
-            delay: 0.3,
             y: '+=50',
             stagger: 0.3,
             scrollTrigger: {
@@ -73,7 +72,7 @@ const Socials = () => {
 
     return (
         <Wrapper>
-            <MediaQuery maxDeviceWidth={1024}>
+            <MediaQuery maxDeviceWidth={786}>
                 <Logo small />
             </MediaQuery>
             <IconsWrapper ref={socialRef}>

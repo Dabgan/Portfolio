@@ -40,7 +40,7 @@ export const Navbox = styled.ul`
     justify-content: space-between;
     flex: 1;
     align-items: center;
-    ${({ theme }) => theme.mq.md} {
+    ${({ theme }) => theme.mq.lg} {
         justify-content: flex-end;
     }
 `;
