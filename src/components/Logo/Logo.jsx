@@ -41,7 +41,11 @@ const Logo = ({ small }) => {
     };
 
     return (
-        <LogoWrapper $small={small} onClick={handleScrollToTop}>
+        <LogoWrapper
+            $small={small}
+            onClick={handleScrollToTop}
+            title="scroll to top"
+        >
             <Img fluid={data.logo.childImageSharp.fluid} alt="logo" />
         </LogoWrapper>
     );

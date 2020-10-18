@@ -27,7 +27,8 @@ export const theme = {
         regular: '400',
         bold: '600',
         family: {
-            main: `'Roboto', cursive`,
+            main: `'Roboto', sans-serif`,
+            secondary: `'Francois One', sans-serif`,
         },
         color: {
             primary: '#1E1F26',

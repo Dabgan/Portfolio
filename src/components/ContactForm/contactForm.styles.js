@@ -89,6 +89,7 @@ export const Input = styled(Field)`
     border: 2px solid ${({ theme }) => theme.gray};
     outline: none;
     transition: border 0.3s ease-in-out;
+    font-family: ${({ theme }) => theme.fonts.family.main};
 
     ${({ theme }) => theme.mq.lg} {
         font-size: ${({ theme }) => theme.fontSize.m};

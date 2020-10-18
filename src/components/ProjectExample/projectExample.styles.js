@@ -6,6 +6,12 @@ export const Wrapper = styled.article`
     margin-bottom: ${({ theme }) => theme.margin.m};
     position: relative;
 
+    ${({ theme }) => theme.mq.md} {
+        align-items: center;
+        margin: ${({ theme }) => theme.margin.m} 0
+            ${({ theme }) => theme.margin.m};
+    }
+
     ${({ theme }) => theme.mq.lg} {
         flex-flow: ${({ inverted }) => (inverted ? 'row-reverse' : 'row')};
         padding: ${({ theme }) => theme.padding.l} 0;
@@ -13,10 +19,9 @@ export const Wrapper = styled.article`
             ${({ theme }) => theme.margin.l};
     }
 
-    ${({ theme }) => theme.mq.md} {
-        align-items: center;
-        margin: ${({ theme }) => theme.margin.s} 0
-            ${({ theme }) => theme.margin.s};
+    ${({ theme }) => theme.mq.xl} {
+        margin: ${({ theme }) => theme.margin.xl} 0
+            ${({ theme }) => theme.margin.xl};
     }
 `;
 
@@ -68,21 +73,23 @@ export const InfoWrapper = styled.div`
     ${({ theme }) => theme.mq.lg} {
         flex: 0 0 50%;
         padding: 0
-            ${({ inverted, theme }) => (inverted ? theme.padding.xl : '0')} 0
-            ${({ inverted, theme }) => (inverted ? '0' : theme.padding.xl)};
+            ${({ inverted, theme }) => (inverted ? theme.padding.l : '0')} 0
+            ${({ inverted, theme }) => (inverted ? '0' : theme.padding.l)};
         align-items: ${({ inverted }) =>
             inverted ? 'flex-start' : 'flex-end'};
     }
-    ${({ theme }) => theme.mq.md} {
+    ${({ theme }) => theme.mq.xl} {
         padding: 0
-            ${({ inverted, theme }) => (inverted ? theme.padding.l : '0')} 0
-            ${({ inverted, theme }) => (inverted ? '0' : theme.padding.l)};
+            ${({ inverted, theme }) => (inverted ? theme.padding.xl : '0')} 0
+            ${({ inverted, theme }) => (inverted ? '0' : theme.padding.xl)};
     }
 `;
 
 export const ProjectTitle = styled.h3`
     color: ${({ theme }) => theme.tertiary};
     font-size: ${({ theme }) => theme.fontSize.ml};
+    font-family: ${({ theme }) => theme.fonts.family.secondary};
+    letter-spacing: 0.2rem;
     margin-top: ${({ theme }) => theme.margin.s};
     ${({ theme }) => theme.mq.lg} {
         text-align: ${({ inverted }) => (inverted ? 'left' : 'right')};

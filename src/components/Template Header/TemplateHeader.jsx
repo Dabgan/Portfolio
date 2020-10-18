@@ -9,6 +9,8 @@ const Header = styled.h2`
     padding: 0 3px;
     font-size: ${({ theme }) => theme.fontSize.xl};
     font-weight: ${({ theme }) => theme.fonts.bold};
+    font-family: ${({ theme }) => theme.fonts.family.secondary};
+    letter-spacing: 0.25rem;
     color: ${({ $color }) =>
         $color ? ({ theme }) => theme.primary : ({ theme }) => theme.white};
 

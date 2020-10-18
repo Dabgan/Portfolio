@@ -38,16 +38,13 @@ module.exports = {
             },
         },
         {
-            resolve: `gatsby-plugin-prefetch-google-fonts`,
+            resolve: `gatsby-plugin-google-fonts`,
             options: {
-                fonts: [
-                    {
-                        family: 'Roboto',
-                        variants: ['400', '700'],
-                    },
-                ],
+                fonts: [`Roboto`, `Francois One`],
+                display: 'swap',
             },
         },
+
         {
             resolve: 'gatsby-plugin-react-svg',
             options: {

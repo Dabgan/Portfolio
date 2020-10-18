@@ -10,6 +10,7 @@ position: absolute;
     bottom: ${({ $position }) => `${$position.bottom}px`};
     right: ${({ $position }) => `${$position.right}px`};
     left: ${({ $position }) => `${$position.left}px`};
+    z-index: 1;
     path {
         /* stroke: ${({ theme }) => theme.fourth}; */
     }
