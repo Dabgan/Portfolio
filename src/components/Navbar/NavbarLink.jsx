@@ -16,12 +16,13 @@ const NavItem = styled.li`
     font-size: ${({ theme }) => theme.fontSize.m};
     transition: all 0.5s ease-in-out;
     transform: translateY(-70px);
+    font-family: ${({ theme }) => theme.fonts.family.secondary};
 
     a {
         text-decoration: none;
-        color: ${({ theme }) => theme.primary};
+        color: ${({ theme }) => theme.fonts.color.secondary};
         cursor: pointer;
-        background: ${({ $active }) => ($active ? 'red' : 'white')};
+        background: ${({ theme }) => theme.background};
     }
 
     ${({ theme }) => theme.mq.md} {

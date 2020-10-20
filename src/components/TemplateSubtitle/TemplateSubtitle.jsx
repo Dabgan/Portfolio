@@ -11,6 +11,8 @@ const Subtitle = styled.h2`
     text-align: center;
     font-weight: 300;
     margin-top: ${({ $mTop }) => $mTop};
+    color: ${({ $halfWidth, theme }) =>
+        $halfWidth ? theme.fonts.color.secondary : theme.fonts.color.primary};
 
     ${({ theme }) => theme.mq.md} {
         margin: 1rem 0 2rem;

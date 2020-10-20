@@ -112,6 +112,7 @@ export const Description = styled.p`
     text-align: justify;
     text-justify: inter-word;
     letter-spacing: 0.05rem;
+    color: ${({ theme }) => theme.fonts.color.secondary};
     ${({ theme }) => theme.mq.lg} {
         font-size: ${({ theme }) => theme.fontSize.s};
         margin-top: ${({ theme }) => theme.margin.xs};
@@ -120,6 +121,7 @@ export const Description = styled.p`
 
 export const TechnologiesList = styled.ul`
     margin-top: ${({ theme }) => theme.margin.xs};
+
     ${({ theme }) => theme.mq.lg} {
         display: flex;
         flex-flow: row wrap;
@@ -132,7 +134,7 @@ export const ProjectItem = styled.li`
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    color: ${({ theme }) => theme.black};
+    color: ${({ theme }) => theme.fonts.color.secondary};
     font-size: ${({ theme }) => theme.fontSize.s};
     margin: 0.6rem 0;
     padding: 0 0;
@@ -168,7 +170,7 @@ export const ButtonsWrapper = styled.div`
     align-items: center;
     height: 80px;
     ${({ theme }) => theme.mq.lg} {
-        justify-content: space-between;
+        justify-content: space-around;
         height: auto;
         width: 300px;
         margin-top: ${({ theme }) => theme.margin.s};

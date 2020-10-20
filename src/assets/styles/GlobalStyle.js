@@ -20,7 +20,7 @@ html {
     theme.fourth};
 }
 body {
-    background-color: ${({ theme }) => theme.white};
+    background-color: ${({ theme }) => theme.background};
     font-family: ${({ theme }) => theme.fonts.family.main};
     padding-top: 2rem;
 
@@ -43,6 +43,10 @@ body {
 }
 button, li {
     font-family: ${({ theme }) => theme.fonts.family.main};
+    color: ${({ theme }) => theme.fonts.color.secondary};
+}
+p {
+    color: ${({ theme }) => theme.fonts.color.primary};
 }
 
 `;

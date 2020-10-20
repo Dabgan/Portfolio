@@ -4,7 +4,7 @@ export const Wrapper = styled.nav`
     position: sticky;
     top: 0;
     width: 100%;
-    background: ${({ theme }) => theme.white};
+    background: ${({ theme }) => theme.background};
     z-index: 2;
     padding: 0.3rem 0;
     transition: all 0.5s ease-in-out;

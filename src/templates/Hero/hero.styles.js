@@ -2,6 +2,9 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.header`
     margin-top: 5rem;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
     ${({ theme }) => theme.mq.lg} {
         position: relative;
     }
@@ -22,9 +25,12 @@ export const HeroTitle = styled.h1`
     display: flex;
     overflow: hidden;
     font-family: ${({ theme }) => theme.fonts.family.secondary};
-    ::selection {
-        color: ${({ theme }) => theme.fourth};
-        background: ${({ theme }) => theme.primary};
+
+    span {
+        ::selection {
+            color: ${({ theme }) => theme.fourth};
+            background: ${({ theme }) => theme.primary};
+        }
     }
 
     ${({ theme }) => theme.mq.md} {
@@ -46,6 +52,7 @@ export const HeroSubtitle = styled.h2`
     font-weight: ${({ theme }) => theme.fonts.regular};
     text-align: center;
     margin-top: 4rem;
+    color: ${({ theme }) => theme.fonts.color.secondary};
     ${({ theme }) => theme.mq.lg} {
         font-size: ${({ theme }) => theme.fontSize.xl};
     }

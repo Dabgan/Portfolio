@@ -18,8 +18,8 @@ export const Icon = styled.div`
     transition: all 0.3s ease-in-out;
     ::before {
         content: '';
-        height: 100%;
-        width: 100%;
+        height: calc(100% - 5px);
+        width: calc(100% - 5px);
         background: ${({ theme }) => theme.white};
         position: absolute;
         top: 3px;
@@ -27,7 +27,7 @@ export const Icon = styled.div`
         z-index: -1;
         transition: all 0.3s ease-in-out;
         ${({ theme }) => theme.mq.lg} {
-            top: 5px;
+            top: 10px;
             left: -5px;
         }
     }
@@ -85,4 +85,5 @@ export const Name = styled.h4`
     font-weight: 700;
     font-size: ${({ theme }) => theme.fontSize.m};
     text-transform: capitalize;
+    color: ${({ theme }) => theme.white};
 `;

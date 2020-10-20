@@ -12,6 +12,7 @@ const Item = styled.li`
     padding: 1rem;
     margin: 0.6rem 0;
     height: 5rem;
+    color: ${({ theme }) => theme.fonts.color.primary};
 
     ${({ theme }) => theme.mq.md} {
         font-size: ${({ theme }) => theme.fontSize.m};

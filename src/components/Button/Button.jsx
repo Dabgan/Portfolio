@@ -167,7 +167,7 @@ Button.propTypes = {
     btnRef: propTypes.oneOfType([
         propTypes.func,
         propTypes.shape({
-            current: propTypes.instanceOf(propTypes.element),
+            current: propTypes.elementType,
         }),
     ]),
 };

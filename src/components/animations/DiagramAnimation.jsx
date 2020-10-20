@@ -31,6 +31,7 @@ const DiagramAnimation = () => {
         const bars = elements.getElementById('bars');
         const hop = elements.getElementById('hop');
         const diagramLine = elements.getElementById('circleLine');
+        const circles = elements.querySelectorAll('.circle');
 
         gsap.set([...circlesLine.children, hop], {
             autoAlpha: 0,
@@ -40,6 +41,7 @@ const DiagramAnimation = () => {
             transformOrigin: '50% 100%',
         });
         gsap.set([...bars.children], { scaleY: 0, fill: diagramTheme.fourth });
+        gsap.set([circles], { fill: diagramTheme.tertiary });
 
         const pathLength = diagramLine.getTotalLength();
         gsap.set(diagramLine, { strokeDasharray: pathLength });

@@ -25,14 +25,12 @@ const AboutAnimation = () => {
         gsap.registerPlugin(ScrollTrigger);
 
         const [elements] = wrapper.current.children;
-        const platform = elements.getElementById('platform');
-        const leaves = elements.getElementById('leaves');
+        const background = elements.getElementById('background');
         const messages = elements.getElementById('messages');
         const message2 = elements.getElementById('message2');
 
-        gsap.set([platform], { transformOrigin: '50% 50%' });
-        gsap.set([...leaves.children], { transformOrigin: '50% 100%' });
         gsap.set(message2, { transformOrigin: '100% 50%' });
+        gsap.set([background], { fill: '#ededed' });
 
         const timeLine = gsap.timeline({
             defaults: { duration: 0.8 },
@@ -84,12 +82,6 @@ const AboutAnimation = () => {
                     }
                 );
         });
-
-        timeLine.fromTo(
-            [...leaves.children],
-            { autoAlpha: 0, scaleY: 0 },
-            { duration: 2, autoAlpha: 1, scaleY: 1, stagger: 0.3 }
-        );
     }, []);
 
     return (

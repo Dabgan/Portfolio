@@ -7,8 +7,8 @@ const StyledFooter = styled.footer`
     justify-content: center;
     width: 100%;
     padding: ${({ theme }) => theme.padding.s};
-    color: ${({ theme }) => theme.fourth};
-    background: ${({ theme }) => theme.primary};
+    color: ${({ theme }) => theme.fonts.color.primary};
+    background: ${({ theme }) => theme.secondary};
     font-style: italic;
 
     ${({ theme }) => theme.mq.md} {

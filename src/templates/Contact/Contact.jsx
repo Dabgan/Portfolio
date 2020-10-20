@@ -22,7 +22,7 @@ const Contact = () => {
                 <AnimationWrapper>
                     <MediaQuery minDeviceWidth={1024}>
                         <DrawSvgAnimation
-                            position={{ right: -40, top: 10 }}
+                            position={{ right: -30, top: 13 }}
                             animation={{ speed: 4, delay: 1.5 }}
                         >
                             <Circle />
