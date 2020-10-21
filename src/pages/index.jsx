@@ -8,9 +8,11 @@ import About from '../templates/About/About';
 import Contact from '../templates/Contact/Contact';
 import Footer from '../components/Footer/Footer';
 import Navbar from '../components/Navbar/Navbar';
+import SEO from '../components/SEO/SEO';
 
 const IndexPage = () => (
     <Theme>
+        <SEO />
         <Navbar />
         <Hero />
         <main>

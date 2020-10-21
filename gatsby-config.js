@@ -3,8 +3,9 @@ const path = require('path');
 module.exports = {
     siteMetadata: {
         title: `Gabriel Daniluk - Portfolio`,
-        description: `Welcome on my personal portfolio website!`,
-        author: `@gabrieldaniluk`,
+        description: `Welcome to my personal portfolio website!`,
+        author: `Gabriel Daniluk`,
+        previewImage: `${__dirname}/src/assets/images/portfolio.png`,
     },
     plugins: [
         'gatsby-plugin-sharp',
