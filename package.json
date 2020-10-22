@@ -34,6 +34,10 @@
     "yup": "^0.29.3"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "babel-jest": "^26.6.0",
+    "babel-preset-gatsby": "^0.5.14",
     "eslint": "^7.5.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-prettier": "^6.11.0",
@@ -45,8 +49,11 @@
     "gatsby-plugin-root-import": "^2.0.5",
     "gatsby-plugin-stylelint": "^3.2.0",
     "husky": "^4.2.5",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^26.6.0",
     "lint-staged": "^10.2.11",
     "prettier": "^2.0.5",
+    "react-test-renderer": "^17.0.1",
     "stylelint": "^13.6.1",
     "stylelint-config-recommended": "^3.0.0",
     "stylelint-config-styled-components": "^0.1.1",
@@ -64,7 +71,7 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",

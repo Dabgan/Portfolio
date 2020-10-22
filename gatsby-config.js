@@ -41,7 +41,7 @@ module.exports = {
         {
             resolve: `gatsby-plugin-google-fonts`,
             options: {
-                fonts: [`Roboto`, `Francois One`],
+                fonts: [`Roboto:300,400,500,600,700`, `Francois One:400,700`],
                 display: 'swap',
             },
         },

@@ -7,6 +7,7 @@ export const FormWrapper = styled.div`
     padding: 1.5rem 1.5rem 0;
     margin: 0 3rem 0 1rem;
     position: relative;
+    border: 2px solid ${({ theme }) => theme.tertiary};
     ::before {
         content: '';
         width: 100%;
