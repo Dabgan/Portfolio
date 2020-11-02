@@ -24,15 +24,9 @@
             }
         }
     },
-    "import/no-extraneous-dependencies": [
-        "error",
-        {
-            "devDependencies": [
-                "**/*.test.js",
-                "**/*.spec.js"
-            ]
-        }
-    ],
+    "env": {
+        "jasmine": true
+    },
     "rules": {
         "react/jsx-filename-extension": [
             1,
@@ -41,6 +35,12 @@
                     ".js",
                     ".jsx"
                 ]
+            }
+        ],
+        "import/no-extraneous-dependencies": [
+            "error",
+            {
+                "devDependencies": true
             }
         ]
     }
