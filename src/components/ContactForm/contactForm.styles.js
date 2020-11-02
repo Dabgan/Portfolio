@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { Field, Form } from 'formik';
-import Button from 'components/Button/Button';
+import Button from '../Button/Button';
 
 export const FormWrapper = styled.div`
     background: ${({ theme }) => theme.white};
