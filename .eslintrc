@@ -18,10 +18,15 @@
                     "./src"
                 ],
                 "extensions": [
-                    ".js"
+                    ".js",
+                    ".jsx"
                 ]
             }
         }
+    },
+    "env": {
+        "jest": true,
+        "jasmine": true
     },
     "rules": {
         "react/jsx-filename-extension": [
@@ -31,6 +36,12 @@
                     ".js",
                     ".jsx"
                 ]
+            }
+        ],
+        "import/no-extraneous-dependencies": [
+            "error",
+            {
+                "devDependencies": true
             }
         ]
     }

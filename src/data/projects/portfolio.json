@@ -1,0 +1,16 @@
+{
+    "order": 3,
+    "title": "Portfolio",
+    "introduction": "My personal website. First project I made with Gatsby.",
+    "description": "My personal website. First project I made with Gatsby. Enter github login, and the application will download repositories of that user. Then choose an repository and click it, to see commits history presented on a timeline.",
+    "technologies": [
+        "Gatsby",
+        "Styled Components",
+        "GSAP",
+        "PropTypes"
+    ],
+    "codeLink": "https://github.com/Dabgan/Portfolio",
+    "demoLink": "https://github.com/Dabgan/Portfolio",
+    "coverImg": "../../assets/images/portfolio.png",
+    "inverted": false
+}
