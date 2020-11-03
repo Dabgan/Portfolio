@@ -56,7 +56,10 @@ const navItems = [
 ];
 
 const NavbarLinks = ({ isActive, direction }) => {
-    const offset = window.innerWidth > breakpoints.md;
+    let offset;
+    if (typeof window !== 'undefined') {
+        offset = window.innerWidth > breakpoints.md;
+    }
 
     const setOffset = name => {
         switch (name) {
