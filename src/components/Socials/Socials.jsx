@@ -57,17 +57,18 @@ const Socials = () => {
         gsap.registerPlugin(ScrollTrigger);
 
         const social = socialRef.current.children;
-
-        gsap.from(social, {
-            duration: 1,
-            autoAlpha: 0,
-            y: '+=50',
-            stagger: 0.3,
-            scrollTrigger: {
-                trigger: social,
-                start: 'top bottom-=20px',
-            },
-        });
+        if (social) {
+            gsap.from(social, {
+                duration: 1,
+                autoAlpha: 0,
+                y: '+=50',
+                stagger: 0.3,
+                scrollTrigger: {
+                    trigger: social,
+                    start: 'top bottom-=20px',
+                },
+            });
+        }
     }, []);
 
     return (

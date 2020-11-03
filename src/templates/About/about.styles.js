@@ -24,6 +24,7 @@ export const Description = styled.div`
     text-justify: inter-word;
     p {
         margin: 2rem 0;
+        visibility: hidden;
     }
     ${({ theme }) => theme.mq.lg} {
         font-size: ${({ theme }) => theme.fontSize.m};

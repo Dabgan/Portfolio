@@ -45,23 +45,25 @@ const Technologies = () => {
         const lists = [listOneRef.current, listTwoRef.current];
         gsap.registerPlugin(ScrollTrigger);
 
-        lists.forEach(list => {
-            gsap.fromTo(
-                list.children,
-                { autoAlpha: 0, y: '+=40' },
-                {
-                    duration: 1,
-                    autoAlpha: 1,
-                    y: '0',
-                    stagger: 0.15,
-                    ease: 'power2.out',
-                    scrollTrigger: {
-                        trigger: list,
-                        start: '-10% 90%',
-                    },
-                }
-            );
-        });
+        if (lists) {
+            lists.forEach(list => {
+                gsap.fromTo(
+                    list.children,
+                    { autoAlpha: 0, y: '+=40' },
+                    {
+                        duration: 1,
+                        autoAlpha: 1,
+                        y: '0',
+                        stagger: 0.15,
+                        ease: 'power2.out',
+                        scrollTrigger: {
+                            trigger: list,
+                            start: '-10% 90%',
+                        },
+                    }
+                );
+            });
+        }
     }, []);
 
     return (

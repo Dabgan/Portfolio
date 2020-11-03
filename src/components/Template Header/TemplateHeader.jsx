@@ -13,7 +13,7 @@ const Header = styled.h2`
     letter-spacing: 0.25rem;
     color: ${({ $color }) =>
         $color ? ({ theme }) => theme.primary : ({ theme }) => theme.white};
-
+    visibility: hidden;
     ${({ theme }) => theme.mq.lg} {
         text-align: left;
         font-size: ${({ theme }) => theme.fontSize.xxxl};
@@ -33,16 +33,17 @@ const TemplateHeader = ({ children, color, inverted }) => {
         gsap.registerPlugin(ScrollTrigger);
 
         const header = headerRef.current;
-
-        gsap.from(header, {
-            duration: 1,
-            autoAlpha: 0,
-            y: '+=50',
-            scrollTrigger: {
-                trigger: header,
-                start: 'top bottom-=20px',
-            },
-        });
+        if (header) {
+            gsap.from(header, {
+                duration: 1,
+                autoAlpha: 0,
+                y: '+=50',
+                scrollTrigger: {
+                    trigger: header,
+                    start: 'top bottom-=20px',
+                },
+            });
+        }
     }, []);
 
     return (

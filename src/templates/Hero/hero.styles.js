@@ -25,8 +25,8 @@ export const HeroTitle = styled.h1`
     display: flex;
     overflow: hidden;
     font-family: ${({ theme }) => theme.fonts.family.secondary};
-
     span {
+        visibility: hidden;
         ::selection {
             color: ${({ theme }) => theme.fourth};
             background: ${({ theme }) => theme.primary};
@@ -53,11 +53,10 @@ export const HeroSubtitle = styled.h2`
     text-align: center;
     margin-top: 4rem;
     color: ${({ theme }) => theme.fonts.color.secondary};
+    visibility: hidden;
     ${({ theme }) => theme.mq.lg} {
         font-size: ${({ theme }) => theme.fontSize.xl};
     }
 `;
 
-export const NameSpan = styled.span`
-    /* margin-left: 8px; */
-`;
+export const NameSpan = styled.span``;

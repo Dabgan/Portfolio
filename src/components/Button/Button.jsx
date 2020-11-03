@@ -5,6 +5,8 @@ import propTypes from 'prop-types';
 const BtnWrapper = styled.div`
     position: relative;
     margin-top: ${props => props.marginTop};
+    visibility: ${({ $startAnimation }) =>
+        $startAnimation ? 'hidden' : 'inherit'};
 `;
 
 const Btn = styled.button`
@@ -133,7 +135,7 @@ const Button = ({
     }, [submit]);
 
     return (
-        <BtnWrapper marginTop={marginTop} ref={btnRef}>
+        <BtnWrapper marginTop={marginTop} ref={btnRef} $startAnimation={btnRef}>
             <Btn
                 ref={buttonRef}
                 size={size}

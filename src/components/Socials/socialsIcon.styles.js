@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Item = styled.li`
     list-style: none;
     margin-left: 2rem;
+    visibility: hidden;
     ${({ theme }) => theme.mq.lg} {
         display: flex;
         width: 100%;

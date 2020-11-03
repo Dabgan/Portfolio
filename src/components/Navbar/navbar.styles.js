@@ -7,6 +7,7 @@ export const Wrapper = styled.nav`
     background: ${({ theme }) => theme.background};
     z-index: 2;
     padding: 0.3rem 0;
+    visibility: hidden;
     transition: all 0.5s ease-in-out;
     ${({ direction }) =>
         direction === 1 &&

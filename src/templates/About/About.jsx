@@ -14,22 +14,23 @@ const About = () => {
         gsap.registerPlugin(ScrollTrigger);
 
         const paragraphs = descriptionRef.current.children;
-
-        gsap.fromTo(
-            [paragraphs],
-            { y: `+=30`, autoAlpha: 0 },
-            {
-                duration: 1.2,
-                y: '0',
-                autoAlpha: 1,
-                ease: 'power1.inOut',
-                stagger: 0.5,
-                scrollTrigger: {
-                    trigger: paragraphs,
-                    start: '-10% 90%',
-                },
-            }
-        );
+        if (paragraphs) {
+            gsap.fromTo(
+                [paragraphs],
+                { y: `+=30`, autoAlpha: 0 },
+                {
+                    duration: 1.2,
+                    y: '0',
+                    autoAlpha: 1,
+                    ease: 'power1.inOut',
+                    stagger: 0.5,
+                    scrollTrigger: {
+                        trigger: paragraphs,
+                        start: '-10% 90%',
+                    },
+                }
+            );
+        }
     }, []);
 
     return (
