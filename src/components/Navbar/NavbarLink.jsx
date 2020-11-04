@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-scroll';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { BsFillBarChartFill as Skills } from 'react-icons/bs';
 import { FaRegLightbulb as Projects } from 'react-icons/fa';
 import { BiMessageDetail as Contact } from 'react-icons/bi';
@@ -14,8 +14,6 @@ const NavItem = styled.li`
     list-style: none;
     position: relative;
     font-size: ${({ theme }) => theme.fontSize.m};
-    transition: all 0.5s ease-in-out;
-    transform: translateY(-70px);
     font-family: ${({ theme }) => theme.fonts.family.secondary};
 
     a {
@@ -32,14 +30,7 @@ const NavItem = styled.li`
         font-size: ${({ theme }) => theme.fontSize.m};
         padding: 0;
         z-index: 0;
-        transition: none;
     }
-    ${({ $direction, $isActive }) =>
-        $direction === -1 &&
-        $isActive &&
-        css`
-            transform: translateY(0px);
-        `}
 `;
 
 const IconWrapper = styled.div`

@@ -39,35 +39,38 @@ const About = () => {
             <Wrapper id="about">
                 <Content>
                     <TemplateHeader>About</TemplateHeader>
-                    <TemplateSubtitle>me talking about myself</TemplateSubtitle>
+                    <TemplateSubtitle>
+                        just me talking about myself
+                    </TemplateSubtitle>
                     <InnerWrapper>
                         <Description ref={descriptionRef}>
                             <p>
                                 My name is Gabriel and I have always been
                                 interested in technology. When it comes to
-                                programming, I got intriqued by it recently, a
-                                year and a half ago, when I wanted to build my
-                                own website. I started learning about the
-                                front-end technologies and since then, I have
-                                been systematically developing my skills.
+                                programming, I got intriqued by it over a year
+                                ago, when I wanted to build my own website. I
+                                started learning about front-end technologies
+                                and since then, I have been systematically
+                                developing my skills.
                             </p>
                             <p>
-                                I am currently learning and creating projects in
-                                React which is my favorite technology so far
-                                <span role="img" aria-label="heart-icon">
-                                    💗
+                                I really enjoy creating websites and web
+                                applications using React
+                                <span role="img" aria-label="cat-icon">
+                                    ❤️
                                 </span>
-                                . I really enjoy creating websites and web
-                                applications using this library. Besides that, I
-                                like challenges and I like to learn new things -
-                                in every project that I create, apart from
-                                technologies that I already know, I always try
-                                to discover & learn something new.
+                                , which is my favorite technology so far.
+                                Besides that, I like challenges and I like
+                                learning new things - in every project that I
+                                create, apart from technologies that I already
+                                know, I always try to discover & learn something
+                                new. I am currently learning about Typescript
+                                and improving myself in testing.
                             </p>
                             <p>
-                                My main goal right now is to start my career as
-                                a Frontend Developer and further develop in the
-                                IT industry.
+                                My main goal is to start my career as a Frontend
+                                Developer and further develop in the IT
+                                industry.
                             </p>
                         </Description>
                         <AboutAnimation />

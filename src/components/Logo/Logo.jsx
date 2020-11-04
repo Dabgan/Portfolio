@@ -8,7 +8,6 @@ import propTypes from 'prop-types';
 const LogoWrapper = styled.div`
     display: block;
     width: 48px;
-    /* height: 48px; */
     cursor: pointer;
     z-index: 5;
     ${({ theme }) => theme.mq.md} {

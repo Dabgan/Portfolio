@@ -2,9 +2,9 @@
     "order": 1,
     "title": "Snowshop",
     "introduction": "My biggest project so far. A mockup of a fully functioning online shop.",
-    "description": "My biggest project so far. A mockup of a fully functioning online shop in which I used firebase as my backend. It has features such as shopping cart, filtering and more. While creating this page, I learned how to solve advanced problems with React.",
+    "description": "My biggest project so far. A mockup of fully functioning online shop with firebase as a backend. It contains features such as shopping cart, filtering and more. While creating this project, I learned how to solve advanced React problems.",
     "technologies": [
-        "React & Hooks",
+        "React & React Hooks",
         "Styled Components",
         "Firebase",
         "Formik",

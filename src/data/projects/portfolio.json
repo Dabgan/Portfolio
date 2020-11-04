@@ -2,12 +2,14 @@
     "order": 3,
     "title": "Portfolio",
     "introduction": "My personal website. First project I made with Gatsby.",
-    "description": "My personal website. First project I made with Gatsby. Enter github login, and the application will download repositories of that user. Then choose an repository and click it, to see commits history presented on a timeline.",
+    "description": "My personal website. First project I made with Gatsby. Throughout this project I learned how to use GraphQL to get desired data and how to put more life into the page by using GSAP animations.",
     "technologies": [
         "Gatsby",
+        "GraphQL",
         "Styled Components",
         "GSAP",
-        "PropTypes"
+        "PropTypes",
+        "Jest & RTL"
     ],
     "codeLink": "https://github.com/Dabgan/Portfolio",
     "demoLink": "https://github.com/Dabgan/Portfolio",

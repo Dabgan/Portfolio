@@ -26,6 +26,7 @@ export const Description = styled.div`
         margin: 2rem 0;
         visibility: hidden;
     }
+
     ${({ theme }) => theme.mq.lg} {
         font-size: ${({ theme }) => theme.fontSize.m};
         padding: ${({ theme }) => theme.padding.l}

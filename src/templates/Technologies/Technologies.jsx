@@ -15,26 +15,26 @@ import {
 } from './technologies.styles';
 
 const technologyListOne = [
-    'React',
     'HTML5',
     'CSS3',
     'SCSS',
+    'RWD',
     'Javascript (ES6+)',
-    'React Hooks',
-    'Redux',
-    'Figma',
-    'Styled Components',
-];
-const technologyListTwo = [
-    'Gatsby',
-    'GSAP',
-    'Jest & Enzyme',
     'GIT',
     'Github',
-    'RWD',
-    'Firebase',
-    'Bootstrap',
     'JQuery',
+    'Bootstrap',
+];
+const technologyListTwo = [
+    'React',
+    'React Hooks',
+    'Gatsby',
+    'GSAP',
+    'Redux',
+    'Firebase',
+    'Figma',
+    'Jest & Enzyme',
+    'Styled Components',
 ];
 
 const Technologies = () => {

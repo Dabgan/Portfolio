@@ -130,9 +130,13 @@ const Button = ({
 
     // setting proportional button background based on actual button sizes
     useEffect(() => {
-        setHeight(buttonRef.current.offsetHeight);
-        setWidth(buttonRef.current.offsetWidth);
-    }, [submit]);
+        const setDimensions = () => {
+            setHeight(buttonRef.current.offsetHeight);
+            setWidth(buttonRef.current.offsetWidth);
+        };
+        window.addEventListener('resize', setDimensions);
+        setDimensions();
+    }, []);
 
     return (
         <BtnWrapper marginTop={marginTop} ref={btnRef} $startAnimation={btnRef}>

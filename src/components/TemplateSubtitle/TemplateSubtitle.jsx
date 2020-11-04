@@ -14,6 +14,12 @@ const Subtitle = styled.h2`
     color: ${({ $halfWidth, theme }) =>
         $halfWidth ? theme.fonts.color.secondary : theme.fonts.color.primary};
     visibility: hidden;
+    p {
+        color: ${({ $halfWidth, theme }) =>
+            $halfWidth
+                ? theme.fonts.color.secondary
+                : theme.fonts.color.primary};
+    }
     ${({ theme }) => theme.mq.md} {
         margin: 1rem 0 2rem;
     }

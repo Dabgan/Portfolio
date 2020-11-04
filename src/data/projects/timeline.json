@@ -2,7 +2,7 @@
     "order": 2,
     "title": "Github Timeline",
     "introduction": "In this project you pick up users github repo and display commits in a timeline ",
-    "description": "My main goal here was to learn the basics of react-redux and expand my knowledge about Styled-Components. Enter github login, and the application will download repositories of that user. Then choose an repository and click it, to see commits history presented on a timeline.",
+    "description": "My main goal here was to learn the basics of react-redux, basics of testing and expand my knowledge about Styled-Components. After entering a github login, application will download repositories of that user. Then choose a repository and click on it to see commits history presented on a timeline.",
     "technologies": [
         "React & Hooks",
         "Styled Components",
