@@ -12,12 +12,11 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
 }
 
-
 html {
     font-size: 62.5%;
-    scrollbar-width: thin;
-    scrollbar-color: ${({ theme }) => theme.primary} ${({ theme }) =>
-    theme.fourth};
+    scrollbar-color: ${({ theme }) => theme.fourth} ${({ theme }) =>
+    theme.primary};
+    scrollbar-width: auto;
 }
 body {
     background-color: ${({ theme }) => theme.background};
@@ -25,20 +24,17 @@ body {
     padding-top: 2rem;
 
     ${({ theme }) => theme.mq.lg} {
-    padding-top: 5rem;
+        padding-top: 5rem;
     }
-
     ::-webkit-scrollbar {
-    width: 16px;
+        width: 16px;
     }
-
     ::-webkit-scrollbar-track {
-    background:  ${({ theme }) => theme.primary};
+        background:  ${({ theme }) => theme.primary};
     }
-
-  ::-webkit-scrollbar-thumb {
-    background-color: ${({ theme }) => theme.fourth};
-    border: 1px solid ${({ theme }) => theme.primary};
+    ::-webkit-scrollbar-thumb {
+        background-color: ${({ theme }) => theme.fourth};
+        border: 1px solid ${({ theme }) => theme.primary};
     }
 }
 button, li {

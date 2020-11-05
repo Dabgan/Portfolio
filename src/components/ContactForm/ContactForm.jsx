@@ -51,7 +51,7 @@ const ContactForm = () => {
             )
             .then(
                 () => {
-                    setBtnMsg('Email send, thanks!');
+                    setBtnMsg('Email sent, thanks!');
                     setBtnColor('send');
                     resetForm();
                     resetBtn();
