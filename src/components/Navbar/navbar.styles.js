@@ -21,7 +21,6 @@ export const Wrapper = styled.nav`
             box-shadow: 0 2px 5px -2px ${({ theme }) => theme.gray100};
         `}
 `;
-
 export const Navigation = styled.div`
     display: flex;
     justify-content: space-between;
@@ -35,13 +34,8 @@ export const Navigation = styled.div`
         text-transform: none;
     }
 `;
-
-export const Navbox = styled.ul`
+export const Navbox = styled.div`
     display: flex;
     justify-content: space-between;
     flex: 1;
-    align-items: center;
-    ${({ theme }) => theme.mq.lg} {
-        justify-content: flex-end;
-    }
 `;

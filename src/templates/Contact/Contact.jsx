@@ -8,6 +8,7 @@ import Circle from 'assets/svg/circle.inline.svg';
 import Arrow from 'assets/svg/arrow.inline.svg';
 import TemplateSubtitle from 'components/TemplateSubtitle/TemplateSubtitle';
 import DrawSvgAnimation from '../../components/animations/DrawSvgAnimation';
+
 import {
     Wrapper,
     InnerWrapper,

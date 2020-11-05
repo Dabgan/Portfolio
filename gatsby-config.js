@@ -6,6 +6,7 @@ module.exports = {
         description: `Welcome to my personal portfolio website!`,
         author: `Gabriel Daniluk`,
         previewImage: `${__dirname}/src/assets/images/portfolio.png`,
+        language: 'en',
     },
     plugins: [
         'gatsby-plugin-sharp',

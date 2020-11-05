@@ -69,6 +69,7 @@ const ProjectExample = ({ projectData }) => {
             <ImageWrapper ref={imgRef} inverted={inverted ? 1 : 0}>
                 <Img fluid={coverImg.childImageSharp.fluid} alt={title} />
             </ImageWrapper>
+
             <InfoWrapper ref={contentRef} inverted={inverted ? 1 : 0}>
                 <ProjectTitle inverted={inverted ? 1 : 0}>{title}</ProjectTitle>
                 <Line />
@@ -81,7 +82,6 @@ const ProjectExample = ({ projectData }) => {
                         </ProjectItem>
                     ))}
                 </TechnologiesList>
-
                 <ButtonsWrapper>
                     <a
                         href={demoLink}

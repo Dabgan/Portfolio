@@ -63,7 +63,8 @@ const TemplateSubtitle = ({ children, mTop, halfWidth }) => {
 };
 
 TemplateSubtitle.propTypes = {
-    children: propTypes.string.isRequired,
+    children: propTypes.oneOfType([propTypes.string, propTypes.array])
+        .isRequired,
     mTop: propTypes.string,
     halfWidth: propTypes.bool,
 };

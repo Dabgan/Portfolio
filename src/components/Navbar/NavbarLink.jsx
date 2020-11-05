@@ -9,6 +9,17 @@ import MediaQuery from 'react-responsive';
 import { breakpoints } from 'assets/styles/theme';
 import propTypes from 'prop-types';
 
+const NavLinksList = styled.div`
+    display: flex;
+    justify-content: space-around;
+    flex: 1;
+    padding-left: 5vw;
+    align-items: center;
+    ${({ theme }) => theme.mq.lg} {
+        justify-content: flex-end;
+    }
+`;
+
 const NavItem = styled.li`
     text-decoration: none;
     list-style: none;
@@ -68,7 +79,7 @@ const NavbarLinks = ({ isActive, direction }) => {
     };
 
     return (
-        <>
+        <NavLinksList>
             {navItems.map(({ name, icon }) => (
                 <NavItem key={name} $isActive={isActive} $direction={direction}>
                     <Link to={name} smooth offset={setOffset(name)}>
@@ -79,7 +90,7 @@ const NavbarLinks = ({ isActive, direction }) => {
                     </Link>
                 </NavItem>
             ))}
-        </>
+        </NavLinksList>
     );
 };
 
