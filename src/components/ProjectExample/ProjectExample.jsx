@@ -48,8 +48,8 @@ const ProjectExample = ({ projectData }) => {
                         autoAlpha: 0,
                     },
                     {
-                        duration: 1.2,
-                        x: '=0',
+                        duration: 0.9,
+                        x: '0',
                         autoAlpha: 1,
                         ease: 'power3.inOut',
                         scrollTrigger: {

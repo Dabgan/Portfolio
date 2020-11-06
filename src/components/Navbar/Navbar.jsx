@@ -29,7 +29,7 @@ const Navbar = () => {
                 navLinks.children,
                 { autoAlpha: 0, y: '-=20' },
                 {
-                    duration: 1.5,
+                    duration: 0.7,
                     autoAlpha: 1,
                     y: '0',
                     ease: 'power2.out',

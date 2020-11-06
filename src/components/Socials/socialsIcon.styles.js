@@ -4,6 +4,7 @@ export const Item = styled.li`
     list-style: none;
     margin-left: 2rem;
     visibility: hidden;
+    will-change: transform, opacity;
     ${({ theme }) => theme.mq.lg} {
         display: flex;
         width: 100%;

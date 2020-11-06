@@ -14,6 +14,7 @@ const Subtitle = styled.h2`
     color: ${({ $halfWidth, theme }) =>
         $halfWidth ? theme.fonts.color.secondary : theme.fonts.color.primary};
     visibility: hidden;
+    will-change: transform, opacity;
     p {
         color: ${({ $halfWidth, theme }) =>
             $halfWidth

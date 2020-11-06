@@ -9,6 +9,7 @@ export const Wrapper = styled.nav`
     padding: 0.3rem 0;
     visibility: hidden;
     transition: all 0.5s ease-in-out;
+    will-change: transform, opacity;
     ${({ direction }) =>
         direction === 1 &&
         css`
@@ -28,7 +29,7 @@ export const Navigation = styled.div`
     text-transform: uppercase;
     padding: 0vh 5vw;
     z-index: 2;
-    transition: all 0.3s ease-in;
+    /* transition: all 0.3s ease-in; */
     ${({ theme }) => theme.mq.md} {
         position: relative;
         text-transform: none;

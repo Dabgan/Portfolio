@@ -43,6 +43,7 @@ export const ImageWrapper = styled.div`
     box-shadow: 5px 5px 35px #9e9e9e;
     position: relative;
     visibility: hidden;
+    will-change: transform, opacity;
     img {
         width: 100%;
         height: 100%;
@@ -71,6 +72,7 @@ export const InfoWrapper = styled.div`
     display: flex;
     flex-flow: column;
     visibility: hidden;
+    will-change: transform, opacity;
     ${({ theme }) => theme.mq.lg} {
         flex: 0 0 50%;
         padding: 0

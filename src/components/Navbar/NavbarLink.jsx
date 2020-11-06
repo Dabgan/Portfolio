@@ -15,6 +15,7 @@ const NavItem = styled.li`
     position: relative;
     font-size: ${({ theme }) => theme.fontSize.m};
     font-family: ${({ theme }) => theme.fonts.family.secondary};
+    will-change: transform, opacity;
 
     a {
         text-decoration: none;

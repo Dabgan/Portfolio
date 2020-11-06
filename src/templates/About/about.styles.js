@@ -16,6 +16,7 @@ export const Description = styled.div`
     padding: 0 0;
     text-align: justify;
     text-justify: inter-word;
+    text-shadow: 1px 1px 2px ${({ theme }) => theme.fonts.color.secondary};
     p {
         margin: 2rem 0;
         visibility: hidden;

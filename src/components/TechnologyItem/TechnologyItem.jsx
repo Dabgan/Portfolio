@@ -14,6 +14,7 @@ const Item = styled.li`
     height: 5rem;
     color: ${({ theme }) => theme.fonts.color.primary};
     visibility: hidden;
+    will-change: transform, opacity;
     ${({ theme }) => theme.mq.md} {
         font-size: ${({ theme }) => theme.fontSize.m};
     }

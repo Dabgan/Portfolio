@@ -27,6 +27,7 @@ export const HeroTitle = styled.h1`
     font-family: ${({ theme }) => theme.fonts.family.secondary};
     span {
         visibility: hidden;
+        will-change: opacity;
         ::selection {
             color: ${({ theme }) => theme.fourth};
             background: ${({ theme }) => theme.primary};

@@ -14,6 +14,7 @@ const Header = styled.h2`
     color: ${({ $color }) =>
         $color ? ({ theme }) => theme.primary : ({ theme }) => theme.white};
     visibility: hidden;
+    will-change: transform, opacity;
     ${({ theme }) => theme.mq.lg} {
         text-align: left;
         font-size: ${({ theme }) => theme.fontSize.xxxl};
