@@ -34,9 +34,12 @@ export const Navigation = styled.div`
         text-transform: none;
     }
 `;
-export const Navbox = styled.div`
+export const Navbox = styled.ul`
     display: flex;
     justify-content: space-between;
-    align-items: center;
     flex: 1;
+    align-items: center;
+    ${({ theme }) => theme.mq.lg} {
+        justify-content: flex-end;
+    }
 `;

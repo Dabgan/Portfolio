@@ -60,6 +60,7 @@ const Navbar = () => {
                         <MediaQuery maxDeviceWidth={787}>
                             <Logo />
                         </MediaQuery>
+
                         <NavbarLinks
                             isActive={isActive}
                             direction={scrollDirection}

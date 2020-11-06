@@ -1,18 +1,17 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, lazy, Suspense } from 'react';
 import Content from 'components/Content/Content';
 import TemplateHeader from 'components/Template Header/TemplateHeader';
 import TechnologyItem from 'components/TechnologyItem/TechnologyItem';
-import { theme } from 'assets/styles/theme';
+import Wave from 'components/Wave/Wave';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import DiagramAnimation from 'components/animations/DiagramAnimation';
-import {
-    Wrapper,
-    InnerWrapper,
-    List,
-    TopWave,
-    BottomWave,
-} from './technologies.styles';
+import { Wrapper, InnerWrapper, List, Loader } from './technologies.styles';
+
+const DiagramAnimation = lazy(() =>
+    import('../../components/animations/DiagramAnimation')
+);
+
+const renderLoader = () => <Loader />;
 
 const technologyListOne = [
     'HTML5',
@@ -40,6 +39,7 @@ const technologyListTwo = [
 const Technologies = () => {
     const listOneRef = useRef(null);
     const listTwoRef = useRef(null);
+    const isSR = typeof window === 'undefined';
 
     useEffect(() => {
         const lists = [listOneRef.current, listTwoRef.current];
@@ -68,15 +68,7 @@ const Technologies = () => {
 
     return (
         <>
-            <TopWave
-                fill={theme.primary}
-                options={{
-                    height: 50,
-                    amplitude: 30,
-                    speed: 0.15,
-                    points: 3,
-                }}
-            />
+            <Wave top />
             <Wrapper id="skills">
                 <Content>
                     <TemplateHeader>Technologies</TemplateHeader>
@@ -95,11 +87,15 @@ const Technologies = () => {
                                 </TechnologyItem>
                             ))}
                         </List>
-                        <DiagramAnimation />
+                        {!isSR && (
+                            <Suspense fallback={renderLoader()}>
+                                <DiagramAnimation />
+                            </Suspense>
+                        )}
                     </InnerWrapper>
                 </Content>
             </Wrapper>
-            <BottomWave />
+            <Wave />
         </>
     );
 };

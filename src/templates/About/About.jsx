@@ -1,14 +1,20 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, lazy, Suspense } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Content from 'components/Content/Content';
 import TemplateHeader from 'components/Template Header/TemplateHeader';
 import TemplateSubtitle from 'components/TemplateSubtitle/TemplateSubtitle';
-import { Wrapper, InnerWrapper, Description, Wave } from './about.styles';
-import AboutAnimation from '../../components/animations/AboutAnimation';
+import Wave from 'components/Wave/Wave';
+import { Wrapper, InnerWrapper, Description } from './about.styles';
+
+const AboutAnimation = lazy(() =>
+    import('../../components/animations/AboutAnimation')
+);
+const renderLoader = () => <div />;
 
 const About = () => {
     const descriptionRef = useRef(null);
+    const isSR = typeof window === 'undefined';
 
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
@@ -35,7 +41,7 @@ const About = () => {
 
     return (
         <>
-            <Wave top="true" />
+            <Wave top />
             <Wrapper id="about">
                 <Content>
                     <TemplateHeader>About</TemplateHeader>
@@ -73,7 +79,12 @@ const About = () => {
                                 industry.
                             </p>
                         </Description>
-                        <AboutAnimation />
+
+                        {!isSR && (
+                            <Suspense fallback={renderLoader()}>
+                                <AboutAnimation />
+                            </Suspense>
+                        )}
                     </InnerWrapper>
                 </Content>
             </Wrapper>
