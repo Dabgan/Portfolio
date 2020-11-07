@@ -7,7 +7,10 @@ export const Wrapper = styled.nav`
     background: ${({ theme }) => theme.background};
     z-index: 2;
     padding: 0.3rem 0;
+    visibility: hidden;
     transition: all 0.5s ease-in-out;
+    will-change: transform, opacity;
+    transform: translateY(0px);
     ${({ direction }) =>
         direction === 1 &&
         css`
@@ -17,10 +20,14 @@ export const Wrapper = styled.nav`
         direction === -1 &&
         isActive &&
         css`
+            transform: translateY(0px);
             box-shadow: 0 2px 5px -2px ${({ theme }) => theme.gray100};
         `}
+    ${({ theme }) => theme.mq.lg} {
+    min-height: 7rem;
+    margin-top: 2rem;
+    }
 `;
-
 export const Navigation = styled.div`
     display: flex;
     justify-content: space-between;
@@ -28,13 +35,12 @@ export const Navigation = styled.div`
     text-transform: uppercase;
     padding: 0vh 5vw;
     z-index: 2;
-    transition: all 0.3s ease-in;
+    /* transition: all 0.3s ease-in; */
     ${({ theme }) => theme.mq.md} {
         position: relative;
         text-transform: none;
     }
 `;
-
 export const Navbox = styled.ul`
     display: flex;
     justify-content: space-between;

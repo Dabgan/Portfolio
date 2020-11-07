@@ -30,6 +30,7 @@ export const InnerWrapper = styled.div`
     flex-flow: row;
     align-items: center;
     margin: ${({ theme }) => theme.margin.s} 0 ${({ theme }) => theme.margin.xs};
+
     ${({ theme }) => theme.mq.lg} {
         justify-content: flex-end;
         height: auto;
@@ -41,7 +42,8 @@ export const ImageWrapper = styled.div`
     width: 100%;
     box-shadow: 5px 5px 35px #9e9e9e;
     position: relative;
-
+    visibility: hidden;
+    will-change: transform, opacity;
     img {
         width: 100%;
         height: 100%;
@@ -69,7 +71,8 @@ export const ImageWrapper = styled.div`
 export const InfoWrapper = styled.div`
     display: flex;
     flex-flow: column;
-
+    visibility: hidden;
+    will-change: transform, opacity;
     ${({ theme }) => theme.mq.lg} {
         flex: 0 0 50%;
         padding: 0

@@ -11,28 +11,32 @@ const detailsQuery = graphql`
                 defaultDescription: description
                 defaultAuthor: author
                 defaultImage: previewImage
+                defaultLanguage: language
             }
         }
     }
 `;
 
-const SEO = ({ title, description, author, previewImage }) => {
+const SEO = ({ title, description, author, previewImage, lang }) => {
     const { site } = useStaticQuery(detailsQuery);
     const {
         defaultTitle,
         defaultDescription,
         defaultAuthor,
         defaultImage,
+        defaultLanguage,
     } = site.siteMetadata;
     const seo = {
         title: title || defaultTitle,
         description: description || defaultDescription,
         author: author || defaultAuthor,
         previewImage: previewImage || defaultImage,
+        lang: lang || defaultLanguage,
     };
 
     return (
         <Helmet
+            htmlAttributes={{ lang: seo.lang }}
             title={seo.title}
             meta={[
                 {

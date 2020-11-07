@@ -39,27 +39,29 @@ const ProjectExample = ({ projectData }) => {
 
         const tweenDirection = inverted ? '+' : '-';
 
-        const startProjectAnimation = (elem, distance) => {
-            gsap.fromTo(
-                elem,
-                {
-                    x: `${tweenDirection}=${distance}`,
-                    autoAlpha: 0,
-                },
-                {
-                    duration: 1.2,
-                    x: '=0',
-                    autoAlpha: 1,
-                    ease: 'power3.inOut',
-                    scrollTrigger: {
-                        trigger: elem,
-                        start: '-10% 90%',
+        if (img && content) {
+            const startProjectAnimation = (elem, distance) => {
+                gsap.fromTo(
+                    elem,
+                    {
+                        x: `${tweenDirection}=${distance}`,
+                        autoAlpha: 0,
                     },
-                }
-            );
-        };
-        startProjectAnimation(img, '200');
-        startProjectAnimation(content, '400');
+                    {
+                        duration: 0.9,
+                        x: '0',
+                        autoAlpha: 1,
+                        ease: 'power3.inOut',
+                        scrollTrigger: {
+                            trigger: elem,
+                            start: '-10% 90%',
+                        },
+                    }
+                );
+            };
+            startProjectAnimation(img, '200');
+            startProjectAnimation(content, '400');
+        }
     }, []);
 
     return (
@@ -67,6 +69,7 @@ const ProjectExample = ({ projectData }) => {
             <ImageWrapper ref={imgRef} inverted={inverted ? 1 : 0}>
                 <Img fluid={coverImg.childImageSharp.fluid} alt={title} />
             </ImageWrapper>
+
             <InfoWrapper ref={contentRef} inverted={inverted ? 1 : 0}>
                 <ProjectTitle inverted={inverted ? 1 : 0}>{title}</ProjectTitle>
                 <Line />
@@ -79,7 +82,6 @@ const ProjectExample = ({ projectData }) => {
                         </ProjectItem>
                     ))}
                 </TechnologiesList>
-
                 <ButtonsWrapper>
                     <a
                         href={demoLink}

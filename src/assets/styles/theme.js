@@ -12,7 +12,7 @@ export const breakpoints = {
 };
 
 export const theme = {
-    primary: '#1E1F26',
+    primary: '#1a1b21',
     secondary: '#121212',
     tertiary: '#4D648D',
     fourth: '#D0E1F9',
@@ -33,7 +33,7 @@ export const theme = {
             secondary: `'Francois One', sans-serif`,
         },
         color: {
-            primary: '#e0e0e0',
+            primary: '#e3e3e3',
             secondary: '#141414',
         },
     },

@@ -13,7 +13,14 @@ const Subtitle = styled.h2`
     margin-top: ${({ $mTop }) => $mTop};
     color: ${({ $halfWidth, theme }) =>
         $halfWidth ? theme.fonts.color.secondary : theme.fonts.color.primary};
-
+    visibility: hidden;
+    will-change: transform, opacity;
+    p {
+        color: ${({ $halfWidth, theme }) =>
+            $halfWidth
+                ? theme.fonts.color.secondary
+                : theme.fonts.color.primary};
+    }
     ${({ theme }) => theme.mq.md} {
         margin: 1rem 0 2rem;
     }
@@ -35,16 +42,18 @@ const TemplateSubtitle = ({ children, mTop, halfWidth }) => {
 
         const header = headerRef.current;
 
-        gsap.from(header, {
-            duration: 1,
-            delay: 0.3,
-            autoAlpha: 0,
-            y: '+=50',
-            scrollTrigger: {
-                trigger: header,
-                start: 'top bottom-=20px',
-            },
-        });
+        if (header) {
+            gsap.from(header, {
+                duration: 1,
+                delay: 0.3,
+                autoAlpha: 0,
+                y: '+=50',
+                scrollTrigger: {
+                    trigger: header,
+                    start: 'top bottom-=20px',
+                },
+            });
+        }
     }, []);
 
     return (
@@ -55,7 +64,8 @@ const TemplateSubtitle = ({ children, mTop, halfWidth }) => {
 };
 
 TemplateSubtitle.propTypes = {
-    children: propTypes.string.isRequired,
+    children: propTypes.oneOfType([propTypes.string, propTypes.array])
+        .isRequired,
     mTop: propTypes.string,
     halfWidth: propTypes.bool,
 };

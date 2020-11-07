@@ -5,6 +5,8 @@ import propTypes from 'prop-types';
 const BtnWrapper = styled.div`
     position: relative;
     margin-top: ${props => props.marginTop};
+    visibility: ${({ $startAnimation }) =>
+        $startAnimation ? 'hidden' : 'inherit'};
 `;
 
 const Btn = styled.button`
@@ -128,12 +130,17 @@ const Button = ({
 
     // setting proportional button background based on actual button sizes
     useEffect(() => {
-        setHeight(buttonRef.current.offsetHeight);
-        setWidth(buttonRef.current.offsetWidth);
-    }, [submit]);
+        const setDimensions = () => {
+            setHeight(buttonRef.current.offsetHeight);
+            setWidth(buttonRef.current.offsetWidth);
+        };
+        window.addEventListener('resize', setDimensions);
+        buttonRef.current.addEventListener('resize', setDimensions);
+        setDimensions();
+    }, []);
 
     return (
-        <BtnWrapper marginTop={marginTop} ref={btnRef}>
+        <BtnWrapper marginTop={marginTop} ref={btnRef} $startAnimation={btnRef}>
             <Btn
                 ref={buttonRef}
                 size={size}

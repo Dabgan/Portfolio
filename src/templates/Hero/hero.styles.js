@@ -1,22 +1,26 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.header`
-    margin-top: 5rem;
-    min-height: 70vh;
     display: flex;
     align-items: center;
+    margin-top: 5rem;
+    min-height: 75vh;
+    ${({ theme }) => theme.mq.s} {
+        min-height: 90vh;
+        margin-top: 1rem;
+    }
     ${({ theme }) => theme.mq.lg} {
         position: relative;
+        margin-top: 2rem;
+        min-height: 75vh;
     }
 `;
-
 export const InnerWrapper = styled.div`
     display: flex;
     flex-flow: column;
     align-items: center;
     margin-bottom: 6rem;
 `;
-
 export const HeroTitle = styled.h1`
     font-size: 7.5rem;
     line-height: 7.5rem;
@@ -25,8 +29,9 @@ export const HeroTitle = styled.h1`
     display: flex;
     overflow: hidden;
     font-family: ${({ theme }) => theme.fonts.family.secondary};
-
     span {
+        visibility: hidden;
+        will-change: opacity;
         ::selection {
             color: ${({ theme }) => theme.fourth};
             background: ${({ theme }) => theme.primary};
@@ -46,18 +51,16 @@ export const HeroTitle = styled.h1`
         margin-top: 8rem;
     }
 `;
-
 export const HeroSubtitle = styled.h2`
     font-size: ${({ theme }) => theme.fontSize.m};
     font-weight: ${({ theme }) => theme.fonts.regular};
     text-align: center;
     margin-top: 4rem;
     color: ${({ theme }) => theme.fonts.color.secondary};
+    visibility: hidden;
     ${({ theme }) => theme.mq.lg} {
         font-size: ${({ theme }) => theme.fontSize.xl};
     }
 `;
 
-export const NameSpan = styled.span`
-    /* margin-left: 8px; */
-`;
+export const NameSpan = styled.span``;

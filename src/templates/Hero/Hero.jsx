@@ -23,33 +23,48 @@ const Hero = () => {
         const subtext = subtextRef.current;
         const button = buttonRef.current;
         const icon = subtext.children[1];
-        const shakeTween = gsap.timeline({
-            delay: 3.3,
-            repeat: -1,
-            repeatDelay: 4,
-        });
-        const tl = gsap.timeline();
 
-        gsap.set(icon, {
-            display: 'inline-block',
-            transformOrigin: '100% 100%',
-        });
+        if (letters && subtext && button && icon) {
+            const shakeTween = gsap.timeline({
+                delay: 3.3,
+                repeat: -1,
+                repeatDelay: 4,
+            });
+            const tl = gsap.timeline();
 
-        shakeTween.fromTo(
-            icon,
-            { rotation: 15 },
-            { duration: 2, rotation: 0, ease: Elastic.easeOut.config(3, 0.2) }
-        );
+            gsap.set(icon, {
+                display: 'inline-block',
+                transformOrigin: '100% 100%',
+            });
 
-        tl.addLabel('start')
-            .fromTo(
-                letters,
-                { autoAlpha: 0 },
-                { duration: 1, autoAlpha: 1, stagger: 0.2 },
-                'start'
-            )
-            .from(subtext, { delay: 1.4, autoAlpha: 0, y: '+=100' }, 'start')
-            .from(button, { delay: 2.2, autoAlpha: 0, y: '+=100' }, 'start');
+            shakeTween.fromTo(
+                icon,
+                { rotation: 15 },
+                {
+                    duration: 2,
+                    rotation: 0,
+                    ease: Elastic.easeOut.config(3, 0.2),
+                }
+            );
+
+            tl.addLabel('start')
+                .fromTo(
+                    letters,
+                    { autoAlpha: 0 },
+                    { duration: 1, autoAlpha: 1, stagger: 0.2 },
+                    'start'
+                )
+                .from(
+                    subtext,
+                    { delay: 1.4, autoAlpha: 0, y: '+=100' },
+                    'start'
+                )
+                .from(
+                    button,
+                    { delay: 2.2, autoAlpha: 0, y: '+=100' },
+                    'start'
+                );
+        }
     }, []);
 
     return (

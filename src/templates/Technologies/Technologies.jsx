@@ -1,80 +1,74 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, lazy, Suspense } from 'react';
 import Content from 'components/Content/Content';
 import TemplateHeader from 'components/Template Header/TemplateHeader';
 import TechnologyItem from 'components/TechnologyItem/TechnologyItem';
-import { theme } from 'assets/styles/theme';
+import Wave from 'components/Wave/Wave';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import DiagramAnimation from 'components/animations/DiagramAnimation';
-import {
-    Wrapper,
-    InnerWrapper,
-    List,
-    TopWave,
-    BottomWave,
-} from './technologies.styles';
+import { Wrapper, InnerWrapper, List, Loader } from './technologies.styles';
+
+const DiagramAnimation = lazy(() =>
+    import('../../components/animations/DiagramAnimation')
+);
+
+const renderLoader = () => <Loader />;
 
 const technologyListOne = [
-    'React',
     'HTML5',
     'CSS3',
     'SCSS',
+    'RWD',
     'Javascript (ES6+)',
-    'React Hooks',
-    'Redux',
-    'Figma',
-    'Styled Components',
-];
-const technologyListTwo = [
-    'Gatsby',
-    'GSAP',
-    'Jest & Enzyme',
     'GIT',
     'Github',
-    'RWD',
-    'Firebase',
-    'Bootstrap',
     'JQuery',
+    'Bootstrap',
+];
+const technologyListTwo = [
+    'React',
+    'React Hooks',
+    'Gatsby',
+    'GSAP',
+    'Redux',
+    'Firebase',
+    'Figma',
+    'Jest & Enzyme',
+    'Styled Components',
 ];
 
 const Technologies = () => {
     const listOneRef = useRef(null);
     const listTwoRef = useRef(null);
+    const isSR = typeof window === 'undefined';
 
     useEffect(() => {
         const lists = [listOneRef.current, listTwoRef.current];
         gsap.registerPlugin(ScrollTrigger);
 
-        lists.forEach(list => {
-            gsap.fromTo(
-                list.children,
-                { autoAlpha: 0, y: '+=40' },
-                {
-                    duration: 1,
-                    autoAlpha: 1,
-                    y: '0',
-                    stagger: 0.15,
-                    ease: 'power2.out',
-                    scrollTrigger: {
-                        trigger: list,
-                        start: '-10% 90%',
-                    },
-                }
-            );
-        });
+        if (lists) {
+            lists.forEach(list => {
+                gsap.fromTo(
+                    list.children,
+                    { autoAlpha: 0, y: '+=40' },
+                    {
+                        duration: 1,
+                        autoAlpha: 1,
+                        y: '0',
+                        stagger: 0.15,
+                        ease: 'power2.out',
+                        scrollTrigger: {
+                            trigger: list,
+                            start: '-10% 90%',
+                        },
+                    }
+                );
+            });
+        }
     }, []);
 
     return (
         <>
-            <TopWave
-                fill={theme.primary}
-                options={{
-                    height: 50,
-                    amplitude: 30,
-                    speed: 0.15,
-                    points: 3,
-                }}
-            />
+            <Wave top />
             <Wrapper id="skills">
                 <Content>
                     <TemplateHeader>Technologies</TemplateHeader>
@@ -93,11 +87,15 @@ const Technologies = () => {
                                 </TechnologyItem>
                             ))}
                         </List>
-                        <DiagramAnimation />
+                        {!isSR && (
+                            <Suspense fallback={renderLoader()}>
+                                <DiagramAnimation />
+                            </Suspense>
+                        )}
                     </InnerWrapper>
                 </Content>
             </Wrapper>
-            <BottomWave />
+            <Wave />
         </>
     );
 };

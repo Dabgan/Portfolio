@@ -51,7 +51,7 @@ const ContactForm = () => {
             )
             .then(
                 () => {
-                    setBtnMsg('Email send, thanks!');
+                    setBtnMsg('Email sent, thanks!');
                     setBtnColor('send');
                     resetForm();
                     resetBtn();
@@ -96,6 +96,7 @@ const ContactForm = () => {
                                 <Input
                                     type="email"
                                     name="email"
+                                    id="form-email"
                                     autoComplete="email"
                                     $valid={touched.email && !errors.email}
                                     $error={touched.email && errors.email}
@@ -106,7 +107,7 @@ const ContactForm = () => {
                                     }}
                                 />
                                 <Label
-                                    htmlFor="email"
+                                    htmlFor="form-email"
                                     touched={touched.email}
                                     focused={values.email || emailFocused}
                                 >
@@ -115,6 +116,7 @@ const ContactForm = () => {
                             </FormGroup>
                             <FormGroup>
                                 <Input
+                                    id="form-message"
                                     type="text"
                                     name="message"
                                     component="textarea"
@@ -128,7 +130,7 @@ const ContactForm = () => {
                                     }}
                                 />
                                 <Label
-                                    htmlFor="message"
+                                    htmlFor="form-message"
                                     focused={values.message || messageFocused}
                                 >
                                     message

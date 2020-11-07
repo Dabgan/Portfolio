@@ -6,6 +6,7 @@ module.exports = {
         description: `Welcome to my personal portfolio website!`,
         author: `Gabriel Daniluk`,
         previewImage: `${__dirname}/src/assets/images/portfolio.png`,
+        language: 'en',
     },
     plugins: [
         'gatsby-plugin-sharp',
@@ -41,11 +42,10 @@ module.exports = {
         {
             resolve: `gatsby-plugin-google-fonts`,
             options: {
-                fonts: [`Roboto:300,400,500,600,700`, `Francois One:400,700`],
+                fonts: [`Roboto:300,400`, `Francois One`],
                 display: 'swap',
             },
         },
-
         {
             resolve: 'gatsby-plugin-react-svg',
             options: {

@@ -8,7 +8,6 @@ import propTypes from 'prop-types';
 const LogoWrapper = styled.div`
     display: block;
     width: 48px;
-    /* height: 48px; */
     cursor: pointer;
     z-index: 5;
     ${({ theme }) => theme.mq.md} {
@@ -28,7 +27,7 @@ const Logo = ({ small }) => {
         query {
             logo: file(name: { eq: "Logo" }) {
                 childImageSharp {
-                    fluid(maxWidth: 64, pngQuality: 90) {
+                    fluid(maxWidth: 64, maxHeight: 64, pngQuality: 90) {
                         ...GatsbyImageSharpFluid
                     }
                 }

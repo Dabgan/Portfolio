@@ -6,6 +6,7 @@ import propTypes from 'prop-types';
 
 const SVGWrapper = styled.span`
     position: absolute;
+    visibility: hidden;
     top: ${({ $position }) => `${$position.top}px`};
     bottom: ${({ $position }) => `${$position.bottom}px`};
     right: ${({ $position }) => `${$position.right}px`};
