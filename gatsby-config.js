@@ -40,12 +40,10 @@ module.exports = {
             },
         },
         {
-            resolve: 'gatsby-plugin-web-font-loader',
+            resolve: `gatsby-plugin-google-fonts`,
             options: {
-                custom: {
-                    families: ['Roboto', 'FrancoisOne'],
-                    urls: ['fonts.css'],
-                },
+                fonts: [`Roboto:300,400`, `Francois One`],
+                display: 'swap',
             },
         },
         {

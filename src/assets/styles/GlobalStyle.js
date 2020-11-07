@@ -44,7 +44,6 @@ button, li {
 p {
     color: ${({ theme }) => theme.fonts.color.primary};
 }
-
 `;
 
 export default GlobalStyle;

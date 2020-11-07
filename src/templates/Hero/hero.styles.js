@@ -5,9 +5,14 @@ export const Wrapper = styled.header`
     align-items: center;
     margin-top: 5rem;
     min-height: 75vh;
+    ${({ theme }) => theme.mq.s} {
+        min-height: 90vh;
+        margin-top: 1rem;
+    }
     ${({ theme }) => theme.mq.lg} {
         position: relative;
         margin-top: 2rem;
+        min-height: 75vh;
     }
 `;
 export const InnerWrapper = styled.div`
