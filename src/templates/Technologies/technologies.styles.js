@@ -4,9 +4,14 @@ export const Wrapper = styled.section`
     background: ${({ theme }) => theme.primary};
     margin-top: -1rem;
     padding: 2rem 0;
+    min-height: 110vh;
     ${({ theme }) => theme.mq.lg} {
         padding-top: 5rem;
         padding-bottom: 4rem;
+        min-height: 88vh;
+    }
+    ${({ theme }) => theme.mq.md} {
+        min-height: 65vh;
     }
 `;
 
@@ -26,8 +31,13 @@ export const InnerWrapper = styled.div`
 export const List = styled.ul`
     display: flex;
     flex-flow: column;
+    width: 50%;
+    ${({ theme }) => theme.mq.md} {
+        padding-left: 2rem;
+    }
     ${({ theme }) => theme.mq.lg} {
         margin-right: 3rem;
+        width: auto;
     }
 `;
 export const Loader = styled.div`

@@ -5,6 +5,9 @@ export const Wrapper = styled.section`
     color: ${({ theme }) => theme.white};
     margin-top: -1rem;
     padding: 2.5rem 0;
+    ${({ theme }) => theme.mq.lg} {
+        min-height: 75rem;
+    }
 `;
 export const InnerWrapper = styled.section`
     ${({ theme }) => theme.mq.lg} {

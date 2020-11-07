@@ -135,6 +135,7 @@ const Button = ({
             setWidth(buttonRef.current.offsetWidth);
         };
         window.addEventListener('resize', setDimensions);
+        buttonRef.current.addEventListener('resize', setDimensions);
         setDimensions();
     }, []);
 

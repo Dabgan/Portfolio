@@ -1,22 +1,21 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.header`
-    margin-top: 5rem;
-    min-height: 70vh;
     display: flex;
     align-items: center;
+    margin-top: 5rem;
+    min-height: 75vh;
     ${({ theme }) => theme.mq.lg} {
         position: relative;
+        margin-top: 2rem;
     }
 `;
-
 export const InnerWrapper = styled.div`
     display: flex;
     flex-flow: column;
     align-items: center;
     margin-bottom: 6rem;
 `;
-
 export const HeroTitle = styled.h1`
     font-size: 7.5rem;
     line-height: 7.5rem;
@@ -47,7 +46,6 @@ export const HeroTitle = styled.h1`
         margin-top: 8rem;
     }
 `;
-
 export const HeroSubtitle = styled.h2`
     font-size: ${({ theme }) => theme.fontSize.m};
     font-weight: ${({ theme }) => theme.fonts.regular};

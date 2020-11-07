@@ -40,13 +40,14 @@ module.exports = {
             },
         },
         {
-            resolve: `gatsby-plugin-google-fonts`,
+            resolve: 'gatsby-plugin-web-font-loader',
             options: {
-                fonts: [`Roboto:300,400,500,600,700`, `Francois One:400,700`],
-                display: 'swap',
+                custom: {
+                    families: ['Roboto', 'FrancoisOne'],
+                    urls: ['fonts.css'],
+                },
             },
         },
-
         {
             resolve: 'gatsby-plugin-react-svg',
             options: {

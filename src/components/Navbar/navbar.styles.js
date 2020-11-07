@@ -10,6 +10,7 @@ export const Wrapper = styled.nav`
     visibility: hidden;
     transition: all 0.5s ease-in-out;
     will-change: transform, opacity;
+    transform: translateY(0px);
     ${({ direction }) =>
         direction === 1 &&
         css`
@@ -19,8 +20,13 @@ export const Wrapper = styled.nav`
         direction === -1 &&
         isActive &&
         css`
+            transform: translateY(0px);
             box-shadow: 0 2px 5px -2px ${({ theme }) => theme.gray100};
         `}
+    ${({ theme }) => theme.mq.lg} {
+    min-height: 7rem;
+    margin-top: 2rem;
+    }
 `;
 export const Navigation = styled.div`
     display: flex;

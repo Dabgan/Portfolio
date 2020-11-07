@@ -9,7 +9,7 @@ import { Wrapper, Navigation, Navbox } from './navbar.styles';
 
 const Navbar = () => {
     const [scrollDirection, setScrollDirection] = useState(0);
-    const [isActive, setIsActive] = useState(false);
+    const [isActive, setIsActive] = useState(true);
     const navLinksRef = useRef(null);
     const navigationRef = useRef(null);
 
