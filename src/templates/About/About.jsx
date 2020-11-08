@@ -1,44 +1,11 @@
-import React, { useEffect, useRef, lazy, Suspense } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import React from 'react';
 import Content from 'components/Content/Content';
 import TemplateHeader from 'components/Template Header/TemplateHeader';
 import TemplateSubtitle from 'components/TemplateSubtitle/TemplateSubtitle';
 import Wave from 'components/Wave/Wave';
 import { Wrapper, InnerWrapper, Description } from './about.styles';
 
-const AboutAnimation = lazy(() =>
-    import('../../components/animations/AboutAnimation')
-);
-const renderLoader = () => <div />;
-
 const About = () => {
-    const descriptionRef = useRef(null);
-    const isSR = typeof window === 'undefined';
-
-    useEffect(() => {
-        gsap.registerPlugin(ScrollTrigger);
-
-        const paragraphs = descriptionRef.current.children;
-        if (paragraphs) {
-            gsap.fromTo(
-                [paragraphs],
-                { y: `+=30`, autoAlpha: 0 },
-                {
-                    duration: 1.2,
-                    y: '0',
-                    autoAlpha: 1,
-                    ease: 'power1.inOut',
-                    stagger: 0.5,
-                    scrollTrigger: {
-                        trigger: paragraphs,
-                        start: '-10% 90%',
-                    },
-                }
-            );
-        }
-    }, []);
-
     return (
         <>
             <Wave top />
@@ -49,7 +16,7 @@ const About = () => {
                         just me talking about myself
                     </TemplateSubtitle>
                     <InnerWrapper>
-                        <Description ref={descriptionRef}>
+                        <Description>
                             <p>
                                 My name is Gabriel and I have always been
                                 interested in technology. When it comes to
@@ -79,12 +46,6 @@ const About = () => {
                                 industry.
                             </p>
                         </Description>
-
-                        {!isSR && (
-                            <Suspense fallback={renderLoader()}>
-                                <AboutAnimation />
-                            </Suspense>
-                        )}
                     </InnerWrapper>
                 </Content>
             </Wrapper>

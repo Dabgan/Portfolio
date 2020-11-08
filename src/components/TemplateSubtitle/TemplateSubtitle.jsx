@@ -1,8 +1,6 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import propTypes from 'prop-types';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 const Subtitle = styled.h2`
     font-size: ${({ theme }) => theme.fontSize.s};
@@ -13,8 +11,6 @@ const Subtitle = styled.h2`
     margin-top: ${({ $mTop }) => $mTop};
     color: ${({ $halfWidth, theme }) =>
         $halfWidth ? theme.fonts.color.secondary : theme.fonts.color.primary};
-    visibility: hidden;
-    will-change: transform, opacity;
     p {
         color: ${({ $halfWidth, theme }) =>
             $halfWidth
@@ -35,29 +31,8 @@ const Subtitle = styled.h2`
 `;
 
 const TemplateSubtitle = ({ children, mTop, halfWidth }) => {
-    const headerRef = useRef(null);
-
-    useEffect(() => {
-        gsap.registerPlugin(ScrollTrigger);
-
-        const header = headerRef.current;
-
-        if (header) {
-            gsap.from(header, {
-                duration: 1,
-                delay: 0.3,
-                autoAlpha: 0,
-                y: '+=50',
-                scrollTrigger: {
-                    trigger: header,
-                    start: 'top bottom-=20px',
-                },
-            });
-        }
-    }, []);
-
     return (
-        <Subtitle ref={headerRef} $mTop={mTop} $halfWidth={halfWidth}>
+        <Subtitle $mTop={mTop} $halfWidth={halfWidth}>
             {children}
         </Subtitle>
     );

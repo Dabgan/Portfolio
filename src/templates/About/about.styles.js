@@ -6,12 +6,13 @@ export const Wrapper = styled.section`
     margin-top: -1rem;
     padding: 2.5rem 0;
     ${({ theme }) => theme.mq.lg} {
-        min-height: 75rem;
+        min-height: 40rem;
     }
 `;
 export const InnerWrapper = styled.section`
     ${({ theme }) => theme.mq.lg} {
         display: flex;
+        justify-content: center;
     }
 `;
 export const Description = styled.div`
@@ -22,14 +23,13 @@ export const Description = styled.div`
     text-shadow: 1px 1px 2px ${({ theme }) => theme.fonts.color.secondary};
     p {
         margin: 2rem 0;
-        visibility: hidden;
     }
 
     ${({ theme }) => theme.mq.lg} {
         font-size: ${({ theme }) => theme.fontSize.m};
         padding: ${({ theme }) => theme.padding.l}
             ${({ theme }) => theme.padding.l} 0 0;
-        flex: 0 0 50%;
+        flex: 0 0 100%;
         text-align: justify;
         text-justify: inter-word;
         letter-spacing: 0.05rem;

@@ -1,10 +1,8 @@
-import React, { useEffect, useRef, lazy, Suspense } from 'react';
+import React, { lazy, Suspense } from 'react';
 import Content from 'components/Content/Content';
 import TemplateHeader from 'components/Template Header/TemplateHeader';
 import TechnologyItem from 'components/TechnologyItem/TechnologyItem';
 import Wave from 'components/Wave/Wave';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Wrapper, InnerWrapper, List, Loader } from './technologies.styles';
 
 const DiagramAnimation = lazy(() =>
@@ -37,34 +35,7 @@ const technologyListTwo = [
 ];
 
 const Technologies = () => {
-    const listOneRef = useRef(null);
-    const listTwoRef = useRef(null);
     const isSR = typeof window === 'undefined';
-
-    useEffect(() => {
-        const lists = [listOneRef.current, listTwoRef.current];
-        gsap.registerPlugin(ScrollTrigger);
-
-        if (lists) {
-            lists.forEach(list => {
-                gsap.fromTo(
-                    list.children,
-                    { autoAlpha: 0, y: '+=40' },
-                    {
-                        duration: 1,
-                        autoAlpha: 1,
-                        y: '0',
-                        stagger: 0.15,
-                        ease: 'power2.out',
-                        scrollTrigger: {
-                            trigger: list,
-                            start: '-10% 90%',
-                        },
-                    }
-                );
-            });
-        }
-    }, []);
 
     return (
         <>
@@ -73,14 +44,14 @@ const Technologies = () => {
                 <Content>
                     <TemplateHeader>Technologies</TemplateHeader>
                     <InnerWrapper>
-                        <List ref={listOneRef}>
+                        <List>
                             {technologyListOne.map(item => (
                                 <TechnologyItem key={item}>
                                     {item}
                                 </TechnologyItem>
                             ))}
                         </List>
-                        <List ref={listTwoRef}>
+                        <List>
                             {technologyListTwo.map(item => (
                                 <TechnologyItem key={item}>
                                     {item}

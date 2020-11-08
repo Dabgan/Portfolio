@@ -13,8 +13,6 @@ const Item = styled.li`
     margin: 0.6rem 0;
     height: 5rem;
     color: ${({ theme }) => theme.fonts.color.primary};
-    visibility: hidden;
-    will-change: transform, opacity;
     ${({ theme }) => theme.mq.md} {
         font-size: ${({ theme }) => theme.fontSize.m};
     }
