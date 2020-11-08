@@ -4,7 +4,6 @@ export const Wrapper = styled.section`
     background: ${({ theme }) => theme.primary};
     margin-top: -1rem;
     padding: 2rem 0;
-    min-height: 110vh;
     ${({ theme }) => theme.mq.lg} {
         padding-top: 5rem;
         padding-bottom: 4rem;

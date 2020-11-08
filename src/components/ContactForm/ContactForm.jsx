@@ -11,6 +11,7 @@ import {
     FormGroup,
     StyledForm,
     SubmitButton,
+    ErrorsContainer,
 } from './contactForm.styles';
 
 const initialValues = { email: '', message: '' };
@@ -137,20 +138,22 @@ const ContactForm = () => {
                                 </Label>
                             </FormGroup>
                             <FormGroup mb="2rem">
-                                <ErrorMessage name="email">
-                                    {msg => (
-                                        <StyledInlineErrorMessage>
-                                            {msg}
+                                <ErrorsContainer>
+                                    <ErrorMessage name="email">
+                                        {msg => (
+                                            <StyledInlineErrorMessage>
+                                                {msg}
+                                            </StyledInlineErrorMessage>
+                                        )}
+                                    </ErrorMessage>
+                                    {errors.message && touched.message && (
+                                        <StyledInlineErrorMessage $message>
+                                            {errors.message}
                                         </StyledInlineErrorMessage>
                                     )}
-                                </ErrorMessage>
-                                {errors.message && touched.message && (
-                                    <StyledInlineErrorMessage $message>
-                                        {errors.message}
-                                    </StyledInlineErrorMessage>
-                                )}
+                                </ErrorsContainer>
                                 <SubmitButton
-                                    marginTop="1rem"
+                                    marginTop="0.5rem"
                                     size="medium"
                                     submit={btnColor}
                                     disabled={
