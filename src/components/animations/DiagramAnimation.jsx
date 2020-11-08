@@ -53,7 +53,7 @@ const DiagramAnimation = () => {
             gsap.set(diagramLine, { strokeDasharray: pathLength });
 
             const timeLine = gsap.timeline({
-                defaults: { ease: 'power1.out', delay: 1 },
+                defaults: { ease: 'power1.out', delay: 0.5 },
                 scrollTrigger: {
                     trigger: '#diagram',
                     toggleActions: 'play pause resume pause',
@@ -71,27 +71,27 @@ const DiagramAnimation = () => {
 
             timeLine
                 .addLabel('startDiagramBars')
-                .to(...createBarTween(0, 1.48))
+                .to(...createBarTween(0, 1.258))
                 .addLabel('finishBar1')
-                .to(...createBarTween(1, 2.36))
+                .to(...createBarTween(1, 2.006))
                 .addLabel('finishBar2')
-                .to(...createBarTween(2, 2.96))
+                .to(...createBarTween(2, 2.516))
                 .addLabel('finishBar3')
-                .to(...createBarTween(3, 3.52))
+                .to(...createBarTween(3, 2.992))
                 .addLabel('finishBar4')
-                .to(...createBarTween(4, 4.52))
+                .to(...createBarTween(4, 3.842))
                 .addLabel('finishBar5')
                 .fromTo(
                     hop,
                     { scaleY: 0 },
-                    { scaleY: 1, duration: 4.52, autoAlpha: 1 },
+                    { scaleY: 1, duration: 3.842, autoAlpha: 1 },
                     'startDiagramBars'
                 )
                 .fromTo(
                     diagramLine,
                     { strokeDashoffset: pathLength },
                     {
-                        duration: 4.52,
+                        duration: 3.842,
                         strokeDashoffset: 0,
                         autoAlpha: 1,
                     },

@@ -21,18 +21,11 @@ export const HeroTitle = styled.h1`
     line-height: 7.5rem;
     letter-spacing: 1.5rem;
     margin: 3rem 0 0 5px;
-    display: flex;
-    overflow: hidden;
     font-family: ${({ theme }) => theme.fonts.family.secondary};
-    span {
-        visibility: hidden;
-        will-change: opacity;
-        ::selection {
-            color: ${({ theme }) => theme.fourth};
-            background: ${({ theme }) => theme.primary};
-        }
+    ::selection {
+        color: ${({ theme }) => theme.fourth};
+        background: ${({ theme }) => theme.primary};
     }
-
     ${({ theme }) => theme.mq.md} {
         font-size: 20rem;
         line-height: 20rem;

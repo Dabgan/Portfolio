@@ -11,7 +11,7 @@ export const Wrapper = styled.section`
         margin-top: -3rem;
     }
     ${({ theme }) => theme.mq.lg} {
-        min-height: 100vh;
+        min-height: 95vh;
         margin-top: -6rem;
         padding: ${({ theme }) => theme.padding.xl} 0 0;
     }

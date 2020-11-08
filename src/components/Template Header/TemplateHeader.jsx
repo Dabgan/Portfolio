@@ -1,8 +1,6 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import styled, { css } from 'styled-components';
 import propTypes from 'prop-types';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 const Header = styled.h2`
     text-align: center;
@@ -13,8 +11,6 @@ const Header = styled.h2`
     letter-spacing: 0.25rem;
     color: ${({ $color }) =>
         $color ? ({ theme }) => theme.primary : ({ theme }) => theme.white};
-    visibility: hidden;
-    will-change: transform, opacity;
     ${({ theme }) => theme.mq.lg} {
         text-align: left;
         font-size: ${({ theme }) => theme.fontSize.xxxl};
@@ -28,27 +24,8 @@ const Header = styled.h2`
 `;
 
 const TemplateHeader = ({ children, color, inverted }) => {
-    const headerRef = useRef(null);
-
-    useEffect(() => {
-        gsap.registerPlugin(ScrollTrigger);
-
-        const header = headerRef.current;
-        if (header) {
-            gsap.from(header, {
-                duration: 1,
-                autoAlpha: 0,
-                y: '+=50',
-                scrollTrigger: {
-                    trigger: header,
-                    start: 'top bottom-=20px',
-                },
-            });
-        }
-    }, []);
-
     return (
-        <Header ref={headerRef} $color={color} $inverted={inverted}>
+        <Header $color={color} $inverted={inverted}>
             {children}
         </Header>
     );

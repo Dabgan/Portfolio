@@ -32,14 +32,14 @@ const Contact = () => {
                             <MediaQuery minDeviceWidth={1024}>
                                 <DrawSvgAnimation
                                     position={{ right: -30, top: 13 }}
-                                    animation={{ speed: 4, delay: 1.5 }}
+                                    animation={{ speed: 3, delay: 1.5 }}
                                 >
                                     <Circle />
                                 </DrawSvgAnimation>
                                 <MediaQuery minDeviceWidth={1366}>
                                     <DrawSvgAnimation
                                         position={{ right: 350, top: -60 }}
-                                        animation={{ delay: 4.3, speed: 3.8 }}
+                                        animation={{ delay: 3.3, speed: 3.8 }}
                                     >
                                         <Arrow />
                                     </DrawSvgAnimation>

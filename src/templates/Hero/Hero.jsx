@@ -13,22 +13,20 @@ import {
 } from './hero.styles';
 
 const Hero = () => {
-    const textRef = useRef(null);
     const subtextRef = useRef(null);
     const buttonRef = useRef(null);
     gsap.registerPlugin(Elastic);
 
     useEffect(() => {
-        const letters = textRef.current.children;
         const subtext = subtextRef.current;
         const button = buttonRef.current;
         const icon = subtext.children[1];
 
-        if (letters && subtext && button && icon) {
+        if (subtext && button && icon) {
             const shakeTween = gsap.timeline({
-                delay: 3.3,
+                delay: 2,
                 repeat: -1,
-                repeatDelay: 4,
+                repeatDelay: 3.5,
             });
             const tl = gsap.timeline();
 
@@ -48,22 +46,12 @@ const Hero = () => {
             );
 
             tl.addLabel('start')
-                .fromTo(
-                    letters,
-                    { autoAlpha: 0 },
-                    { duration: 1, autoAlpha: 1, stagger: 0.2 },
-                    'start'
-                )
                 .from(
                     subtext,
-                    { delay: 1.4, autoAlpha: 0, y: '+=100' },
+                    { delay: 0.3, autoAlpha: 0, y: '+=100' },
                     'start'
                 )
-                .from(
-                    button,
-                    { delay: 2.2, autoAlpha: 0, y: '+=100' },
-                    'start'
-                );
+                .from(button, { delay: 1, autoAlpha: 0, y: '+=100' }, 'start');
         }
     }, []);
 
@@ -71,13 +59,7 @@ const Hero = () => {
         <Wrapper>
             <Content>
                 <InnerWrapper>
-                    <HeroTitle ref={textRef}>
-                        <span>H</span>
-                        <span>E</span>
-                        <span>L</span>
-                        <span>L</span>
-                        <span>O</span>
-                    </HeroTitle>
+                    <HeroTitle>HELLO</HeroTitle>
                     <HeroSubtitle ref={subtextRef}>
                         I’m <NameSpan>Gabriel</NameSpan>. I create websites and
                         web applications.

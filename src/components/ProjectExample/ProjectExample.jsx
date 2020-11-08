@@ -48,7 +48,7 @@ const ProjectExample = ({ projectData }) => {
                         autoAlpha: 0,
                     },
                     {
-                        duration: 0.9,
+                        duration: 0.8,
                         x: '0',
                         autoAlpha: 1,
                         ease: 'power3.inOut',

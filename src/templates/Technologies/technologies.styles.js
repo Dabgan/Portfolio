@@ -13,7 +13,6 @@ export const Wrapper = styled.section`
         min-height: 65vh;
     }
 `;
-
 export const InnerWrapper = styled.div`
     display: flex;
     align-items: center;
