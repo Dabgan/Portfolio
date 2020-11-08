@@ -23,7 +23,7 @@ export const FormWrapper = styled.div`
         flex: 1;
         padding: 2.5rem 1.5rem 0;
         margin: 0 5rem 0 3rem;
-        max-height: 50rem;
+        max-height: 51rem;
     }
     ${({ theme }) => theme.mq.md} {
         margin: 0 0;
@@ -44,12 +44,10 @@ export const FormGroup = styled.div`
     position: relative;
     padding: 1rem 0 0.5rem;
     z-index: 1;
-    margin: 0.2rem 0;
+    margin-bottom: ${({ mb }) => mb};
     ${({ theme }) => theme.mq.lg} {
         margin: 0 2rem;
-        margin-bottom: ${({ mb }) => mb};
     }
-    margin-bottom: ${({ mb }) => mb};
 `;
 
 export const Label = styled.label`
@@ -125,6 +123,14 @@ export const Input = styled(Field)`
     }
 `;
 
+export const ErrorsContainer = styled.div`
+    width: 100%;
+    text-align: center;
+    min-height: 30px;
+    ${({ theme }) => theme.mq.md} {
+        min-height: 36px;
+    }
+`;
 export const StyledInlineErrorMessage = styled.div`
     color: ${({ theme }) => theme.error};
     font-size: ${({ theme }) => theme.fontSize.xxs};

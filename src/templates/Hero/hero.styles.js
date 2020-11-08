@@ -3,12 +3,7 @@ import styled from 'styled-components';
 export const Wrapper = styled.header`
     display: flex;
     align-items: center;
-    margin-top: 5rem;
-    min-height: 75vh;
-    ${({ theme }) => theme.mq.s} {
-        min-height: 90vh;
-        margin-top: 1rem;
-    }
+    min-height: 100vh;
     ${({ theme }) => theme.mq.lg} {
         position: relative;
         margin-top: 2rem;
@@ -59,7 +54,7 @@ export const HeroSubtitle = styled.h2`
     color: ${({ theme }) => theme.fonts.color.secondary};
     visibility: hidden;
     ${({ theme }) => theme.mq.lg} {
-        font-size: ${({ theme }) => theme.fontSize.xl};
+        font-size: ${({ theme }) => theme.fontSize.l};
     }
 `;
 
