@@ -15,9 +15,9 @@ import {
 const Hero = () => {
     const subtextRef = useRef(null);
     const buttonRef = useRef(null);
-    gsap.registerPlugin(Elastic);
 
     useEffect(() => {
+        gsap.registerPlugin(Elastic);
         const subtext = subtextRef.current;
         const button = buttonRef.current;
         const icon = subtext.children[1];

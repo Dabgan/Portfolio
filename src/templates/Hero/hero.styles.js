@@ -4,6 +4,10 @@ export const Wrapper = styled.header`
     display: flex;
     align-items: center;
     min-height: 100vh;
+
+    ${({ theme }) => theme.mq.md} {
+        min-height: 55vh;
+    }
     ${({ theme }) => theme.mq.lg} {
         position: relative;
         margin-top: 2rem;

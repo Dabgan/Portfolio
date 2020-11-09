@@ -21,21 +21,18 @@ export const InnerWrapper = styled.div`
     margin-top: 3rem;
     ${({ theme }) => theme.mq.lg} {
         margin-top: 5rem;
+        padding-left: 2rem;
     }
     ${({ theme }) => theme.mq.md} {
-        justify-content: space-around;
+        justify-content: flex-start;
     }
 `;
 export const List = styled.ul`
     display: flex;
     flex-flow: column;
     width: 50%;
-    ${({ theme }) => theme.mq.md} {
-        padding-left: 2rem;
-    }
     ${({ theme }) => theme.mq.lg} {
-        margin-right: 3rem;
-        width: auto;
+        width: 25%;
     }
 `;
 export const Loader = styled.div`
