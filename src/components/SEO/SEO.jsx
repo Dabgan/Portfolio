@@ -2,6 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { graphql, useStaticQuery } from 'gatsby';
 import propTypes from 'prop-types';
+import portfolio from '../../assets/images/portfolio.png';
 
 const detailsQuery = graphql`
     query {
@@ -30,7 +31,7 @@ const SEO = ({ title, description, author, previewImage, lang }) => {
         title: title || defaultTitle,
         description: description || defaultDescription,
         author: author || defaultAuthor,
-        previewImage: previewImage || defaultImage,
+        previewImage: portfolio || previewImage || defaultImage,
         lang: lang || defaultLanguage,
     };
 

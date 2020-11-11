@@ -3,9 +3,9 @@ const path = require('path');
 module.exports = {
     siteMetadata: {
         title: `Gabriel Daniluk - Portfolio`,
-        description: `Welcome to my personal portfolio website!`,
+        description: `Frontend Developer and React enthusiast interested in building creative websites and web applications`,
         author: `Gabriel Daniluk`,
-        previewImage: `${__dirname}/src/assets/images/portfolio.png`,
+        previewImage: `/src/assets/images/portfolio.png`,
         language: 'en',
     },
     plugins: [
