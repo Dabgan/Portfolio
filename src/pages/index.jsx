@@ -10,20 +10,22 @@ import Footer from '../components/Footer/Footer';
 import Navbar from '../components/Navbar/Navbar';
 import SEO from '../components/SEO/SEO';
 
-const IndexPage = () => (
-    <Theme>
-        <SEO />
-        <Navbar />
-        <Hero />
-        <main>
-            <Technologies />
-            <Projects />
-            <About />
-            <Contact />
-            <Footer />
-            <GlobalStyle />
-        </main>
-    </Theme>
-);
+const IndexPage = () => {
+    return (
+        <Theme>
+            <Navbar />
+            <Hero />
+            <main>
+                <Technologies />
+                <Projects />
+                <About />
+                <Contact />
+                <Footer />
+                <GlobalStyle />
+            </main>
+            <SEO />
+        </Theme>
+    );
+};
 
 export default IndexPage;

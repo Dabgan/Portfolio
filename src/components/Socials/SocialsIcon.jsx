@@ -1,6 +1,6 @@
 import React from 'react';
-import propTypes from 'prop-types';
 import MediaQuery from 'react-responsive';
+import propTypes from 'prop-types';
 
 import { Item, Icon, ItemDesc, Name } from './socialsIcon.styles';
 

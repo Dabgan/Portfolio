@@ -4,6 +4,7 @@ import TemplateHeader from 'components/Template Header/TemplateHeader';
 import TechnologyItem from 'components/TechnologyItem/TechnologyItem';
 import Wave from 'components/Wave/Wave';
 import { Wrapper, InnerWrapper, List, Loader } from './technologies.styles';
+import CheckRender from '../../components/CheckRender/CheckRender';
 
 const DiagramAnimation = lazy(() =>
     import('../../components/animations/DiagramAnimation')
@@ -35,8 +36,6 @@ const technologyListTwo = [
 ];
 
 const Technologies = () => {
-    const isSR = typeof window === 'undefined';
-
     return (
         <>
             <Wave top />
@@ -58,11 +57,11 @@ const Technologies = () => {
                                 </TechnologyItem>
                             ))}
                         </List>
-                        {!isSR && (
+                        <CheckRender>
                             <Suspense fallback={renderLoader()}>
                                 <DiagramAnimation />
                             </Suspense>
-                        )}
+                        </CheckRender>
                     </InnerWrapper>
                 </Content>
             </Wrapper>

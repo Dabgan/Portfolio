@@ -1,10 +1,10 @@
 import React from 'react';
-import Logo from 'components/Logo/Logo';
 import styled from 'styled-components';
+import MediaQuery from 'react-responsive';
+import Logo from 'components/Logo/Logo';
 import { GrLinkedinOption } from 'react-icons/gr';
 import { MdEmail } from 'react-icons/md';
 import { FiGithub } from 'react-icons/fi';
-import MediaQuery from 'react-responsive';
 import SocialsIcon from './SocialsIcon';
 
 const Wrapper = styled.div`

@@ -1,13 +1,13 @@
 import React, { lazy, Suspense } from 'react';
+import MediaQuery from 'react-responsive';
 import Content from 'components/Content/Content';
 import TemplateHeader from 'components/Template Header/TemplateHeader';
-import ContactForm from 'components/ContactForm/ContactForm';
-import MediaQuery from 'react-responsive';
-import Socials from 'components/Socials/Socials';
+import TemplateSubtitle from 'components/TemplateSubtitle/TemplateSubtitle';
 import Circle from 'assets/svg/circle.inline.svg';
 import Arrow from 'assets/svg/arrow.inline.svg';
-import TemplateSubtitle from 'components/TemplateSubtitle/TemplateSubtitle';
-
+import ContactForm from 'components/ContactForm/ContactForm';
+import CheckRender from 'components/CheckRender/CheckRender';
+import Socials from 'components/Socials/Socials';
 import {
     Wrapper,
     InnerWrapper,
@@ -21,13 +21,11 @@ const DrawSvgAnimation = lazy(() =>
 const renderLoader = () => <div />;
 
 const Contact = () => {
-    const isSR = typeof window === 'undefined';
-
     return (
         <Wrapper id="contact">
             <Content>
                 <AnimationWrapper>
-                    {!isSR && (
+                    <CheckRender>
                         <Suspense fallback={renderLoader()}>
                             <MediaQuery minDeviceWidth={1024}>
                                 <DrawSvgAnimation
@@ -39,14 +37,17 @@ const Contact = () => {
                                 <MediaQuery minDeviceWidth={1366}>
                                     <DrawSvgAnimation
                                         position={{ right: 350, top: -60 }}
-                                        animation={{ delay: 3.3, speed: 3.8 }}
+                                        animation={{
+                                            delay: 3.3,
+                                            speed: 3,
+                                        }}
                                     >
                                         <Arrow />
                                     </DrawSvgAnimation>
                                 </MediaQuery>
                             </MediaQuery>
                         </Suspense>
-                    )}
+                    </CheckRender>
                     <TemplateHeader inverted>Contact</TemplateHeader>
                 </AnimationWrapper>
                 <InnerWrapper>
@@ -62,10 +63,10 @@ const Contact = () => {
                     </InfoWrapper>
                     <ContactForm />
                 </InnerWrapper>
+                <MediaQuery maxDeviceWidth={786}>
+                    <Socials />
+                </MediaQuery>
             </Content>
-            <MediaQuery maxDeviceWidth={786}>
-                <Socials />
-            </MediaQuery>
         </Wrapper>
     );
 };
