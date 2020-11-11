@@ -5,8 +5,6 @@ export const Wrapper = styled.section`
     color: ${({ theme }) => theme.white};
     margin-top: -2rem;
     padding: 5rem 0 0;
-    overflow: hidden;
-
     ${({ theme }) => theme.mq.md} {
         margin-top: -3rem;
     }

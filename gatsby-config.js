@@ -9,10 +9,17 @@ module.exports = {
         language: 'en',
     },
     plugins: [
-        'gatsby-plugin-styled-components',
         'gatsby-plugin-sharp',
         'gatsby-plugin-react-helmet',
         'gatsby-transformer-sharp',
+        'gatsby-plugin-styled-components',
+        {
+            resolve: `gatsby-plugin-google-fonts`,
+            options: {
+                fonts: [`Roboto:300,400`, `Francois One`],
+                display: 'block',
+            },
+        },
         {
             resolve: `gatsby-source-filesystem`,
             options: {
@@ -40,13 +47,6 @@ module.exports = {
             },
         },
         {
-            resolve: `gatsby-plugin-google-fonts`,
-            options: {
-                fonts: [`Roboto:300,400`, `Francois One`],
-                display: 'swap',
-            },
-        },
-        {
             resolve: 'gatsby-plugin-react-svg',
             options: {
                 rule: {
@@ -64,6 +64,7 @@ module.exports = {
                 icon: `src/assets/images/Logo.png`,
             },
         },
+
         'gatsby-plugin-offline',
     ],
 };

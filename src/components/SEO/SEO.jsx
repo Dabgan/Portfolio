@@ -93,12 +93,14 @@ SEO.propTypes = {
     description: propTypes.string,
     author: propTypes.string,
     previewImage: propTypes.string,
+    lang: propTypes.string,
 };
 SEO.defaultProps = {
     title: null,
     author: null,
     description: null,
     previewImage: null,
+    lang: 'en',
 };
 
 export default SEO;

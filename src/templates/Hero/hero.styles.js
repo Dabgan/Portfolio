@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Wrapper = styled.header`
     display: flex;
     align-items: center;
-    min-height: 100vh;
+    min-height: 90vh;
 
     ${({ theme }) => theme.mq.md} {
         min-height: 55vh;
@@ -25,6 +25,9 @@ export const HeroTitle = styled.h1`
     line-height: 7.5rem;
     letter-spacing: 1.5rem;
     margin: 3rem 0 0 5px;
+    display: flex;
+    overflow: hidden;
+    visibility: hidden;
     font-family: ${({ theme }) => theme.fonts.family.secondary};
     ::selection {
         color: ${({ theme }) => theme.fourth};
@@ -35,7 +38,6 @@ export const HeroTitle = styled.h1`
         line-height: 20rem;
         margin-top: 5rem;
     }
-
     ${({ theme }) => theme.mq.xl} {
         font-size: 30rem;
         line-height: 30rem;
