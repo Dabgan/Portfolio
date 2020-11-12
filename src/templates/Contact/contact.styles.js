@@ -5,11 +5,13 @@ export const Wrapper = styled.section`
     color: ${({ theme }) => theme.white};
     margin-top: -2rem;
     padding: 5rem 0 0;
-    ${({ theme }) => theme.mq.md} {
-        margin-top: -3rem;
-    }
-    ${({ theme }) => theme.mq.lg} {
+
+    ${({ theme }) => theme.mq.xl} {
         min-height: 95vh;
+    }
+
+    ${({ theme }) => theme.mq.lg} {
+        min-height: auto;
         margin-top: -6rem;
         padding: ${({ theme }) => theme.padding.xl} 0 0;
     }
