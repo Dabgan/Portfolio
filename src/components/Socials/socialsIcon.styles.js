@@ -22,7 +22,7 @@ export const Icon = styled.div`
         width: calc(100% - 5px);
         background: ${({ theme }) => theme.white};
         position: absolute;
-        top: 3px;
+        top: 8px;
         left: -3px;
         z-index: -1;
         transition: all 0.3s ease-in-out;

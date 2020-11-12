@@ -31,7 +31,7 @@ const technologyListTwo = [
     'Redux',
     'Firebase',
     'Figma',
-    'Jest & Enzyme',
+    'Jest & React TL',
     'Styled Components',
 ];
 
