@@ -2,7 +2,7 @@
 
 My personal website made with Gatsby. You can check it live [here](https://www.gabrieldaniluk.pl/).
 
-![main view](https://i.imgur.com/VyvyZ6E.png "main page preview")
+![main view](https://i.imgur.com/0YeV1cU.png "main page preview")
 
 ## Technologies
 
