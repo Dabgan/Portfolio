@@ -21,9 +21,13 @@ const StyledFooter = styled.footer`
 `;
 
 const Footer = () => {
+    const getYear = () => {
+        return new Date().getFullYear();
+    };
+
     return (
         <StyledFooter>
-            © 2020 Gabriel Daniluk - All rights reserved.
+            © {getYear()} Gabriel Daniluk - All rights reserved.
         </StyledFooter>
     );
 };

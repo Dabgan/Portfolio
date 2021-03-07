@@ -1,5 +1,5 @@
 {
-    "order": 3,
+    "order": 4,
     "title": "Portfolio",
     "introduction": "My personal website. First project I made with Gatsby.",
     "description": "My personal website. First project I made with Gatsby. Throughout this project I learned how to use GraphQL to get desired data and how to put more life into the page by using GSAP animations.",
@@ -14,5 +14,5 @@
     "codeLink": "https://github.com/Dabgan/Portfolio",
     "demoLink": "https://www.gabrieldaniluk.pl/",
     "coverImg": "../../assets/images/portfolio.png",
-    "inverted": false
+    "inverted": true
 }
