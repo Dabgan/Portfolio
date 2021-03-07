@@ -13,6 +13,7 @@ module.exports = {
         'gatsby-plugin-react-helmet',
         'gatsby-transformer-sharp',
         'gatsby-plugin-styled-components',
+        `gatsby-transformer-json`,
         {
             resolve: `gatsby-plugin-google-fonts`,
             options: {
@@ -32,7 +33,6 @@ module.exports = {
             options: {
                 name: `projects`,
                 path: `${__dirname}/src/data/`,
-                plugins: [`gatsby-transformer-json`],
             },
         },
         {

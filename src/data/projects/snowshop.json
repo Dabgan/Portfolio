@@ -1,5 +1,5 @@
 {
-    "order": 1,
+    "order": 2,
     "title": "Snowshop",
     "introduction": "My biggest project so far. A mockup of a fully functioning online shop.",
     "description": "My biggest project so far. A mockup of fully functioning online shop with firebase as a backend. It contains features such as shopping cart, filtering and more. While creating this project, I learned how to solve advanced React problems.",
@@ -14,5 +14,5 @@
     "codeLink": "https://github.com/Dabgan/SnowShop",
     "demoLink": "https://snow-shop.netlify.app/",
     "coverImg": "../../assets/images/snowshop.png",
-    "inverted": false
+    "inverted": true
 }

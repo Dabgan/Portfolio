@@ -20,11 +20,11 @@ const About = () => {
                             <p>
                                 My name is Gabriel and I have always been
                                 interested in technology. When it comes to
-                                programming, I got intriqued by it over a year
-                                ago, when I wanted to build my own website. I
-                                started learning about front-end technologies
-                                and since then, I have been systematically
-                                developing my skills.
+                                programming, I got intriqued by it over two
+                                years ago, when I wanted to build my own
+                                website. I started learning about front-end
+                                technologies and since then, I have been
+                                systematically developing my skills.
                             </p>
                             <p>
                                 I really enjoy creating websites and web
@@ -37,12 +37,12 @@ const About = () => {
                                 learning new things - in every project that I
                                 create, apart from technologies that I already
                                 know, I always try to discover & learn something
-                                new. I am currently learning about Typescript
-                                and improving myself in testing.
+                                new. I am currently learning about Core Web
+                                Vitals and expanding my React knowledge.
                             </p>
                             <p>
-                                My main goal is to start my career as a Frontend
-                                Developer and further develop in the IT
+                                My goal is to further improve my technical
+                                skills and develop my passion in the IT
                                 industry.
                             </p>
                         </Description>

@@ -1,0 +1,17 @@
+{
+    "order": 1,
+    "title": "Make up portfolio",
+    "introduction": "Portfolio website made for make up artist.",
+    "description": "Portfolio website made for Make up Artist. It contains projects gallery where I used DatoCMS as a headless CMS for easy content management. ",
+    "technologies": [
+        "Gatsby",
+        "Typescript",
+        "CSS Modules",
+        "GraphQL",
+        "Dato CMS"
+    ],
+    "codeLink": "https://github.com/Dabgan/MakeUp_Portfolio",
+    "demoLink": "https://kingadabrowska.netlify.app/",
+    "coverImg": "../../assets/images/makeup.png",
+    "inverted": false
+}
