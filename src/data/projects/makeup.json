@@ -2,7 +2,7 @@
     "order": 1,
     "title": "Make up portfolio",
     "introduction": "Portfolio website made for make up artist.",
-    "description": "Portfolio website made for Make up Artist. It contains projects gallery where I used DatoCMS as a headless CMS for easy content management. ",
+    "description": "A fully responsive portfolio website created to present the work of a make-up artist. Designed in Figma and connected to the CMS for easy content management. I also used Typescript (even though I know it is a fairly simple app) just to practice it better.",
     "technologies": [
         "Gatsby",
         "Typescript",

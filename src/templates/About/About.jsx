@@ -37,8 +37,9 @@ const About = () => {
                                 learning new things - in every project that I
                                 create, apart from technologies that I already
                                 know, I always try to discover & learn something
-                                new. I am currently learning about Core Web
-                                Vitals and expanding my React knowledge.
+                                new. I am currently learning about Next.js and
+                                expanding my React, Typescript and tests
+                                knowledge.
                             </p>
                             <p>
                                 My goal is to further improve my technical
