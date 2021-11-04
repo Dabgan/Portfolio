@@ -1,6 +1,6 @@
 # Portfolio
 
-My personal website made with Gatsby. You can check it live [here](https://www.gabrieldaniluk.pl/).
+My personal website made with Gatsby. You can check it live [here](https://www.gabrieldaniluk.com/).
 
 ![main view](https://i.imgur.com/VyvyZ6E.png "main page preview")
 
