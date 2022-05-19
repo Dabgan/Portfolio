@@ -8,20 +8,17 @@ export const Wrapper = styled.article`
 
     ${({ theme }) => theme.mq.md} {
         align-items: center;
-        margin: ${({ theme }) => theme.margin.m} 0
-            ${({ theme }) => theme.margin.m};
+        margin: ${({ theme }) => theme.margin.m} 0 ${({ theme }) => theme.margin.m};
     }
 
     ${({ theme }) => theme.mq.lg} {
         flex-flow: ${({ inverted }) => (inverted ? 'row-reverse' : 'row')};
         padding: ${({ theme }) => theme.padding.l} 0;
-        margin: ${({ theme }) => theme.margin.l} 0
-            ${({ theme }) => theme.margin.l};
+        margin: ${({ theme }) => theme.margin.l} 0 ${({ theme }) => theme.margin.l};
     }
 
     ${({ theme }) => theme.mq.xl} {
-        margin: ${({ theme }) => theme.margin.xl} 0
-            ${({ theme }) => theme.margin.xl};
+        margin: ${({ theme }) => theme.margin.xl} 0 ${({ theme }) => theme.margin.xl};
     }
 `;
 
@@ -50,8 +47,8 @@ export const ImageWrapper = styled.div`
     }
 
     ${({ theme }) => theme.mq.lg} {
-        margin: 0 ${({ inverted, theme }) => (inverted ? theme.margin.s : '0')}
-            0 ${({ inverted, theme }) => (inverted ? '0' : theme.margin.s)};
+        margin: 0 ${({ inverted, theme }) => (inverted ? theme.margin.s : '0')} 0
+            ${({ inverted, theme }) => (inverted ? '0' : theme.margin.s)};
     }
     ${({ theme }) => theme.mq.lg} {
         ::before {
@@ -75,15 +72,12 @@ export const InfoWrapper = styled.div`
     will-change: transform, opacity;
     ${({ theme }) => theme.mq.lg} {
         flex: 0 0 50%;
-        padding: 0
-            ${({ inverted, theme }) => (inverted ? theme.padding.l : '0')} 0
+        padding: 0 ${({ inverted, theme }) => (inverted ? theme.padding.l : '0')} 0
             ${({ inverted, theme }) => (inverted ? '0' : theme.padding.l)};
-        align-items: ${({ inverted }) =>
-            inverted ? 'flex-start' : 'flex-end'};
+        align-items: ${({ inverted }) => (inverted ? 'flex-start' : 'flex-end')};
     }
     ${({ theme }) => theme.mq.xl} {
-        padding: 0
-            ${({ inverted, theme }) => (inverted ? theme.padding.xl : '0')} 0
+        padding: 0 ${({ inverted, theme }) => (inverted ? theme.padding.xl : '0')} 0
             ${({ inverted, theme }) => (inverted ? '0' : theme.padding.xl)};
     }
 `;
