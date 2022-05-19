@@ -20,13 +20,7 @@ const detailsQuery = graphql`
 
 const SEO = ({ title, description, author, previewImage, lang }) => {
     const { site } = useStaticQuery(detailsQuery);
-    const {
-        defaultTitle,
-        defaultDescription,
-        defaultAuthor,
-        defaultImage,
-        defaultLanguage,
-    } = site.siteMetadata;
+    const { defaultTitle, defaultDescription, defaultAuthor, defaultImage, defaultLanguage } = site.siteMetadata;
     const seo = {
         title: title || defaultTitle,
         description: description || defaultDescription,
@@ -85,7 +79,14 @@ const SEO = ({ title, description, author, previewImage, lang }) => {
                     content: seo.previewImage,
                 },
             ]}
-        />
+        >
+            <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin />
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+            <link
+                href="https://fonts.googleapis.com/css2?family=Francois+One&family=Roboto:wght@300;400&display=block"
+                rel="stylesheet"
+            />
+        </Helmet>
     );
 };
 
