@@ -1,36 +1,13 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
 import ProjectExample from 'components/ProjectExample/ProjectExample';
 import Content from 'components/Content/Content';
 import TemplateHeader from '../../components/Template Header/TemplateHeader';
 import { InnerWrapper, Wrapper } from './projects.styles';
 import TemplateSubtitle from '../../components/TemplateSubtitle/TemplateSubtitle';
+import getProjects from '../../utils/getProjects';
 
 const Projects = () => {
-    const data = useStaticQuery(graphql`
-        query {
-            projects: allProjectsJson(sort: { fields: order }) {
-                nodes {
-                    title
-                    technologies
-                    description
-                    demoLink
-                    codeLink
-                    id
-                    introduction
-                    inverted
-                    coverImg {
-                        childImageSharp {
-                            fluid(maxWidth: 850, maxHeight: 571, quality: 90) {
-                                ...GatsbyImageSharpFluid_tracedSVG
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    `);
-
+    const data = getProjects();
     return (
         <Wrapper id="projects">
             <Content>
@@ -40,9 +17,15 @@ const Projects = () => {
                         Here are few of my applications.
                         <p>You can find more on my github profile.</p>
                     </TemplateSubtitle>
-                    {data.projects.nodes.map(node => (
-                        <ProjectExample key={node.id} projectData={node} />
-                    ))}
+                    {data.map((node, index) => {
+                        const isInverted = index % 2 === 0;
+                        return (
+                            <ProjectExample
+                                key={node.id}
+                                projectData={{ ...node, isInverted }}
+                            />
+                        );
+                    })}
                 </InnerWrapper>
             </Content>
         </Wrapper>
