@@ -20,10 +20,10 @@ import {
 const ProjectExample = ({ projectData }) => {
     const imgRef = useRef(null);
     const contentRef = useRef(null);
-    const codeText = '<Code />';
+    const codeBtnText = '<Code />';
     const {
         title,
-        inverted,
+        isInverted,
         description,
         technologies,
         coverImg,
@@ -37,7 +37,7 @@ const ProjectExample = ({ projectData }) => {
         const img = imgRef.current;
         const content = contentRef.current;
 
-        const tweenDirection = inverted ? '+' : '-';
+        const tweenDirection = isInverted ? '+' : '-';
 
         if (img && content) {
             const startProjectAnimation = (elem, distance) => {
@@ -65,13 +65,15 @@ const ProjectExample = ({ projectData }) => {
     }, []);
 
     return (
-        <Wrapper inverted={inverted ? 1 : 0}>
-            <ImageWrapper ref={imgRef} inverted={inverted ? 1 : 0}>
+        <Wrapper inverted={isInverted ? 1 : 0}>
+            <ImageWrapper ref={imgRef} inverted={isInverted ? 1 : 0}>
                 <Img fluid={coverImg.childImageSharp.fluid} alt={title} />
             </ImageWrapper>
 
-            <InfoWrapper ref={contentRef} inverted={inverted ? 1 : 0}>
-                <ProjectTitle inverted={inverted ? 1 : 0}>{title}</ProjectTitle>
+            <InfoWrapper ref={contentRef} inverted={isInverted ? 1 : 0}>
+                <ProjectTitle inverted={isInverted ? 1 : 0}>
+                    {title}
+                </ProjectTitle>
                 <Line />
                 <Description>{description}</Description>
                 <TechnologiesList>
@@ -96,7 +98,7 @@ const ProjectExample = ({ projectData }) => {
                         rel="noopener noreferrer"
                     >
                         <Button size="medium" secondary>
-                            {codeText}
+                            {codeBtnText}
                         </Button>
                     </a>
                 </ButtonsWrapper>
@@ -111,7 +113,7 @@ ProjectExample.propTypes = {
         introduction: propTypes.string.isRequired,
         description: propTypes.string.isRequired,
         technologies: propTypes.arrayOf(propTypes.string),
-        inverted: propTypes.bool.isRequired,
+        isInverted: propTypes.bool.isRequired,
         coverImg: propTypes.shape({
             childImageSharp: propTypes.shape({
                 fluid: propTypes.shape({

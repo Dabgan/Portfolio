@@ -2,7 +2,7 @@
     "order": 1,
     "title": "Make up portfolio",
     "introduction": "Portfolio website made for make up artist.",
-    "description": "A fully responsive portfolio website created to present the work of a make-up artist. Designed in Figma and connected to the CMS for easy content management. I also used Typescript (even though I know it is a fairly simple app) just to practice it better.",
+    "description": "A fully responsive portfolio website created to present the work of a make-up artist. Designed in Figma and connected to the CMS for easy content management. The website is fully responsive and adapts to all screen sizes.",
     "technologies": [
         "Gatsby",
         "Typescript",
@@ -12,6 +12,5 @@
     ],
     "codeLink": "https://github.com/Dabgan/MakeUp_Portfolio",
     "demoLink": "https://kingadabrowska.netlify.app/",
-    "coverImg": "../../assets/images/makeup.png",
-    "inverted": false
+    "coverImg": "../../assets/images/makeup.png"
 }

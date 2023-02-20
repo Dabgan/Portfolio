@@ -1,5 +1,5 @@
 import React from 'react';
-import ContactForm from '../ContactForm/ContactForm';
+import ContactForm from './ContactForm';
 import { fireEvent, render, waitFor } from '../../../jest-configs/test-utils';
 
 describe('Contact form', () => {

@@ -12,7 +12,7 @@ export const Wrapper = styled.section`
 
     ${({ theme }) => theme.mq.lg} {
         min-height: auto;
-        margin-top: -6rem;
+        margin-top: -8rem;
         padding: ${({ theme }) => theme.padding.xl} 0 0;
     }
 `;
